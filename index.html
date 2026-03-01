@@ -184,7 +184,7 @@
       padding:0 6px;
     }
 
-    /* PRICING */
+    /* PRICING (clean + badge fix) */
     .pricing{
       margin-top:42px;
       display:grid;
@@ -192,10 +192,11 @@
       gap:22px;
       align-items:stretch;
     }
+
     .price-card{
       background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
       border:1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
+      border-radius:18px;
       box-shadow: var(--shadow);
       padding:28px 28px 22px;
       position:relative;
@@ -208,11 +209,19 @@
       background: radial-gradient(520px 260px at 20% 5%, rgba(255,255,255,.06), transparent 65%);
       pointer-events:none;
     }
+    .price-card > *{ position:relative; }
+
+    .price-card.popular{
+      border-color:rgba(255,255,255,.18);
+      transform: translateY(-6px);
+    }
+
+    .badge-wrapper{
+      text-align:center;
+      margin-bottom:14px;
+    }
     .badge{
-      position:absolute;
-      top:14px;
-      left:50%;
-      transform:translateX(-50%);
+      display:inline-block;
       background:#fff;
       color:#0b0c0f;
       font-weight:800;
@@ -222,16 +231,35 @@
       border-radius:999px;
       box-shadow:0 10px 26px rgba(0,0,0,.35);
     }
+
+    .plan-title{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.70);
+      margin-bottom:10px;
+      font-weight:700;
+      text-align:center;
+    }
+
     .price{
       font-size:44px;
       letter-spacing:-.03em;
-      margin:42px 0 8px;
+      margin:18px 0 8px;
       font-weight:800;
+      text-align:center;
     }
-    .price-sub{color:rgba(255,255,255,.65); margin:0 0 22px; font-size:14px; line-height:1.35}
+    .price-sub{
+      color:rgba(255,255,255,.65);
+      margin:0 0 22px;
+      font-size:14px;
+      line-height:1.35;
+      text-align:center;
+    }
+
     .list{margin:18px 0 26px; padding:0; list-style:none; display:grid; gap:12px;}
     .li{
-      display:flex; gap:12px; align-items:flex-start;text-align:left;
+      display:flex; gap:12px; align-items:flex-start; text-align:left;
       color:rgba(255,255,255,.82);
       font-size:14.5px;
       line-height:1.35;
@@ -248,24 +276,6 @@
     .check svg{width:12px; height:12px; color:var(--green)}
     .price-card .btn{width:100%; padding:14px 18px; border-radius:12px}
     .price-card .btn.ghost{border-color:rgba(255,255,255,.18)}
-    .price-card.popular{
-      border-color:rgba(255,255,255,.18);
-      transform: translateY(-6px);
-    }
-.price-card{
-  position:relative;
-}
-  .badge{
-  display:inline-block;
-  background:#ffffff;
-  color:#000000;
-  font-size:11px;
-  font-weight:700;
-  padding:6px 14px;
-  border-radius:999px;
-  letter-spacing:.05em;
-  margin-bottom:14px;
-}
 
     /* STATEMENT section */
     .statement{
@@ -482,25 +492,24 @@
       .hero{min-height:78vh}
       .price-card.popular{transform:none}
     }
+
     /* SELECT DARK DROPDOWN FIX */
-select {
-  background-color: #0f1014;
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,.15);
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-select option {
-  background-color: #0f1014;
-  color: #ffffff;
-}
-
-select option:checked {
-  background-color: #121318;
-  color: #ffffff;
-}
+    select {
+      background-color: #0f1014;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,.15);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    select option {
+      background-color: #0f1014;
+      color: #ffffff;
+    }
+    select option:checked {
+      background-color: #121318;
+      color: #ffffff;
+    }
   </style>
 </head>
 
@@ -520,7 +529,6 @@ select option:checked {
   <header class="hero" id="top">
     <div class="container hero-inner center">
       <div class="logo" aria-label="Logo">
-        <!-- Vervang door jouw logo -->
         <img src="assets/logo.svg" alt="Sem Elite Performance logo" onerror="this.style.display='none'"/>
       </div>
 
@@ -545,7 +553,6 @@ select option:checked {
       <div class="grid-3">
         <div class="card">
           <div class="icon" aria-hidden="true">
-            <!-- medal -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/>
               <path d="M8 2 12 7l4-5"/>
@@ -557,7 +564,6 @@ select option:checked {
 
         <div class="card">
           <div class="icon" aria-hidden="true">
-            <!-- trophy -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M8 4h8v3a4 4 0 0 1-8 0V4Z"/>
               <path d="M6 5H4a2 2 0 0 0 2 4"/>
@@ -572,7 +578,6 @@ select option:checked {
 
         <div class="card">
           <div class="icon" aria-hidden="true">
-            <!-- users -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z"/>
               <path d="M6 21a6 6 0 0 1 12 0"/>
@@ -618,13 +623,12 @@ select option:checked {
 
         <!-- Performance (recommended) -->
         <div class="price-card popular">
+          <div class="badge-wrapper">
+            <div class="badge">AANBEVOLEN</div>
+          </div>
 
-  <div style="text-align:center;">
-    <div class="badge">AANBEVOLEN</div>
-  </div>
-
-  <div class="plan-title">PERFORMANCE CAMP</div>
-  <div class="price">€450</div>
+          <div class="plan-title">PERFORMANCE CAMP</div>
+          <div class="price">€450</div>
           <p class="price-sub">Voor spelers die fysiek het verschil willen maken.</p>
 
           <ul class="list">
@@ -636,65 +640,63 @@ select option:checked {
           <button class="btn" data-select="Performance" data-scroll="#inschrijven">Reserveer mijn plek</button>
         </div>
 
-  <!-- All-in -->
-<div class="price-card">
-  <div class="plan-title">ELITE CAMP</div>
-  <div class="price">€550</div>
-  <p class="price-sub">Voor spelers die all-in gaan.</p>
+        <!-- Elite -->
+        <div class="price-card">
+          <div class="plan-title">ELITE CAMP</div>
+          <div class="price">€550</div>
+          <p class="price-sub">Voor spelers die all-in gaan.</p>
 
-  <ul class="list">
+          <ul class="list">
+            <li class="li">
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <span>Alles van Performance</span>
+            </li>
 
-    <li class="li">
-      <span class="check">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-          <path d="M20 6 9 17l-5-5"/>
-        </svg>
-      </span>
-      <span>Alles van Performance</span>
-    </li>
+            <li class="li">
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <span>MAS test</span>
+            </li>
 
-    <li class="li">
-      <span class="check">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-          <path d="M20 6 9 17l-5-5"/>
-        </svg>
-      </span>
-      <span>MAS test</span>
-    </li>
+            <li class="li">
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <span>Persoonlijk zomerschema – Conditie</span>
+            </li>
 
-    <li class="li">
-      <span class="check">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-          <path d="M20 6 9 17l-5-5"/>
-        </svg>
-      </span>
-      <span>Persoonlijk zomerschema – Conditie</span>
-    </li>
+            <li class="li">
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <span>Persoonlijk zomerschema – Kracht</span>
+            </li>
 
-    <li class="li">
-      <span class="check">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-          <path d="M20 6 9 17l-5-5"/>
-        </svg>
-      </span>
-      <span>Persoonlijk zomerschema – Kracht</span>
-    </li>
+            <li class="li">
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <span>Persoonlijk zomerschema – Body Movements</span>
+            </li>
+          </ul>
 
-    <li class="li">
-      <span class="check">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-          <path d="M20 6 9 17l-5-5"/>
-        </svg>
-      </span>
-      <span>Persoonlijk zomerschema – Body Movements</span>
-    </li>
-
-  </ul>
-
-  <button class="btn" data-select="All-in" data-scroll="#inschrijven">
-    Ik ga all-in
-  </button>
-</div> 
+          <button class="btn" data-select="All-in" data-scroll="#inschrijven">Ik ga all-in</button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- STATEMENT -->
@@ -744,7 +746,6 @@ select option:checked {
       <div class="focus">
         <div class="tile">
           <div class="tile-icon" aria-hidden="true">
-            <!-- bolt -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z"/>
             </svg>
@@ -754,7 +755,6 @@ select option:checked {
 
         <div class="tile">
           <div class="tile-icon" aria-hidden="true">
-            <!-- target -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="9"/>
               <circle cx="12" cy="12" r="5"/>
@@ -766,7 +766,6 @@ select option:checked {
 
         <div class="tile">
           <div class="tile-icon" aria-hidden="true">
-            <!-- arrows -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M7 7h6v6"/>
               <path d="M7 13 13 7"/>
@@ -779,7 +778,6 @@ select option:checked {
 
         <div class="tile">
           <div class="tile-icon" aria-hidden="true">
-            <!-- shield -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2 20 6v7c0 5-3.4 8.8-8 9-4.6-.2-8-4-8-9V6l8-4Z"/>
             </svg>
@@ -789,7 +787,6 @@ select option:checked {
 
         <div class="tile">
           <div class="tile-icon" aria-hidden="true">
-            <!-- wave -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 12h4l2-6 4 12 2-6h6"/>
             </svg>
@@ -799,7 +796,6 @@ select option:checked {
 
         <div class="tile">
           <div class="tile-icon" aria-hidden="true">
-            <!-- trend -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 17l6-6 4 4 7-7"/>
               <path d="M14 8h6v6"/>
@@ -812,7 +808,6 @@ select option:checked {
   </section>
 
   <!-- PROGRAM -->
-    <!-- PROGRAM -->
   <section class="section tight" id="programma">
     <div class="container center">
       <h2 class="h2">12 dagen – 2 weken</h2>
@@ -831,7 +826,6 @@ select option:checked {
   </section>
 
   <!-- FOR WHO -->
-   <!-- FOR WHO -->
   <section class="section" id="voorwie">
     <div class="container center">
       <h2 class="h2">Voor wie?</h2>
@@ -839,7 +833,6 @@ select option:checked {
       <div class="forwho">
         <div class="card">
           <div class="icon" aria-hidden="true">
-            <!-- user -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z"/>
               <path d="M6 21a6 6 0 0 1 12 0"/>
@@ -850,7 +843,6 @@ select option:checked {
 
         <div class="card">
           <div class="icon" aria-hidden="true">
-            <!-- pin -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z"/>
               <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
@@ -860,7 +852,7 @@ select option:checked {
         </div>
       </div>
 
-      <!-- Dit blok staat nu buiten de grid, dus altijd mooi gecentreerd -->
+      <!-- gecentreerd blok -->
       <div class="big" style="
         margin-top:24px;
         background:#fff;
@@ -951,19 +943,17 @@ select option:checked {
   </section>
 
   <footer>
-  <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
-    
-    <img src="assets/logo.svg" 
-         alt="Sem Elite Performance logo"
-         style="width:70px; opacity:0.9; filter: drop-shadow(0 6px 14px rgba(0,0,0,.6));"
-         onerror="this.style.display='none'"/>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+      <img src="assets/logo.svg"
+           alt="Sem Elite Performance logo"
+           style="width:70px; opacity:0.9; filter: drop-shadow(0 6px 14px rgba(0,0,0,.6));"
+           onerror="this.style.display='none'"/>
 
-    <div>
-      © <span id="year"></span> Sem Elite Performance. Alle rechten voorbehouden.
+      <div>
+        © <span id="year"></span> Sem Elite Performance. Alle rechten voorbehouden.
+      </div>
     </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script>
     // Smooth scroll
@@ -995,12 +985,11 @@ select option:checked {
       });
     });
 
-    // Dummy submit handler (jij koppelt dit later aan backend / GitHub actions / serverless)
+    // Dummy submit handler
     document.getElementById('leadForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const msg = document.getElementById('formMsg');
       msg.textContent = "Formulier klaar om te koppelen aan backend. (Nu: demo submit)";
-      // Hier kun jij fetch() doen naar jouw endpoint.
     });
 
     // Footer year
