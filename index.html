@@ -1,596 +1,1164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ELITE GYM | Train Elite. Live Elite.</title>
-  <meta name="description" content="Train Elite. Live Elite. Premium gym ervaring met top hygiëne, ruimte en community." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- OPTIONAL: alleen laten staan als je een favicon hebt -->
-  <!-- <link rel="icon" href="./assets/favicon.png" /> -->
+  <title>SEM Elite Performance | Elite Off-Season Performance Kamp</title>
+  <meta name="description" content="Elite Off-Season Performance Kamp (12 dagen) voor O17 t/m (jong) profs. Sneller, krachtiger, robuuster. Intake + testing + persoonlijk plan. Regio Breda / Oosterhout." />
+  <meta name="keywords" content="off-season trainingskamp, performance coach, voetbal performance, snelheid, explosiviteit, kracht, mobiliteit, blessure preventie, Breda, Oosterhout, NAC, Feyenoord" />
+  <meta name="theme-color" content="#0B0B0F" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SEM Elite Performance" />
+  <meta property="og:description" content="Elite Off-Season Performance Kamp (12 dagen). Sneller • Krachtiger • Robuuster. Intake + testen + persoonlijk plan. Regio Breda / Oosterhout." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b0f14;
-      --panel:#111827;
-      --panel2:#0f172a;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.72);
-      --muted2:rgba(255,255,255,.55);
-      --border:rgba(255,255,255,.12);
-      --gold:#d4af37;
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius:18px;
+      --bg:#0b0b0f;
+      --panel:#101018;
+      --panel2:#0f0f16;
+      --text:#f4f5f7;
+      --muted:#b7bac4;
+      --line:rgba(255,255,255,.09);
+      --accent:#7c5cff; /* premium paars-blauw */
+      --accent2:#00d4ff; /* neon cyan */
+      --good:#48ff8b;
+      --warn:#ffcc66;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 22px;
+      --radius2: 30px;
+      --max: 1120px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:
-        radial-gradient(900px 500px at 15% 5%, rgba(212,175,55,.12), transparent 60%),
-        radial-gradient(900px 500px at 85% 30%, rgba(255,255,255,.06), transparent 60%),
+        radial-gradient(900px 600px at 14% 10%, rgba(124,92,255,.22), transparent 62%),
+        radial-gradient(760px 520px at 82% 18%, rgba(0,212,255,.14), transparent 60%),
+        radial-gradient(880px 680px at 60% 120%, rgba(72,255,139,.09), transparent 60%),
         var(--bg);
       color:var(--text);
+      line-height:1.35;
+      letter-spacing:-.01em;
     }
     a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 18px}
-    .hr{border-top:1px solid var(--border)}
-    .section{padding:70px 0}
-    .section.slim{padding:40px 0}
-
-    /* Topbar */
-    .topbar{
-      border-bottom:1px solid var(--border);
-      font-size:12px;
-      color:var(--muted2);
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .blur-orb{
+      position:absolute; inset:auto auto auto auto;
+      width:560px;height:560px;border-radius:999px;
+      filter: blur(60px);
+      opacity:.18; pointer-events:none;
+      background: conic-gradient(from 180deg, var(--accent), var(--accent2), var(--accent), var(--good));
     }
-    .topbar .row{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0; gap:12px;
+    .topline{
+      position:fixed; left:0; top:0; right:0;
+      height:1px; background:linear-gradient(90deg, transparent, rgba(124,92,255,.55), rgba(0,212,255,.35), transparent);
+      z-index:50;
+      opacity:.8;
     }
-    .badge{display:inline-flex; align-items:center; gap:10px}
-    .dot{width:7px;height:7px;border-radius:99px;background:var(--gold)}
-    .toplinks{display:flex; gap:14px}
-    .toplinks a:hover{color:var(--text)}
-
-    /* Nav */
-    .nav{
-      position:sticky; top:0; z-index:50;
+    header{
+      position:sticky; top:0; z-index:40;
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background: rgba(11,15,20,.72);
-      border-bottom:1px solid var(--border);
+      background: rgba(11,11,15,.62);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .nav .row{
+    .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:14px;
+      padding:14px 0;
     }
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand img{width:38px;height:38px;border-radius:12px;object-fit:cover}
-    .brand .name{font-weight:800; letter-spacing:.6px}
-    .brand .tag{font-size:12px;color:var(--muted2);margin-top:2px}
-
-    .menu{
-      display:flex; align-items:center; gap:22px;
-      color:var(--muted); font-size:14px;
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900; letter-spacing:-.03em;
     }
-    .menu a:hover{color:var(--text)}
-    .actions{display:flex; align-items:center; gap:10px}
-
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.24), transparent 40%),
+                  linear-gradient(135deg, rgba(124,92,255,.9), rgba(0,212,255,.65));
+      box-shadow: 0 10px 30px rgba(124,92,255,.22);
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .brand small{display:block;color:var(--muted);font-weight:600;letter-spacing:0}
+    .navlinks{display:flex; gap:18px; align-items:center}
+    .navlinks a{
+      color:rgba(244,245,247,.86);
+      font-weight:600; font-size:14px;
+      padding:10px 10px; border-radius:12px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .navlinks a:hover{background:rgba(255,255,255,.06); color:#fff}
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
+      gap:10px;
+      padding:12px 16px;
       border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      font-weight:700;
-      font-size:14px;
-      cursor:pointer;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      transition: transform .15s ease, background .2s ease, border .2s ease;
+      user-select:none;
+      white-space:nowrap;
     }
-    .btn:hover{background: rgba(255,255,255,.07)}
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.20)}
     .btn.primary{
-      border-color:rgba(212,175,55,.35);
-      background: var(--gold);
-      color:#000;
+      border:1px solid rgba(124,92,255,.55);
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.55));
+      box-shadow: 0 18px 45px rgba(124,92,255,.20);
     }
-    .btn.primary:hover{filter:brightness(.95)}
-    .btn.full{width:100%}
-
-    /* Typography */
-    .h1{font-size:48px; line-height:1.05; margin:16px 0 0}
-    .h1 .gold{color:var(--gold)}
-    .lead{
-      color:var(--muted);
-      margin:16px 0 0;
-      font-size:16px;
-      line-height:1.65;
-      max-width:56ch;
+    .btn.primary:hover{border-color: rgba(255,255,255,.20)}
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.12);
     }
-    .h2{margin:0; font-size:34px; font-weight:900}
-    .sublead{margin-top:10px}
-
-    /* Layout */
-    .grid{display:grid; gap:18px}
-    .hero-grid{
-      grid-template-columns: 1.05fr .95fr;
-      align-items:center;
-      gap:24px;
-    }
-    .cards-3{grid-template-columns: repeat(3, 1fr)}
-    .cards-2{grid-template-columns: repeat(2, 1fr)}
-    .pricing{grid-template-columns: repeat(3, 1fr)}
-
-    /* Keep things side-by-side longer */
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns: 1fr 1fr}
-      .h1{font-size:42px}
-      .cards-3{grid-template-columns: repeat(2, 1fr)}
-    }
-    @media (max-width: 720px){
-      .menu{display:none}
-      .pricing{grid-template-columns: 1fr}
-    }
-    @media (max-width: 640px){
-      .hero-grid{grid-template-columns: 1fr}
-      .cards-2,.cards-3{grid-template-columns: 1fr}
-      .h1{font-size:38px}
-    }
-
-    /* UI blocks */
-    .mini{
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(11,15,20,.45);
-      border-radius: 18px;
-      padding:14px;
+      color:rgba(244,245,247,.90);
+      font-size:13px;
+      font-weight:700;
     }
-    .mini .t{color:var(--muted2); font-size:12px}
-    .mini .v{margin-top:6px; font-weight:900}
+    .pill .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+    }
+    .hamburger{
+      display:none;
+      width:44px;height:44px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      align-items:center; justify-content:center;
+    }
+    .hamburger span{
+      width:18px; height:2px; background:#fff; display:block; position:relative;
+    }
+    .hamburger span::before,.hamburger span::after{
+      content:""; position:absolute; left:0; width:18px; height:2px; background:#fff;
+    }
+    .hamburger span::before{top:-6px}
+    .hamburger span::after{top:6px}
 
-    .panel{
-      border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border-radius: calc(var(--radius) + 8px);
+    /* Hero */
+    .hero{
+      position:relative;
+      padding:72px 0 26px;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:center;
+    }
+    .h1{
+      font-size: clamp(34px, 4.2vw, 60px);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      margin:14px 0 12px;
+      font-weight:900;
+    }
+    .h1 .grad{
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(0,212,255,.78), rgba(124,92,255,.95));
+      -webkit-background-clip:text; background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      color:rgba(244,245,247,.80);
+      font-size:16px;
+      line-height:1.55;
+      max-width:58ch;
+      margin:0 0 18px;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .micro{
+      display:flex; gap:14px; flex-wrap:wrap;
+      margin-top:18px;
+      color:rgba(244,245,247,.72);
+      font-weight:700; font-size:13px;
+    }
+    .micro b{color:#fff}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .panel .inner{
-      background: rgba(17,24,39,.42);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      padding:18px;
-      margin:10px;
+    .card .inner{padding:18px}
+    .metric-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+    .metric{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      padding:14px;
+    }
+    .metric .k{font-weight:900;font-size:18px;letter-spacing:-.02em}
+    .metric .v{color:rgba(244,245,247,.72);font-weight:700;font-size:12px;margin-top:4px}
+    .hero-badges{
+      display:flex; gap:10px; flex-wrap:wrap;
+      padding:0 18px 18px;
+      border-top:1px solid rgba(255,255,255,.07);
+      background: rgba(0,0,0,.18);
     }
 
-    .card{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      border-radius: 22px;
-      padding:18px;
+    /* Sections */
+    section{padding:44px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
     }
-    .card h3{margin:0; font-size:18px}
-    .card p{margin:10px 0 0; color:var(--muted); font-size:14px; line-height:1.6}
-
-    .kpis{
+    h2{
+      margin:0;
+      font-size: clamp(22px, 2.2vw, 34px);
+      letter-spacing:-.04em;
+      font-weight:900;
+    }
+    .sub{
+      margin:0;
+      color:rgba(244,245,247,.72);
+      font-weight:600;
+      max-width:70ch;
+      line-height:1.55;
+      font-size:14px;
+    }
+    .grid-3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-      max-width:520px;
-      margin-top:18px;
+      gap:14px;
     }
-    .kpi{
-      border:1px solid var(--border);
+    .panel{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.04);
+    }
+    .panel h3{
+      margin:2px 0 8px;
+      font-size:16px;
+      letter-spacing:-.02em;
+      font-weight:900;
+    }
+    .panel p{
+      margin:0;
+      color:rgba(244,245,247,.74);
+      font-weight:600;
+      line-height:1.6;
+      font-size:14px;
+    }
+    .icon{
+      width:42px;height:42px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.20), transparent 38%),
+        linear-gradient(135deg, rgba(124,92,255,.40), rgba(0,212,255,.20));
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:10px;
+      box-shadow: 0 14px 35px rgba(0,0,0,.35);
+      font-weight:900;
+    }
+
+    /* Program */
+    .program{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      align-items:start;
+    }
+    .list{
+      margin:0; padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .li{
+      display:flex; gap:12px;
+      padding:12px 12px;
       border-radius:16px;
-      padding:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
     }
-    .kpi .big{color:var(--gold); font-weight:900; font-size:18px}
-    .kpi .small{color:var(--muted2); font-size:12px; margin-top:2px}
-
-    .list{margin:12px 0 0; padding:0; list-style:none}
-    .list li{color:var(--muted); font-size:14px; margin:8px 0}
-
-    .price{
-      border-radius: 24px;
-      padding:22px;
-      border:1px solid var(--border);
-      background: rgba(11,15,20,.45);
+    .check{
+      width:26px;height:26px;border-radius:10px;
+      background: rgba(72,255,139,.14);
+      border:1px solid rgba(72,255,139,.35);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+      color:var(--good);
+      flex:0 0 auto;
     }
-    .price.featured{
-      border-color: rgba(212,175,55,.35);
-      background: linear-gradient(180deg, rgba(212,175,55,.16), rgba(11,15,20,.45));
-      box-shadow: 0 0 0 1px rgba(212,175,55,.2), var(--shadow);
-    }
-    .price .label{font-weight:900}
-    .price .desc{color:var(--muted); font-size:14px; margin-top:8px}
-    .price .amount{font-size:42px; font-weight:900; margin-top:14px}
-    .price .amount span{font-size:14px; color:var(--muted2); font-weight:800}
+    .li b{display:block;font-weight:900}
+    .li span{display:block;color:rgba(244,245,247,.72);font-weight:600;font-size:13px;line-height:1.45}
 
-    .input{
-      width:100%;
-      padding:12px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(11,15,20,.55);
-      color:var(--text);
-      outline:none;
+    /* Schedule */
+    .schedule{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
     }
-    .input:focus{border-color: rgba(212,175,55,.6)}
-    .smallnote{color:var(--muted2); font-size:12px; line-height:1.5}
-
-    .footer{
-      padding:28px 0;
-      border-top:1px solid var(--border);
-      color:var(--muted2);
+    .week{
+      padding:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+    }
+    .week h3{margin:0 0 10px;font-weight:900;letter-spacing:-.02em}
+    .days{
+      display:grid; gap:8px;
+      margin:0; padding:0; list-style:none;
+    }
+    .day{
+      display:flex; justify-content:space-between; gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
+      color:rgba(244,245,247,.86);
+      font-weight:700;
       font-size:13px;
     }
-    .footer .row{display:flex; align-items:center; justify-content:space-between; gap:12px}
-    @media (max-width:640px){
-      .footer .row{flex-direction:column; align-items:flex-start}
+    .tag{
+      color:rgba(244,245,247,.72);
+      font-weight:800;
     }
 
-    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    /* Packages */
+    .packages{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .pkg{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      overflow:hidden;
+      position:relative;
+    }
+    .pkg .top{
+      padding:18px 18px 12px;
+      background: linear-gradient(135deg, rgba(124,92,255,.18), rgba(0,212,255,.08));
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .pkg h3{margin:0;font-weight:900;letter-spacing:-.02em}
+    .price{
+      margin-top:8px;
+      display:flex; align-items:baseline; gap:8px;
+      font-weight:900;
+      letter-spacing:-.03em;
+    }
+    .price .eur{font-size:26px}
+    .price small{color:rgba(244,245,247,.72);font-weight:800}
+    .pkg .body{padding:14px 18px 18px}
+    .bul{margin:0; padding-left:18px; color:rgba(244,245,247,.76); font-weight:600; line-height:1.6; font-size:13px}
+    .bul li{margin:8px 0}
+    .pkg .foot{padding:0 18px 18px}
+    .note{
+      margin-top:10px;
+      color:rgba(244,245,247,.68);
+      font-weight:700;
+      font-size:12px;
+      line-height:1.55;
+    }
+    .ribbon{
+      position:absolute; top:14px; right:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      color:#fff;
+    }
+
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:14px;
+      align-items:start;
+    }
+    .quote{
+      padding:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+    }
+    .quote p{
+      margin:0;
+      color:rgba(244,245,247,.84);
+      font-weight:700;
+      line-height:1.6;
+      font-size:14px;
+    }
+    .quote .by{
+      margin-top:12px;
+      color:rgba(244,245,247,.68);
+      font-weight:800;
+      font-size:12px;
+    }
+    .clubs{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
+    }
+    .club{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color:rgba(244,245,247,.78);
+      font-weight:800;
+      font-size:12px;
+    }
+
+    /* Intake */
+    .intake{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    form{
+      display:grid; gap:10px;
+    }
+    label{font-weight:800; font-size:12px; color:rgba(244,245,247,.78)}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      color:var(--text);
+      outline:none;
+      font-weight:700;
+    }
+    textarea{min-height:110px; resize:vertical}
+    input::placeholder, textarea::placeholder{color:rgba(244,245,247,.40); font-weight:700}
+    .two{
+      display:grid; grid-template-columns: 1fr 1fr; gap:10px;
+    }
+    .fineprint{
+      color:rgba(244,245,247,.62);
+      font-weight:700;
+      font-size:12px;
+      line-height:1.55;
+    }
+    .callout{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(520px 280px at 30% 20%, rgba(124,92,255,.22), transparent 55%),
+        rgba(255,255,255,.04);
+      padding:18px;
+    }
+    .callout h3{margin:0 0 8px;font-weight:900;letter-spacing:-.02em}
+    .callout p{margin:0;color:rgba(244,245,247,.74);font-weight:600;line-height:1.6;font-size:14px}
+    .callout .row{
+      margin-top:12px;
+      display:grid; gap:10px;
+    }
+    .mini{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      color:rgba(244,245,247,.86);
+      font-weight:700;
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid rgba(255,255,255,.06);
+      background: rgba(0,0,0,.16);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      color:rgba(244,245,247,.65);
+      font-weight:700;
+      font-size:12px;
+      align-items:center;
+    }
+    .foot a{color:rgba(244,245,247,.78)}
+    .foot a:hover{color:#fff}
+
+    /* Mobile */
+    .mobilemenu{
+      display:none;
+      padding:10px 0 16px;
+    }
+    .mobilemenu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      margin-top:8px;
+      font-weight:800;
+      color:rgba(244,245,247,.90);
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap:14px}
+      .program{grid-template-columns: 1fr}
+      .about{grid-template-columns: 1fr}
+      .intake{grid-template-columns: 1fr}
+      .grid-3{grid-template-columns: 1fr}
+      .schedule{grid-template-columns: 1fr}
+      .packages{grid-template-columns: 1fr}
+      .navlinks{display:none}
+      .hamburger{display:flex}
+      .mobilemenu.show{display:block}
+    }
   </style>
+
+  <!-- Structured data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "SEM Elite Performance",
+    "areaServed": ["Breda", "Oosterhout", "Noord-Brabant"],
+    "description": "Elite Off-Season Performance Kamp (12 dagen) voor O17 t/m (jong) profs en top amateur. Focus op snelheid, explosiviteit, mobiliteit en blessurepreventie.",
+    "url": ""
+  }
+  </script>
 </head>
 
 <body>
+  <div class="topline"></div>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container">
-      <div class="row">
-        <div class="badge">
-          <span class="dot"></span>
-          <span>Premium 4e verdieping • Hygiëne • Ruimte</span>
-        </div>
-        <div class="toplinks">
-          <a href="#facilities">Faciliteiten</a>
-          <a href="#pricing">Lidmaatschap</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Nav -->
-  <header class="nav">
-    <div class="container">
-      <div class="row">
-        <a class="brand" href="#">
-          <!-- PAS AAN: logo pad (svg/png) -->
-          <img src="./assets/logo.svg" alt="Elite Gym logo" />
-          <div>
-            <div class="name">ELITE GYM</div>
-            <div class="tag">Train Elite. Live Elite.</div>
-          </div>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="SEM Elite Performance">
+          <span class="logo" aria-hidden="true"></span>
+          <span>
+            SEM <span style="opacity:.85">Elite Performance</span>
+            <small>High performance • Off-season • Elite mindset</small>
+          </span>
         </a>
 
-        <nav class="menu">
-          <a href="#facilities">Faciliteiten</a>
-          <a href="#community">Community</a>
-          <a href="#coaching">Coaching</a>
-          <a href="#pricing">Prijzen</a>
-          <a href="#faq">FAQ</a>
+        <nav class="navlinks" aria-label="Hoofdmenu">
+          <a href="#wat">Wat we doen</a>
+          <a href="#kamp">Kamp</a>
+          <a href="#planning">Planning</a>
+          <a href="#sem">Sem</a>
+          <a href="#intake">Intake & Aanmelden</a>
         </nav>
 
-        <div class="actions">
-          <a class="btn" href="#contact">Plan rondleiding</a>
-          <a class="btn primary" href="#pricing">Start vandaag</a>
+        <div class="cta">
+          <a class="btn ghost" href="#intake">Wachtlijst</a>
+          <a class="btn primary" href="#intake">Intake + Aanmelden</a>
+
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+          </button>
         </div>
+      </div>
+
+      <div class="mobilemenu" id="mobilemenu" aria-label="Mobiel menu">
+        <a href="#wat">Wat we doen</a>
+        <a href="#kamp">Kamp</a>
+        <a href="#planning">Planning</a>
+        <a href="#sem">Sem</a>
+        <a href="#intake">Intake & Aanmelden</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="section">
-    <div class="container">
-      <div class="grid hero-grid">
+  <main id="top">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="blur-orb" style="left:-180px; top:-180px;"></div>
+      <div class="blur-orb" style="right:-220px; top:-260px; opacity:.14;"></div>
 
-        <!-- Left -->
-        <div>
-          <div class="mini">
-            <div class="t">Premium gymervaring</div>
-            <div class="v">Clean • Spacious • Community</div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <span class="pill"><span class="dot"></span> Elite Off-Season Performance Kamp • Regio Breda / Oosterhout</span>
+            <h1 class="h1">
+              Word <span class="grad">sneller, explosiever en krachtiger</span> — zonder je lichaam te slopen.
+            </h1>
+            <p class="lead">
+              Voor O17 t/m (jong) profs, top amateur en profs die hun off-season serieus nemen.
+              We bouwen aan een functioneel lichaam: beter bewegen → betere output → robuuster blijven.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#intake">Schrijf je in (wachtlijst)</a>
+              <a class="btn" href="#kamp">Bekijk het kamp</a>
+              <a class="btn ghost" href="#intake" onclick="prefillInterest('2-weeks plan')">Ik wil het 2-weeks plan</a>
+            </div>
+
+            <div class="micro">
+              <span>✅ <b>12 dagen</b> kamp + testen</span>
+              <span>✅ <b>Persoonlijk</b> (intake + exit)</span>
+              <span>✅ Focus: <b>snelheid • kracht • mobiliteit</b></span>
+            </div>
           </div>
 
-          <h1 class="h1">
-            Train <span class="gold">Elite</span>.<br />
-            Live <span class="gold">Elite</span>.
-          </h1>
+          <div class="card" aria-label="Performance snapshot">
+            <div class="inner">
+              <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+                <div>
+                  <div style="font-weight:900; letter-spacing:-.03em; font-size:18px;">Elite mindset. Meetbaar resultaat.</div>
+                  <div style="color:rgba(244,245,247,.70); font-weight:700; font-size:13px; margin-top:6px; line-height:1.5;">
+                    Tests + monitoring: 10m, 30–40m, HRmax & herstel, kracht monitoring (en bij pakket 3: MAS test).
+                  </div>
+                </div>
+                <span class="pill" title="Exclusiviteit"><span class="dot"></span> Limited spots</span>
+              </div>
 
-          <p class="lead">
-            Clean & Spacious Workout Area. Premium facility met veel ruimte en top hygiëne.
-            Sluit je aan bij een motivating fitness community en blijf consistent.
-          </p>
+              <div style="height:12px"></div>
 
-          <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="#pricing">Bekijk lidmaatschappen</a>
-            <a class="btn" href="#facilities">Bekijk faciliteiten</a>
-          </div>
-
-          <div class="kpis">
-            <div class="kpi"><div class="big">4e</div><div class="small">verdieping</div></div>
-            <div class="kpi"><div class="big">Top</div><div class="small">hygiëne</div></div>
-            <div class="kpi"><div class="big">High</div><div class="small">end equipment</div></div>
-          </div>
-        </div>
-
-        <!-- Right -->
-        <div class="panel">
-          <div class="inner">
-            <!-- Hero image (optional). Als je geen hero.jpg hebt, zet url(...) weg. -->
-            <div style="
-              border-radius:18px;
-              border:1px solid rgba(255,255,255,.10);
-              background:
-                linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)),
-                url('./assets/hero.jpg');
-              background-size:cover;
-              background-position:center;
-              min-height:220px;
-              display:flex;
-              align-items:flex-end;
-              padding:14px;
-            ">
-              <div>
-                <div style="color:rgba(255,255,255,.70); font-size:12px;">Deze week</div>
-                <div style="font-weight:900; font-size:20px;">Strength focus + consistency</div>
+              <div class="metric-grid">
+                <div class="metric">
+                  <div class="k">Snelheid</div>
+                  <div class="v">10m • 30–40m sprint tests</div>
+                </div>
+                <div class="metric">
+                  <div class="k">Kracht</div>
+                  <div class="v">Monitoring + verantwoord opbouwen</div>
+                </div>
+                <div class="metric">
+                  <div class="k">Robuust</div>
+                  <div class="v">Blessure preventie + mobiliteit</div>
+                </div>
+                <div class="metric">
+                  <div class="k">Conditie</div>
+                  <div class="v">HRmax • herstel (pakket 3: MAS)</div>
+                </div>
               </div>
             </div>
 
-            <div class="grid cards-2" style="margin-top:14px;">
-              <div class="card">
-                <h3>Clean & Spacious</h3>
-                <p>Ruim opgezet zodat je doortrainen kunt zonder wachten.</p>
-              </div>
-              <div class="card">
-                <h3>Elite Community</h3>
-                <p>Motiverende vibe. Geen ego’s — wel progress.</p>
-              </div>
-            </div>
-
-            <div style="margin-top:14px; display:flex; gap:10px;">
-              <a class="btn" style="flex:1" href="#contact">Vraag info</a>
-              <a class="btn primary" style="flex:1" href="#pricing">Lid worden</a>
-            </div>
-
-            <div class="smallnote" style="margin-top:12px;">
-              Als je geen <code>assets/hero.jpg</code> hebt: verwijder de <code>url('./assets/hero.jpg')</code> regel.
+            <div class="hero-badges">
+              <span class="pill"><span class="dot"></span> Premium • professioneel</span>
+              <span class="pill"><span class="dot"></span> 90–120 min per dag</span>
+              <span class="pill"><span class="dot"></span> 2 weken schema</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
 
-  <div class="hr"></div>
-
-  <!-- FACILITIES -->
-  <section id="facilities" class="section">
-    <div class="container">
-      <div style="max-width:720px;">
-        <h2 class="h2">Faciliteiten</h2>
-        <p class="lead sublead">Alles wat je nodig hebt om sterker, fitter en energieker te worden — zonder rommel en zonder drukte.</p>
-      </div>
-
-      <div class="grid cards-3" style="margin-top:18px;">
-        <div class="card">
-          <h3>Strength Zone</h3>
-          <p>Racks, platforms en alles voor progressive overload.</p>
-          <ul class="list">
-            <li>• Squat/bench/deadlift</li>
-            <li>• Dumbbells & barbells</li>
-            <li>• Plate loaded equipment</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Hygiëne standaard</h3>
-          <p>Fris, schoon en professioneel — elke dag.</p>
-          <ul class="list">
-            <li>• Schoonmaakrondes</li>
-            <li>• Disinfect stations</li>
-            <li>• Ventilatie & comfort</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Conditioning</h3>
-          <p>Cardio & conditioning om je engine te bouwen.</p>
-          <ul class="list">
-            <li>• Zone 2</li>
-            <li>• Intervals</li>
-            <li>• Sled / circuits</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMMUNITY -->
-  <section id="community" class="section" style="background: rgba(255,255,255,.03); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="grid cards-2" style="align-items:center;">
-        <div>
-          <h2 class="h2">Motivating Fitness Community</h2>
-          <p class="lead sublead">Train tussen mensen die ook willen winnen — op hun eigen niveau. Consistency wordt normaal.</p>
-
-          <div class="grid cards-2" style="margin-top:16px;">
-            <div class="card"><h3>Vibe</h3><p>Motivatie zonder toxic druk.</p></div>
-            <div class="card"><h3>Consistency</h3><p>Routines die je volhoudt.</p></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="inner">
-            <h3 style="margin:0; font-size:20px;">Wat je krijgt</h3>
-            <ul class="list" style="margin-top:10px;">
-              <li>• Toegang tot alle zones & equipment</li>
-              <li>• Community events & challenges</li>
-              <li>• Optioneel: personal coaching</li>
-              <li>• Hygiëne & comfort als standaard</li>
-            </ul>
-            <div style="margin-top:14px">
-              <a class="btn primary" href="#contact">Plan gratis intake</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- COACHING -->
-  <section id="coaching" class="section">
-    <div class="container">
-      <div style="max-width:720px;">
-        <h2 class="h2">Coaching (optioneel)</h2>
-        <p class="lead sublead">Structuur, accountability en een plan dat past bij jouw leven. Geen onzin, alleen wat werkt.</p>
-      </div>
-
-      <div class="grid cards-3" style="margin-top:18px;">
-        <div class="card"><h3>Intake & plan</h3><p>Doelen → niveau → roadmap.</p></div>
-        <div class="card"><h3>Progress tracking</h3><p>Meetbaar sterker: lifts, reps, energie.</p></div>
-        <div class="card"><h3>Support</h3><p>Check-ins, techniek, bijsturen.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="section" style="background: rgba(255,255,255,.03); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div style="max-width:720px;">
-        <h2 class="h2">Lidmaatschappen</h2>
-        <p class="lead sublead">Kies wat bij je past. Upgrade later altijd.</p>
-      </div>
-
-      <div class="grid pricing" style="margin-top:18px;">
-        <div class="price">
-          <div class="label">Basic</div>
-          <div class="desc">Voor zelfstandige trainers.</div>
-          <div class="amount">€39 <span>/mnd</span></div>
-          <ul class="list">
-            <li>• Gym toegang</li>
-            <li>• Alle zones</li>
-            <li>• Community vibe</li>
-          </ul>
-          <a class="btn full" href="#contact">Info aanvragen</a>
-        </div>
-
-        <div class="price featured">
-          <div class="label">Pro (meest gekozen)</div>
-          <div class="desc">Meer support, meer tools.</div>
-          <div class="amount">€59 <span>/mnd</span></div>
-          <ul class="list">
-            <li>• Alles van Basic</li>
-            <li>• 1x maand check-in</li>
-            <li>• Schema template</li>
-          </ul>
-          <a class="btn primary full" href="#contact">Start Pro</a>
-        </div>
-
-        <div class="price">
-          <div class="label">Elite Coaching</div>
-          <div class="desc">Volledig begeleid.</div>
-          <div class="amount">€149 <span>/mnd</span></div>
-          <ul class="list">
-            <li>• Coaching plan</li>
-            <li>• Wekelijkse check-ins</li>
-            <li>• Progress tracking</li>
-          </ul>
-          <a class="btn full" href="#contact">Plan intake</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2 class="h2">FAQ</h2>
-
-      <div class="grid cards-2" style="margin-top:18px;">
-        <div class="card"><h3>Kan ik eerst een rondleiding doen?</h3><p>Ja. Plan een intake en we laten je alles zien.</p></div>
-        <div class="card"><h3>Is coaching verplicht?</h3><p>Nee. Je kunt zelfstandig trainen en later upgraden.</p></div>
-        <div class="card"><h3>Voor wie is de gym?</h3><p>Beginners tot gevorderden die serieus willen trainen.</p></div>
-        <div class="card"><h3>Hoe snel kan ik starten?</h3><p>Vandaag nog — stuur ons je gegevens.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section" style="border-top:1px solid var(--border);">
-    <div class="container">
-      <div class="grid cards-2" style="align-items:start;">
-        <div>
-          <h2 class="h2">Klaar om Elite te trainen?</h2>
-          <p class="lead sublead">Laat je naam + e-mail achter en we sturen je info.</p>
-
-          <div class="card" style="margin-top:16px;">
-            <h3>Locatie</h3>
-            <p>4e verdieping — Premium facility<br/>Vul hier je adres in.</p>
-            <p style="margin-top:10px; color:rgba(255,255,255,.55); font-size:13px;">
-              Openingstijden: Ma–Zo 06:00–23:00
+    <!-- WHAT / VALUE -->
+    <section id="wat">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Wat we doen</h2>
+            <p class="sub">
+              Mijn visie: het menselijk lichaam functioneel leren bewegen, zodat je output optimaal wordt.
+              Sneller, krachtiger en robuuster — met discipline, professionaliteit en een elite mindset.
             </p>
           </div>
         </div>
 
-        <div class="card">
-          <form id="leadForm" class="grid" style="gap:12px;">
-            <input class="input" name="name" placeholder="Naam" required />
-            <input class="input" name="email" placeholder="E-mail" type="email" required />
-            <input class="input" name="goal" placeholder="Doel (optioneel)" />
-            <button class="btn primary full" type="submit">Stuur mij info</button>
-            <div class="smallnote">
-              Dit gebruikt <code>mailto</code>. Wil je leads automatisch in je inbox (zonder mail-app)? Zeg “Formspree”, dan zet ik het erin.
-            </div>
-            <div id="formMsg" class="smallnote" style="display:none;"></div>
-          </form>
+        <div class="grid-3">
+          <div class="panel">
+            <div class="icon">01</div>
+            <h3>Functioneel bewegen</h3>
+            <p>We verbeteren hoe je beweegt: mobiliteit, controle, coordinatie. Daardoor wordt kracht & snelheid “bruikbaar” op het veld.</p>
+          </div>
+          <div class="panel">
+            <div class="icon">02</div>
+            <h3>Fitter blijven in de off-season</h3>
+            <p>Veel spelers leveren in: snelheid, kracht en conditie. Wij voorkomen die dip en bouwen gericht door.</p>
+          </div>
+          <div class="panel">
+            <div class="icon">03</div>
+            <h3>Elite mindset</h3>
+            <p>Discipline en uitvoering. Je komt niet om “even te trainen”, je komt om professioneel te bouwen aan je lichaam.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div>© <span id="year"></span> ELITE GYM — Train Elite. Live Elite.</div>
-        <div style="display:flex; gap:14px;">
-          <a href="#facilities">Faciliteiten</a>
-          <a href="#pricing">Prijzen</a>
-          <a href="#contact">Contact</a>
+    <!-- PROGRAM -->
+    <section id="kamp">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Elite Off-Season Performance Kamp</h2>
+            <p class="sub">
+              12 dagen. Focus op snelheid, explosiviteit, mobiliteit en blessurepreventie.
+              Intake + testen → trainen → exit + evaluatie.
+            </p>
+          </div>
+        </div>
+
+        <div class="program">
+          <div class="panel" style="background:rgba(255,255,255,.03); border-radius: var(--radius2);">
+            <h3 style="margin:0 0 12px; font-size:18px; font-weight:900;">Voor wie?</h3>
+            <ul class="list">
+              <li class="li">
+                <div class="check">✓</div>
+                <div>
+                  <b>O17 t/m (jong) prof</b>
+                  <span>Clubs, profs en top amateurs die off-season serieus nemen.</span>
+                </div>
+              </li>
+              <li class="li">
+                <div class="check">✓</div>
+                <div>
+                  <b>Regio Breda / Oosterhout</b>
+                  <span>Trainingen in de omgeving (Breda – Oosterhout en omstreken).</span>
+                </div>
+              </li>
+              <li class="li">
+                <div class="check">✓</div>
+                <div>
+                  <b>Doel</b>
+                  <span>Fit blijven, beter bewegen, sneller & krachtiger worden — verantwoord en meetbaar.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div style="height:14px"></div>
+
+            <div class="panel" style="margin:0; background:rgba(0,0,0,.18)">
+              <h3 style="margin:0 0 8px; font-size:16px;">Waarom dit werkt</h3>
+              <p style="margin:0; font-size:14px;">
+                Je lichaam leert efficiënter bewegen. Dat levert direct output op: meer snelheid, meer power, meer robuustheid.
+                Geen ruis — alleen fundamentals + elite uitvoering.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel" style="border-radius: var(--radius2); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));">
+            <h3 style="margin:0 0 12px; font-size:18px; font-weight:900;">Wat zit erin</h3>
+            <ul class="list">
+              <li class="li">
+                <div class="check">✓</div>
+                <div>
+                  <b>Intake + Testdag</b>
+                  <span>Kennismaken + testen (o.a. sprint, HR, kracht). Start met duidelijke baseline.</span>
+                </div>
+              </li>
+              <li class="li">
+                <div class="check">✓</div>
+                <div>
+                  <b>11 dagen training (90–120 min)</b>
+                  <span>Veld • kracht • body movements — strak geprogrammeerd.</span>
+                </div>
+              </li>
+              <li class="li">
+                <div class="check">✓</div>
+                <div>
+                  <b>Exit + evaluatie</b>
+                  <span>We meten progressie en zetten je richting seizoenstart.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div style="height:14px"></div>
+
+            <div class="panel" style="margin:0; background:rgba(0,0,0,.18)">
+              <h3 style="margin:0 0 8px; font-size:16px;">Unieke invalshoek</h3>
+              <p style="margin:0; font-size:14px;">
+                “Ontdekken hoe je lichaam werkt” → optimaal gebruiken → sneller, explosiever en krachtiger worden.
+                Functioneel bewegen staat centraal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="planning">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>2-weeks structuur</h2>
+            <p class="sub">
+              De week herhaalt zich 2 weken lang. Inclusief testen, intake en exit.
+            </p>
+          </div>
+        </div>
+
+        <div class="schedule">
+          <div class="week">
+            <h3>Weekstructuur</h3>
+            <ul class="days">
+              <li class="day"><span>Maandag</span><span class="tag">Veld</span></li>
+              <li class="day"><span>Dinsdag</span><span class="tag">Kracht</span></li>
+              <li class="day"><span>Woensdag</span><span class="tag">Body movements</span></li>
+              <li class="day"><span>Donderdag</span><span class="tag">Veld</span></li>
+              <li class="day"><span>Vrijdag</span><span class="tag">Kracht</span></li>
+              <li class="day"><span>Zaterdag</span><span class="tag">Body movements</span></li>
+              <li class="day"><span>Zondag</span><span class="tag">Rust</span></li>
+            </ul>
+          </div>
+
+          <div class="week">
+            <h3>Meetbaar & persoonlijk</h3>
+            <div class="mini" style="margin-bottom:10px;">
+              <b>Start:</b> Intake + testen (10m, 30–40m, HRmax, HR herstel, kracht monitoring).
+            </div>
+            <div class="mini" style="margin-bottom:10px;">
+              <b>Tijdens:</b> Coaching per individu — fysiek én mentaal. Veilig, motiverend, prestatiegericht.
+            </div>
+            <div class="mini">
+              <b>Eind:</b> Exit + evaluatie. Jij weet precies waar je staat richting seizoenstart.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES (no separate pricing page; included here) -->
+    <section id="pakketten">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Pakketten (in het kamp)</h2>
+            <p class="sub">
+              Geen losse prijzenpagina — alles staat hier zodat je direct kunt kiezen in je intake.
+              Wil je exclusiviteit? Schrijf je in voor de wachtlijst.
+            </p>
+          </div>
+        </div>
+
+        <div class="packages">
+          <div class="pkg">
+            <div class="top">
+              <h3>Pakket 1</h3>
+              <div class="price">
+                <span class="eur">€375</span>
+                <small>12 dagen trainingskamp</small>
+              </div>
+            </div>
+            <div class="body">
+              <ul class="bul">
+                <li>Aparte testdag + kennismaken met Action Types Profilering</li>
+                <li>Testen: 10m, 30–40m, HRmax & HR herstel, kracht monitoring</li>
+                <li>11 dagen training (90–120 min) — waarde ± €30 per sessie</li>
+              </ul>
+              <div class="note">Voor spelers die “clean” willen instappen met tests + kamp.</div>
+            </div>
+            <div class="foot">
+              <a class="btn" href="#intake" onclick="selectPackage('Pakket 1 (€375)')">Kies Pakket 1</a>
+            </div>
+          </div>
+
+          <div class="pkg">
+            <span class="ribbon">Meest gekozen</span>
+            <div class="top">
+              <h3>Pakket 2</h3>
+              <div class="price">
+                <span class="eur">€450</span>
+                <small>12 dagen trainingskamp</small>
+              </div>
+            </div>
+            <div class="body">
+              <ul class="bul">
+                <li>Alles uit Pakket 1</li>
+                <li>Action Types: begeleiding + uitwerking prep & cooling down</li>
+                <li>Kleding: shirt + broek</li>
+              </ul>
+              <div class="note">Premium begeleiding rondom uitvoering en details.</div>
+            </div>
+            <div class="foot">
+              <a class="btn primary" href="#intake" onclick="selectPackage('Pakket 2 (€450)')">Kies Pakket 2</a>
+            </div>
+          </div>
+
+          <div class="pkg">
+            <div class="top">
+              <h3>Pakket 3</h3>
+              <div class="price">
+                <span class="eur">€550</span>
+                <small>kamp + zomerschema</small>
+              </div>
+            </div>
+            <div class="body">
+              <ul class="bul">
+                <li>Alles uit Pakket 2</li>
+                <li>Extra: MAS test</li>
+                <li>Zomerschema (conditie + kracht + body movements) — persoonlijk</li>
+              </ul>
+              <div class="note">Voor spelers die na het kamp door willen bouwen richting seizoenstart.</div>
+            </div>
+            <div class="foot">
+              <a class="btn" href="#intake" onclick="selectPackage('Pakket 3 (€550)')">Kies Pakket 3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS placeholder -->
+    <section id="resultaten">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Resultaten</h2>
+            <p class="sub">
+              Deze sectie staat klaar, maar gaat nog niet live. Eerst bouwen we jouw volgende level — daarna delen we bewijs.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel" style="border-radius: var(--radius2); background: rgba(0,0,0,.20);">
+          <h3 style="margin:0 0 8px;">Coming soon</h3>
+          <p style="margin:0;">
+            Binnenkort: sprint-progressie, kracht monitoring, en voor/na bewegingskwaliteit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sem">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Over Sem van der Pijl</h2>
+            <p class="sub">
+              Feyenoord-verleden. Al 4 jaar performance coach bij NAC. Elite mindset en coaching per individu — fysiek én mentaal.
+            </p>
+          </div>
+        </div>
+
+        <div class="about">
+          <div class="quote">
+            <p>
+              “Mijn missie is simpel: spelers fit houden, beter laten bewegen en sneller & krachtiger maken.
+              Verantwoord. Meetbaar. Professioneel.”
+            </p>
+            <div class="by">— Sem van der Pijl • Performance Coach</div>
+
+            <div class="clubs" aria-label="Ervaring / clubs (tekstueel)">
+              <span class="club">NAC</span>
+              <span class="club">Feyenoord</span>
+              <span class="club">PSV</span>
+              <span class="club">FC Utrecht</span>
+              <span class="club">Vitesse</span>
+              <span class="club">FC Den Bosch</span>
+            </div>
+          </div>
+
+          <div class="panel" style="border-radius: var(--radius2); background: rgba(255,255,255,.04);">
+            <h3 style="margin:0 0 10px; font-size:18px;">Coaching stijl</h3>
+            <p style="margin:0 0 14px;">
+              Elite high performance. Motiverend, vertrouwelijk, veilig en prestatiegericht.
+              Jij krijgt duidelijkheid: wat je doet, waarom je het doet, en hoe je progressie maakt.
+            </p>
+
+            <div class="panel" style="margin:0; background: rgba(0,0,0,.18);">
+              <h3 style="margin:0 0 8px;">Waarom ik dit doe</h3>
+              <p style="margin:0;">
+                Om spelers fit te laten blijven en verantwoord sterker te maken — zodat het beste eruit komt.
+                Ik coach ieder individu: fysiek én op de “ziel/mentaal”.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTAKE + SIGNUP -->
+    <section id="intake">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Intake & Aanmelden</h2>
+            <p class="sub">
+              Meld je aan of zet jezelf op de wachtlijst (exclusiviteit). We nemen contact op voor intake + planning.
+            </p>
+          </div>
+        </div>
+
+        <div class="intake">
+          <div class="callout">
+            <h3>Wat je krijgt na aanmelding</h3>
+            <p>
+              Binnen 24–48 uur ontvang je bericht met de volgende stap: intake, beschikbare data en wat je mee moet nemen.
+              (Zonder spam — alleen praktisch en professioneel.)
+            </p>
+
+            <div class="row">
+              <div class="mini"><b>Doel:</b> sneller, explosiever, krachtiger + blessurepreventie.</div>
+              <div class="mini"><b>Locatie:</b> Breda / Oosterhout (omstreken).</div>
+              <div class="mini"><b>Exclusief:</b> beperkte plekken → wachtlijst aanbevolen.</div>
+            </div>
+
+            <div style="height:14px"></div>
+            <a class="btn primary" href="#intake" onclick="scrollToForm()">Start intake</a>
+            <a class="btn ghost" href="#pakketten">Bekijk pakketten</a>
+          </div>
+
+          <!-- IMPORTANT: GitHub Pages is static. Replace the form action with Formspree / Getform / your backend endpoint. -->
+          <div class="panel" style="border-radius: var(--radius2); background: rgba(255,255,255,.04);" id="formCard">
+            <h3 style="margin:0 0 12px; font-size:18px;">Aanmeldformulier</h3>
+
+            <form id="leadForm" action="#" method="post" onsubmit="return handleSubmit(event)">
+              <div class="two">
+                <div>
+                  <label for="name">Naam</label>
+                  <input id="name" name="name" placeholder="Jouw naam" required />
+                </div>
+                <div>
+                  <label for="age">Leeftijd</label>
+                  <input id="age" name="age" placeholder="Bijv. 17" inputmode="numeric" />
+                </div>
+              </div>
+
+              <div class="two">
+                <div>
+                  <label for="email">E-mail</label>
+                  <input id="email" name="email" type="email" placeholder="naam@email.nl" required />
+                </div>
+                <div>
+                  <label for="phone">Telefoon</label>
+                  <input id="phone" name="phone" placeholder="+31 ..." inputmode="tel" />
+                </div>
+              </div>
+
+              <div class="two">
+                <div>
+                  <label for="level">Niveau</label>
+                  <select id="level" name="level">
+                    <option value="">Kies…</option>
+                    <option>O17 / jeugd club</option>
+                    <option>Jong prof / BVO</option>
+                    <option>Top amateur</option>
+                    <option>Prof</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="interest">Interesse</label>
+                  <select id="interest" name="interest">
+                    <option value="">Kies…</option>
+                    <option>Wachtlijst (exclusief)</option>
+                    <option>2-weeks off-season plan</option>
+                    <option>Off-season kamp (12 dagen)</option>
+                    <option>1-op-1 coaching</option>
+                    <option>Fysiek + online begeleiding</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="two">
+                <div>
+                  <label for="package">Pakket (optioneel)</label>
+                  <select id="package" name="package">
+                    <option value="">Nog niet</option>
+                    <option>Pakket 1 (€375)</option>
+                    <option>Pakket 2 (€450)</option>
+                    <option>Pakket 3 (€550)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="location">Woonplaats (optioneel)</label>
+                  <input id="location" name="location" placeholder="Bijv. Breda / Oosterhout" />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Doel / situatie (kort)</label>
+                <textarea id="message" name="message" placeholder="Bijv. fit blijven in off-season, sneller worden, terugkomen van blessure, etc."></textarea>
+              </div>
+
+              <button class="btn primary" type="submit">Verstuur aanmelding</button>
+
+              <div class="fineprint">
+                Tip: op GitHub Pages werkt dit formulier pas “echt” als je een endpoint koppelt (bijv. Formspree/Getform).
+                Nu toont hij een bevestiging (demo). Zie onderaan in de JS hoe je dit omzet.
+              </div>
+
+              <div id="formStatus" class="mini" style="display:none; margin-top:10px;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year"></span> SEM Elite Performance • High performance • Premium coaching</div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#intake">Intake & Aanmelden</a>
+          <a href="#kamp">Kamp</a>
+          <a href="#sem">Sem</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobilemenu = document.getElementById('mobilemenu');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobilemenu.classList.toggle('show');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
 
-    // Mailto lead capture (vervang met jouw email)
-    const TO_EMAIL = "jouwemail@domein.nl";
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    const form = document.getElementById("leadForm");
-    const msg = document.getElementById("formMsg");
+    // Helpers
+    function selectPackage(pkg){
+      document.getElementById('package').value = pkg;
+      document.getElementById('interest').value = 'Off-season kamp (12 dagen)';
+      scrollToForm();
+    }
+    function prefillInterest(val){
+      document.getElementById('interest').value = val;
+      scrollToForm();
+    }
+    function scrollToForm(){
+      const el = document.getElementById('formCard');
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
 
-    form.addEventListener("submit", (e) => {
+    // Demo submit (static hosting friendly).
+    // To make it real on GitHub Pages:
+    // 1) Create a Formspree/Getform endpoint
+    // 2) Replace form action="#" with your endpoint URL
+    // 3) Remove onsubmit handler OR keep it and do fetch() to your endpoint.
+    async function handleSubmit(e){
       e.preventDefault();
-      const data = new FormData(form);
-      const name = data.get("name");
-      const email = data.get("email");
-      const goal = data.get("goal") || "-";
+      const status = document.getElementById('formStatus');
+      status.style.display = 'block';
+      status.innerHTML = "<b>Gelukt.</b> Je aanmelding is ontvangen (demo). Koppel nu een formulier-endpoint om dit live te zetten.";
 
-      const subject = encodeURIComponent("Nieuwe lead — Elite Gym landing");
-      const body = encodeURIComponent(
-        `Nieuwe lead via landing page:\n\nNaam: ${name}\nEmail: ${email}\nDoel: ${goal}\n`
-      );
+      // Example (uncomment to use fetch):
+      // const form = e.target;
+      // const data = new FormData(form);
+      // const endpoint = "https://formspree.io/f/YOUR_ID";
+      // const res = await fetch(endpoint, { method: "POST", body: data, headers: { "Accept":"application/json" }});
+      // status.innerHTML = res.ok
+      //   ? "<b>Gelukt.</b> We nemen contact met je op voor intake + planning."
+      //   : "<b>Oeps.</b> Er ging iets mis. Probeer opnieuw of stuur een bericht.";
+      // if(res.ok) form.reset();
 
-      msg.style.display = "block";
-      msg.textContent = "Je mail-app opent nu om te verzenden…";
-      window.location.href = `mailto:${TO_EMAIL}?subject=${subject}&body=${body}`;
-      form.reset();
-    });
+      return false;
+    }
   </script>
-
 </body>
 </html>
