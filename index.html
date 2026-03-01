@@ -252,7 +252,22 @@
       border-color:rgba(255,255,255,.18);
       transform: translateY(-6px);
     }
+.price-card{
+  position:relative;
+}
 
+.badge{
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:#ffffff;
+  color:#000000;
+  font-size:11px;
+  font-weight:700;
+  padding:6px 12px;
+  border-radius:999px;
+  letter-spacing:.05em;
+}
     /* STATEMENT section */
     .statement{
       padding:92px 0;
@@ -579,6 +594,7 @@ select option:checked {
       <div class="pricing">
         <!-- Foundation -->
         <div class="price-card">
+          <div class="plan-title">FOUNDATION CAMP</div>
           <div class="price">€375</div>
           <p class="price-sub">Voor spelers die hun basis willen behouden.</p>
 
@@ -605,6 +621,7 @@ select option:checked {
         <div class="price-card popular">
           <div class="badge">AANBEVOLEN</div>
 
+          <div class="plan-title">PERFORMANCE CAMP</div>
           <div class="price">€450</div>
           <p class="price-sub">Voor spelers die fysiek het verschil willen maken.</p>
 
@@ -619,6 +636,7 @@ select option:checked {
 
   <!-- All-in -->
 <div class="price-card">
+  <div class="plan-title">ELITE CAMP</div>
   <div class="price">€550</div>
   <p class="price-sub">Voor spelers die all-in gaan.</p>
 
