@@ -66,8 +66,6 @@
 
     /* HERO (Optie B: logo als background-layer) */
     .hero{
-  background-blend-mode: normal, screen, normal;
-}
   position:relative;
   min-height:88vh;
   display:flex;
@@ -75,18 +73,24 @@
   padding:96px 0 74px;
   border-bottom:1px solid rgba(255,255,255,.06);
 
-  /* 1) donkere overlay
-     2) groot watermark logo (breedte ~90vw)
-     3) hero foto
-  */
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.88)),
-    url("assets/logo.png") center 120px / 92vw auto no-repeat,
-    url("assets/hero.jpg") center/cover no-repeat;
-}
-      
-    }
+ .hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
 
+  /* WATERMARK LOGO */
+  background: url("assets/logo.png") center 120px / 92vw auto no-repeat;
+
+  /* zichtbaarheid */
+  opacity: .24;              /* maak hoger = zichtbaarder (0.12–0.28 is top) */
+  filter: brightness(1.2) contrast(1.1);
+  pointer-events:none;
+
+  /* optioneel: geeft vaak mooi “watermark” effect */
+  mix-blend-mode: screen;    /* probeer ook: overlay of lighten */
+}
+}
     /* extra vignette/glow zoals screenshot */
     .hero::after{
       content:"";
