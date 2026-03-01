@@ -66,22 +66,23 @@
 
     /* HERO (Optie B: logo als background-layer) */
     .hero{
-      position:relative;
-      min-height:88vh;
-      display:flex;
-      align-items:center;
-      padding:96px 0 74px;
-      border-bottom:1px solid rgba(255,255,255,.06);
+  position:relative;
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  padding:96px 0 74px;
+  border-bottom:1px solid rgba(255,255,255,.06);
 
-      /* LAYERS (boven -> onder):
-         1) donker overlay
-         2) logo (geplakt)
-         3) hero foto
-      */
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.78), rgba(0,0,0,.84)),
-        url("assets/logo.png") center 80px / 150px auto no-repeat,
-        url("assets/hero.jpg") center/cover no-repeat;
+  /* 1) donkere overlay
+     2) groot watermark logo (breedte ~90vw)
+     3) hero foto
+  */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.88)),
+    url("assets/logo.png") center 120px / 92vw auto no-repeat,
+    url("assets/hero.jpg") center/cover no-repeat;
+}
+      
     }
 
     /* extra vignette/glow zoals screenshot */
