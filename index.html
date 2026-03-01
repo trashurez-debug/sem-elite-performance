@@ -14,17 +14,21 @@
 
   <style>
     :root{
+      /* Pure grayscale palette */
       --bg:#0a0a0a;
       --panel:#101010;
       --panel2:#0f0f0f;
       --text:#ffffff;
-      --muted:#bdbdbd;
-      --muted2:#8d8d8d;
-      --line:rgba(255,255,255,.10);
-      --line2:rgba(255,255,255,.06);
-      --shadow: 0 18px 60px rgba(0,0,0,.65);
+      --muted:#c7c7c7;
+      --muted2:#8f8f8f;
+
+      --line:rgba(255,255,255,.12);
+      --line2:rgba(255,255,255,.07);
+
+      --shadow: 0 18px 60px rgba(0,0,0,.70);
       --radius: 22px;
-      --max: 980px; /* small max-width = more premium/space */
+
+      --max: 980px; /* narrow = premium + more whitespace */
     }
 
     *{box-sizing:border-box}
@@ -40,16 +44,17 @@
     a{color:inherit;text-decoration:none}
 
     .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
     .topline{
       position:fixed; left:0; right:0; top:0; height:1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.20), transparent);
       z-index:60;
     }
 
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(10,10,10,.72);
+      background: rgba(10,10,10,.78);
       border-bottom:1px solid var(--line2);
     }
     .nav{
@@ -62,8 +67,8 @@
     }
     .logo{
       width:34px; height:34px; border-radius:12px;
-      background: #fff;
-      opacity:.92;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45);
     }
     .brand small{
       display:block;
@@ -100,7 +105,11 @@
       user-select:none;
       white-space:nowrap;
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22)}
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.24);
+    }
     .btn.primary{
       background:#fff;
       color:#0a0a0a;
@@ -139,10 +148,11 @@
     }
     .mobilemenu.show{display:block}
 
-    /* Layout: everything stacked */
+    /* Air + single column */
     main{padding-bottom:56px}
-    section{padding:72px 0} /* more air */
-    .hero{padding:84px 0 72px}
+    section{padding:78px 0} /* more whitespace */
+    .hero{padding:92px 0 76px}
+
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
@@ -153,7 +163,7 @@
       font-size:12px;
       font-weight:800;
     }
-    .dot{width:6px;height:6px;border-radius:999px;background:#fff; opacity:.9}
+    .dot{width:6px;height:6px;border-radius:999px;background:#fff; opacity:.92}
 
     h1{
       margin:18px 0 14px;
@@ -166,7 +176,7 @@
       margin:0;
       color:rgba(255,255,255,.76);
       font-size:16px;
-      line-height:1.7;
+      line-height:1.75;
       max-width: 72ch;
       font-weight:600;
     }
@@ -188,9 +198,7 @@
       background: rgba(255,255,255,.03);
     }
 
-    .section-head{
-      margin-bottom:18px;
-    }
+    .section-head{margin-bottom:18px}
     h2{
       margin:0 0 10px;
       font-size: clamp(22px, 2.4vw, 36px);
@@ -201,9 +209,9 @@
       margin:0;
       color:rgba(255,255,255,.72);
       font-weight:600;
-      line-height:1.7;
+      line-height:1.75;
       font-size:14px;
-      max-width: 80ch;
+      max-width: 82ch;
     }
 
     .card{
@@ -214,7 +222,9 @@
       overflow:hidden;
     }
     .card .inner{padding:22px}
-    .stack{display:grid; gap:14px} /* one column, spaced */
+
+    .stack{display:grid; gap:14px}
+
     .panel{
       padding:22px;
       border-radius: var(--radius);
@@ -231,7 +241,7 @@
       margin:0;
       color:rgba(255,255,255,.72);
       font-weight:600;
-      line-height:1.7;
+      line-height:1.75;
       font-size:14px;
     }
 
@@ -241,7 +251,7 @@
       padding:14px 14px;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
+      background: rgba(0,0,0,.22);
     }
     .check{
       width:26px;height:26px;border-radius:10px;
@@ -253,11 +263,16 @@
       flex:0 0 auto;
     }
     .li b{display:block; font-weight:900; letter-spacing:-.01em}
-    .li span{display:block; color:rgba(255,255,255,.70); font-weight:600; font-size:13px; line-height:1.55; margin-top:4px}
-
-    .schedule{
-      display:grid; gap:10px;
+    .li span{
+      display:block;
+      color:rgba(255,255,255,.70);
+      font-weight:600;
+      font-size:13px;
+      line-height:1.6;
+      margin-top:4px
     }
+
+    .schedule{display:grid; gap:10px}
     .day{
       display:flex; justify-content:space-between; gap:10px;
       padding:12px 14px;
@@ -290,7 +305,13 @@
     .price .eur{font-size:28px}
     .price small{color:rgba(255,255,255,.66); font-weight:800}
     .pkg .body{padding:18px 22px 22px}
-    .bul{margin:0; padding-left:18px; color:rgba(255,255,255,.72); font-weight:600; line-height:1.7; font-size:13px}
+    .bul{
+      margin:0; padding-left:18px;
+      color:rgba(255,255,255,.72);
+      font-weight:600;
+      line-height:1.75;
+      font-size:13px
+    }
     .bul li{margin:10px 0}
     .pkg .foot{padding:0 22px 22px}
     .note{
@@ -298,7 +319,7 @@
       color:rgba(255,255,255,.64);
       font-weight:700;
       font-size:12px;
-      line-height:1.65;
+      line-height:1.7;
     }
     .ribbon{
       display:inline-flex;
@@ -308,7 +329,7 @@
       font-size:12px;
       font-weight:900;
       border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.24);
+      background: rgba(0,0,0,.26);
       color:#fff;
     }
 
@@ -319,7 +340,7 @@
       padding:13px 14px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
+      background: rgba(0,0,0,.24);
       color:#fff;
       outline:none;
       font-weight:700;
@@ -327,7 +348,7 @@
     textarea{min-height:120px; resize:vertical}
     input::placeholder, textarea::placeholder{color:rgba(255,255,255,.38); font-weight:700}
     .two{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
-    .fineprint{color:rgba(255,255,255,.58); font-weight:700; font-size:12px; line-height:1.65}
+    .fineprint{color:rgba(255,255,255,.58); font-weight:700; font-size:12px; line-height:1.7}
 
     footer{
       padding:28px 0 46px;
@@ -348,8 +369,8 @@
       .navlinks{display:none}
       .hamburger{display:flex}
       .two{grid-template-columns: 1fr}
-      section{padding:64px 0}
-      .hero{padding:78px 0 60px}
+      section{padding:68px 0}
+      .hero{padding:84px 0 68px}
     }
   </style>
 </head>
@@ -397,7 +418,7 @@
   </header>
 
   <main id="top">
-    <!-- HERO (stacked) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="wrap">
         <span class="kicker"><span class="dot"></span> Elite Off-Season • Breda / Oosterhout</span>
@@ -406,7 +427,7 @@
 
         <p class="lead">
           Off-Season Performance Kamp (12 dagen) voor O17 t/m (jong) profs, top amateur en profs.
-          We bouwen een lichaam dat functioneel beweegt — zodat jouw output op het veld omhoog gaat.
+          Functioneel bewegen als basis — zodat jouw output op het veld omhoog gaat.
         </p>
 
         <div class="hero-actions">
@@ -423,29 +444,29 @@
       </div>
     </section>
 
-    <!-- WHAT -->
+    <!-- WAT -->
     <section id="wat">
       <div class="wrap">
         <div class="section-head">
           <h2>Wat ik doe</h2>
           <p class="sub">
             Ik help spelers fit blijven en verbeteren: beter bewegen → meer snelheid, meer power, minder risico.
-            Met discipline, professionaliteit en een elite mindset.
+            Discipline. Professionaliteit. Elite mindset.
           </p>
         </div>
 
         <div class="stack">
           <div class="panel">
             <h3>Functioneel bewegen</h3>
-            <p>We fixen de basis: mobiliteit, controle en efficiëntie. Daardoor wordt kracht en snelheid écht bruikbaar.</p>
+            <p>We bouwen mobiliteit, controle en efficiëntie. Daardoor wordt kracht en snelheid direct bruikbaar.</p>
           </div>
           <div class="panel">
             <h3>Off-season zonder terugval</h3>
-            <p>Veel spelers leveren in op conditie, snelheid en kracht. Wij houden je scherp en bouwen door.</p>
+            <p>Geen conditie- of krachtverlies. Je blijft scherp en bouwt door richting seizoenstart.</p>
           </div>
           <div class="panel">
             <h3>Elite uitvoering</h3>
-            <p>Geen ruis. Geen show. Alleen fundamentals + hard werken — meetbaar en verantwoord.</p>
+            <p>Geen ruis. Geen show. Alleen fundamentals + hard werken. Meetbaar en verantwoord.</p>
           </div>
         </div>
       </div>
@@ -458,7 +479,7 @@
           <h2>Elite Off-Season Performance Kamp</h2>
           <p class="sub">
             12 dagen. Focus: snelheid, explosiviteit, mobiliteit en blessurepreventie.
-            Start met intake + testen, eindig met een duidelijke exit en evaluatie.
+            Start: intake + testen. Eind: exit + duidelijke evaluatie.
           </p>
         </div>
 
@@ -476,7 +497,7 @@
                 <div class="check">✓</div>
                 <div>
                   <b>Wat we meten</b>
-                  <span>10m, 30–40m sprint • HRmax + herstel • kracht monitoring (pakket 3: MAS test).</span>
+                  <span>10m, 30–40m sprint • HRmax + herstel • kracht monitoring (pakket 3: MAS).</span>
                 </div>
               </li>
               <li class="li">
@@ -516,10 +537,7 @@
 
         <div class="panel">
           <h3>Intake → testen → trainen → exit</h3>
-          <p>
-            Jij weet precies waar je staat, wat je moet doen en waarom.
-            Geen gokken. Geen verwarring. Alleen progressie.
-          </p>
+          <p>Jij weet exact waar je staat en wat je moet doen. Geen gokken. Alleen progressie.</p>
         </div>
       </div>
     </section>
@@ -529,9 +547,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Pakketten</h2>
-          <p class="sub">
-            Geen aparte prijzenpagina — alles staat hier. Schrijf je in en we plannen je intake.
-          </p>
+          <p class="sub">Geen aparte prijzenpagina — kies je pakket in je intake.</p>
         </div>
 
         <div class="stack">
@@ -542,11 +558,11 @@
             </div>
             <div class="body">
               <ul class="bul">
-                <li>Aparte testdag + kennismaken met Action Types Profilering</li>
-                <li>Testen: 10m, 30–40m, HRmax & herstel, kracht monitoring</li>
-                <li>11 dagen training (90–120 min) — waarde ± €30 per sessie</li>
+                <li>Testdag + Action Types (kennismaking)</li>
+                <li>10m • 30–40m • HRmax/HR herstel • kracht monitoring</li>
+                <li>11 trainingen (90–120 min)</li>
               </ul>
-              <div class="note">Clean instappen: meten → trainen → beter worden.</div>
+              <div class="note">Meten → trainen → beter worden.</div>
             </div>
             <div class="foot">
               <a class="btn" href="#intake" onclick="selectPackage('Pakket 1 (€375)')">Kies Pakket 1</a>
@@ -562,10 +578,10 @@
             <div class="body">
               <ul class="bul">
                 <li>Alles uit Pakket 1</li>
-                <li>Action Types: begeleiding + uitwerking prep & cooling down</li>
+                <li>Action Types: prep + cooling down begeleiding</li>
                 <li>Kleding: shirt + broek</li>
               </ul>
-              <div class="note">Meer detail, meer begeleiding, premium uitvoering.</div>
+              <div class="note">Meer detail. Meer begeleiding. Strakker resultaat.</div>
             </div>
             <div class="foot">
               <a class="btn primary" href="#intake" onclick="selectPackage('Pakket 2 (€450)')">Kies Pakket 2</a>
@@ -581,9 +597,9 @@
               <ul class="bul">
                 <li>Alles uit Pakket 2</li>
                 <li>Extra: MAS test</li>
-                <li>Zomerschema (conditie + kracht + body movements) — persoonlijk</li>
+                <li>Persoonlijk zomerschema (conditie + kracht + body movements)</li>
               </ul>
-              <div class="note">Na het kamp doorbouwen richting seizoenstart.</div>
+              <div class="note">Doorbouwen richting seizoenstart.</div>
             </div>
             <div class="foot">
               <a class="btn" href="#intake" onclick="selectPackage('Pakket 3 (€550)')">Kies Pakket 3</a>
@@ -593,14 +609,13 @@
       </div>
     </section>
 
-    <!-- RESULTATEN (placeholder) -->
+    <!-- RESULTATEN placeholder -->
     <section id="resultaten">
       <div class="wrap">
         <div class="section-head">
           <h2>Resultaten</h2>
-          <p class="sub">Staat klaar, maar gaat later live. Eerst bouwen we jouw next level.</p>
+          <p class="sub">Komt later live. Eerst leveren — daarna delen.</p>
         </div>
-
         <div class="panel">
           <h3>Coming soon</h3>
           <p>Voor/na: sprint, kracht monitoring en bewegingskwaliteit.</p>
@@ -621,21 +636,16 @@
 
         <div class="stack">
           <div class="panel">
-            <h3>Waarom ik dit doe</h3>
-            <p>
-              Ik help spelers fit blijven en verantwoord sterker worden — zodat het beste eruit komt.
-              Ik coach niet alleen je lichaam, maar ook je mindset.
-            </p>
+            <h3>Missie</h3>
+            <p>Spelers fit houden. Beter laten bewegen. Sneller en krachtiger maken — verantwoord.</p>
           </div>
-
           <div class="panel">
-            <h3>Clubs / ervaring</h3>
+            <h3>Ervaring</h3>
             <p>Spelers van o.a. NAC, Feyenoord, PSV, FC Utrecht, Vitesse, FC Den Bosch.</p>
           </div>
-
           <div class="panel">
             <h3>Stijl</h3>
-            <p>Elite high performance. Duidelijk. Premium. Geen excuses — alleen uitvoering.</p>
+            <p>High performance. Duidelijk. Premium. Geen excuses — alleen uitvoering.</p>
           </div>
         </div>
       </div>
@@ -646,18 +656,13 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Intake & Aanmelden</h2>
-          <p class="sub">
-            Aanmelden of wachtlijst. Daarna plannen we intake + testen en krijg je helderheid over de beste route.
-          </p>
+          <p class="sub">Aanmelden of wachtlijst. Daarna plannen we intake + testen.</p>
         </div>
 
         <div class="stack">
           <div class="panel">
-            <h3>Wat gebeurt er na je aanmelding</h3>
-            <p>
-              Binnen 24–48 uur nemen we contact op met de volgende stap: intake, beschikbare data en voorbereiding.
-              Geen spam. Alleen praktisch.
-            </p>
+            <h3>Na je aanmelding</h3>
+            <p>Binnen 24–48 uur nemen we contact op met intake, data en voorbereiding. Geen spam.</p>
           </div>
 
           <div class="card" id="formCard">
@@ -729,23 +734,22 @@
 
                 <div>
                   <label for="message">Doel / situatie (kort)</label>
-                  <textarea id="message" name="message" placeholder="Bijv. sneller worden, kracht opbouwen, terugkomen van blessure, fit blijven in off-season."></textarea>
+                  <textarea id="message" name="message" placeholder="Bijv. sneller worden, kracht opbouwen, terugkomen van blessure, fit blijven."></textarea>
                 </div>
 
                 <button class="btn primary" type="submit">Verstuur</button>
 
                 <div class="fineprint">
-                  GitHub Pages is statisch. Koppel dit formulier aan Formspree/Getform (of een eigen backend) om leads echt op te slaan.
+                  GitHub Pages is statisch. Koppel dit formulier aan Formspree/Getform (of een backend) om leads echt op te slaan.
                   Nu toont hij een demo-bevestiging.
                 </div>
 
-                <div id="formStatus" class="panel" style="display:none; margin-top:12px; background: rgba(255,255,255,.03);">
+                <div id="formStatus" class="panel" style="display:none; margin-top:12px;">
                   <b>Gelukt.</b> Je aanmelding is ontvangen (demo).
                 </div>
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -774,7 +778,6 @@
         hamburger.setAttribute('aria-expanded', String(isOpen));
       });
     }
-
     document.getElementById('year').textContent = new Date().getFullYear();
 
     function selectPackage(pkg){
@@ -795,22 +798,6 @@
       e.preventDefault();
       const status = document.getElementById('formStatus');
       status.style.display = 'block';
-
-      // Live maken op GitHub Pages:
-      // 1) Maak Formspree/Getform endpoint
-      // 2) Zet form action="https://formspree.io/f/XXXX" en verwijder onsubmit
-      // of gebruik fetch():
-      //
-      // const form = e.target;
-      // const data = new FormData(form);
-      // const endpoint = "https://formspree.io/f/YOUR_ID";
-      // const res = await fetch(endpoint, { method: "POST", body: data, headers: { "Accept":"application/json" }});
-      // status.style.display = 'block';
-      // status.innerHTML = res.ok
-      //   ? "<b>Gelukt.</b> We nemen contact op voor intake + planning."
-      //   : "<b>Oeps.</b> Er ging iets mis. Probeer opnieuw.";
-      // if(res.ok) form.reset();
-
       return false;
     }
   </script>
