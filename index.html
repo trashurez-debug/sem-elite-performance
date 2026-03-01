@@ -1,1 +1,564 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Train Elite. Live Elite. Premium gym ervaring met top hygiëne, ruimte en community." />
+  <title>ELITE GYM | Train Elite. Live Elite.</title>
 
+  <!-- Tailwind CDN (geen build nodig) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            eliteGold: "#D4AF37",
+            eliteBlack: "#0B0F14",
+            eliteGray: "#111827"
+          },
+          boxShadow: {
+            glow: "0 0 0 1px rgba(212,175,55,.25), 0 10px 30px rgba(0,0,0,.35)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Kleine extra’s voor polish */
+    html { scroll-behavior: smooth; }
+    .bg-grid {
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(212,175,55,.12) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+    .glass {
+      background: rgba(17,24,39,.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body class="bg-eliteBlack text-white selection:bg-eliteGold selection:text-black">
+
+  <!-- Top bar -->
+  <div class="border-b border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between text-xs text-white/70">
+      <div class="flex gap-3 items-center">
+        <span class="inline-flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-eliteGold"></span>
+          Premium 4e verdieping • Hygiënisch • Ruim
+        </span>
+      </div>
+      <div class="flex gap-4">
+        <a class="hover:text-white" href="#locatie">Locatie</a>
+        <a class="hover:text-white" href="#prijzen">Lidmaatschap</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 bg-eliteBlack/80 backdrop-blur border-b border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <!-- Simpel logo (vervang gerust door assets/logo.svg) -->
+        <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-eliteGold/80 to-eliteGold/20 shadow-glow"></div>
+        <div class="leading-tight">
+          <div class="font-semibold tracking-wide">ELITE GYM</div>
+          <div class="text-xs text-white/60 -mt-0.5">Train Elite. Live Elite.</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm text-white/80">
+        <a class="hover:text-white" href="#faciliteiten">Faciliteiten</a>
+        <a class="hover:text-white" href="#community">Community</a>
+        <a class="hover:text-white" href="#coaching">Coaching</a>
+        <a class="hover:text-white" href="#prijzen">Prijzen</a>
+        <a class="hover:text-white" href="#faq">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact"
+           class="hidden sm:inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-2 text-sm text-white/90 hover:border-white/25 hover:bg-white/5">
+          Plan een rondleiding
+        </a>
+        <a href="#prijzen"
+           class="inline-flex items-center justify-center rounded-xl bg-eliteGold px-4 py-2 text-sm font-semibold text-black hover:opacity-90">
+          Start vandaag
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-40"></div>
+    <div class="absolute inset-0">
+      <!-- “fake image” achtergrond; vervang desnoods door assets/hero.jpg -->
+      <div class="h-full w-full bg-gradient-to-b from-white/0 via-white/0 to-eliteBlack"></div>
+      <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-eliteGold/15 blur-3xl"></div>
+      <div class="absolute -bottom-28 -left-24 h-96 w-96 rounded-full bg-white/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70">
+            <span class="h-1.5 w-1.5 rounded-full bg-eliteGold"></span>
+            Premium gymervaring • Ruimte • Hygiëne • Resultaat
+          </p>
+
+          <h1 class="mt-5 text-4xl md:text-5xl font-semibold leading-tight">
+            Train <span class="text-eliteGold">Elite</span>.<br />
+            Live <span class="text-eliteGold">Elite</span>.
+          </h1>
+
+          <p class="mt-5 text-base md:text-lg text-white/70 max-w-prose">
+            Een schone en ruime trainingsruimte met high-end apparatuur, gemotiveerde members en coaching die werkt.
+            Word onderdeel van een community waar progress normaal is.
+          </p>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="#prijzen"
+               class="inline-flex items-center justify-center rounded-xl bg-eliteGold px-5 py-3 font-semibold text-black hover:opacity-90">
+              Bekijk lidmaatschappen
+            </a>
+            <a href="#faciliteiten"
+               class="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-3 text-white/90 hover:bg-white/5">
+              Bekijk faciliteiten
+            </a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-3 gap-3 max-w-md">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div class="text-eliteGold font-semibold">4e</div>
+              <div class="text-xs text-white/60">verdieping</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div class="text-eliteGold font-semibold">Top</div>
+              <div class="text-xs text-white/60">hygiëne</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div class="text-eliteGold font-semibold">High</div>
+              <div class="text-xs text-white/60">end equipment</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/0 p-6 shadow-glow">
+            <div class="rounded-2xl border border-white/10 bg-eliteGray/40 p-5">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm text-white/60">Deze week</div>
+                  <div class="text-xl font-semibold">Trainingsfocus</div>
+                </div>
+                <div class="h-10 w-10 rounded-xl bg-eliteGold/20 border border-eliteGold/30"></div>
+              </div>
+
+              <div class="mt-5 space-y-3">
+                <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3">
+                  <div>
+                    <div class="font-medium">Strength</div>
+                    <div class="text-xs text-white/60">Compound lifts + progressie</div>
+                  </div>
+                  <span class="text-xs text-white/70">45–60 min</span>
+                </div>
+
+                <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3">
+                  <div>
+                    <div class="font-medium">Conditioning</div>
+                    <div class="text-xs text-white/60">Zone 2 + intervals</div>
+                  </div>
+                  <span class="text-xs text-white/70">20–30 min</span>
+                </div>
+
+                <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3">
+                  <div>
+                    <div class="font-medium">Mobility</div>
+                    <div class="text-xs text-white/60">Heup/enkels/schouders</div>
+                  </div>
+                  <span class="text-xs text-white/70">10 min</span>
+                </div>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <a href="#contact"
+                   class="flex-1 inline-flex items-center justify-center rounded-xl bg-white/10 border border-white/10 px-4 py-2 text-sm hover:bg-white/15">
+                  Vraag info
+                </a>
+                <a href="#prijzen"
+                   class="flex-1 inline-flex items-center justify-center rounded-xl bg-eliteGold px-4 py-2 text-sm font-semibold text-black hover:opacity-90">
+                  Lid worden
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 -left-6 hidden md:block rounded-2xl glass border border-white/10 p-4 shadow-glow">
+            <div class="text-xs text-white/60">Members zeggen gemiddeld</div>
+            <div class="mt-1 text-lg font-semibold">“Beste gym vibe in de stad.”</div>
+            <div class="mt-1 text-xs text-white/50">— Community review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-10">
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="text-eliteGold font-semibold">Clean & Spacious</div>
+          <p class="mt-1 text-sm text-white/70">Premium trainingsruimte met focus op hygiëne en comfort.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="text-eliteGold font-semibold">Elite Community</div>
+          <p class="mt-1 text-sm text-white/70">Motiverende members, sterke energie, samen progress.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="text-eliteGold font-semibold">Coaching that works</div>
+          <p class="mt-1 text-sm text-white/70">Doelen → plan → uitvoering. Simpel, meetbaar, effectief.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities -->
+  <section id="faciliteiten" class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-semibold">Faciliteiten gebouwd voor consistent resultaat</h2>
+        <p class="mt-4 text-white/70">
+          Alles wat je nodig hebt om sterker, fitter en energieker te worden — zonder drukte en zonder rommel.
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-5">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="h-11 w-11 rounded-2xl bg-eliteGold/15 border border-eliteGold/25"></div>
+          <h3 class="mt-4 text-xl font-semibold">Ruimte & flow</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Slimme indeling zodat je door kunt trainen zonder wachten.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-white/70">
+            <li>• Strength zone</li>
+            <li>• Free weights</li>
+            <li>• Functional area</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="h-11 w-11 rounded-2xl bg-eliteGold/15 border border-eliteGold/25"></div>
+          <h3 class="mt-4 text-xl font-semibold">Top hygiëne</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Schoon, fris en professioneel — elke dag opnieuw.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-white/70">
+            <li>• Regelmatige schoonmaakrondes</li>
+            <li>• Disinfect stations</li>
+            <li>• Ventilatie & comfort</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="h-11 w-11 rounded-2xl bg-eliteGold/15 border border-eliteGold/25"></div>
+          <h3 class="mt-4 text-xl font-semibold">Premium apparatuur</h3>
+          <p class="mt-2 text-sm text-white/70">
+            High-end gear voor strength, hypertrophy en conditioning.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-white/70">
+            <li>• Racks & platforms</li>
+            <li>• Machines</li>
+            <li>• Cardio & conditioning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" class="border-y border-white/10 bg-white/5 py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-semibold">Een community die je omhoog trekt</h2>
+        <p class="mt-4 text-white/70">
+          Geen ego’s. Wel energie. Hier train je tussen mensen die ook willen winnen — op hun eigen niveau.
+        </p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-white/10 bg-eliteBlack/40 p-5">
+            <div class="text-eliteGold font-semibold">Vibe</div>
+            <p class="mt-2 text-sm text-white/70">Motivatie zonder toxic druk.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-eliteBlack/40 p-5">
+            <div class="text-eliteGold font-semibold">Consistency</div>
+            <p class="mt-2 text-sm text-white/70">Routines die je volhoudt.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-eliteBlack/40 p-5">
+            <div class="text-eliteGold font-semibold">Progress</div>
+            <p class="mt-2 text-sm text-white/70">Meetbaar sterker week na week.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-eliteBlack/40 p-5">
+            <div class="text-eliteGold font-semibold">Support</div>
+            <p class="mt-2 text-sm text-white/70">Je staat er niet alleen voor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-eliteGold/15 to-white/0 p-6 shadow-glow">
+        <div class="rounded-2xl border border-white/10 bg-eliteBlack/40 p-6">
+          <div class="text-sm text-white/60">Wat je krijgt</div>
+          <h3 class="mt-1 text-2xl font-semibold">Elite experience, elke sessie</h3>
+          <ul class="mt-4 space-y-3 text-white/75">
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-eliteGold"></span>
+              Toegang tot alle zones & equipment
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-eliteGold"></span>
+              Community events & challenges
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-eliteGold"></span>
+              Optioneel: personal coaching
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-eliteGold"></span>
+              Hygiëne & comfort als standaard
+            </li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-eliteGold px-5 py-3 font-semibold text-black hover:opacity-90">
+            Plan je gratis intake
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching -->
+  <section id="coaching" class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-semibold">Coaching (optioneel) voor maximale progress</h2>
+        <p class="mt-4 text-white/70">
+          Krijg structuur, accountability en een plan dat past bij jouw leven. Geen ingewikkelde onzin — alleen wat werkt.
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-5">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <h3 class="text-xl font-semibold">Intake & plan</h3>
+          <p class="mt-2 text-sm text-white/70">Doelen, niveau, beschikbaarheid → jouw roadmap.</p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <h3 class="text-xl font-semibold">Progress tracking</h3>
+          <p class="mt-2 text-sm text-white/70">Meetbaar sterker: lifts, reps, conditie, energie.</p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <h3 class="text-xl font-semibold">Support</h3>
+          <p class="mt-2 text-sm text-white/70">Check-ins, techniek, aanpassingen wanneer nodig.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="prijzen" class="border-y border-white/10 bg-white/5 py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-semibold">Lidmaatschappen</h2>
+        <p class="mt-4 text-white/70">
+          Kies wat bij je past. Upgrade later altijd.
+        </p>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-3 gap-6 items-stretch">
+        <div class="rounded-3xl border border-white/10 bg-eliteBlack/40 p-7">
+          <h3 class="text-xl font-semibold">Basic</h3>
+          <p class="mt-2 text-sm text-white/70">Voor zelfstandige trainers.</p>
+          <div class="mt-5 text-4xl font-semibold">€39<span class="text-base text-white/60">/mnd</span></div>
+          <ul class="mt-6 space-y-2 text-sm text-white/75">
+            <li>• Gym toegang</li>
+            <li>• Alle zones</li>
+            <li>• Community vibe</li>
+          </ul>
+          <a href="#contact" class="mt-7 inline-flex w-full items-center justify-center rounded-xl border border-white/15 px-5 py-3 hover:bg-white/5">
+            Info aanvragen
+          </a>
+        </div>
+
+        <div class="rounded-3xl border border-eliteGold/35 bg-gradient-to-b from-eliteGold/15 to-eliteBlack/40 p-7 shadow-glow relative">
+          <div class="absolute -top-3 right-6 rounded-full bg-eliteGold px-3 py-1 text-xs font-semibold text-black">Meest gekozen</div>
+          <h3 class="text-xl font-semibold">Pro</h3>
+          <p class="mt-2 text-sm text-white/70">Meer support, meer tools.</p>
+          <div class="mt-5 text-4xl font-semibold">€59<span class="text-base text-white/60">/mnd</span></div>
+          <ul class="mt-6 space-y-2 text-sm text-white/75">
+            <li>• Alles van Basic</li>
+            <li>• 1x maand check-in</li>
+            <li>• Trainingsschema template</li>
+          </ul>
+          <a href="#contact" class="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-eliteGold px-5 py-3 font-semibold text-black hover:opacity-90">
+            Start Pro
+          </a>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-eliteBlack/40 p-7">
+          <h3 class="text-xl font-semibold">Elite Coaching</h3>
+          <p class="mt-2 text-sm text-white/70">Volledig begeleid.</p>
+          <div class="mt-5 text-4xl font-semibold">€149<span class="text-base text-white/60">/mnd</span></div>
+          <ul class="mt-6 space-y-2 text-sm text-white/75">
+            <li>• Coaching plan</li>
+            <li>• Wekelijkse check-ins</li>
+            <li>• Progress tracking</li>
+          </ul>
+          <a href="#contact" class="mt-7 inline-flex w-full items-center justify-center rounded-xl border border-white/15 px-5 py-3 hover:bg-white/5">
+            Plan intake
+          </a>
+        </div>
+      </div>
+
+      <p class="mt-6 text-xs text-white/50">
+        * Prijzen zijn voorbeeldprijzen — pas aan naar jouw aanbod.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-semibold">FAQ</h2>
+        <p class="mt-4 text-white/70">De meest gestelde vragen in één plek.</p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-5">
+        <details class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">Kan ik eerst een rondleiding doen?</summary>
+          <p class="mt-3 text-sm text-white/70">Ja. Plan een intake en we laten je alles zien.</p>
+        </details>
+
+        <details class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">Is coaching verplicht?</summary>
+          <p class="mt-3 text-sm text-white/70">Nee. Je kunt ook zelfstandig trainen en later upgraden.</p>
+        </details>
+
+        <details class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">Voor wie is de gym?</summary>
+          <p class="mt-3 text-sm text-white/70">Voor beginners tot gevorderden die serieus willen trainen.</p>
+        </details>
+
+        <details class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <summary class="cursor-pointer font-medium">Hoe snel kan ik starten?</summary>
+          <p class="mt-3 text-sm text-white/70">Vandaag nog — klik op “Start vandaag” en stuur ons je gegevens.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-white/10 bg-eliteBlack py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-semibold">Klaar om Elite te trainen?</h2>
+        <p class="mt-4 text-white/70 max-w-prose">
+          Laat je naam + e-mail achter en we sturen je info (of plan direct een rondleiding).
+        </p>
+
+        <div id="locatie" class="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="text-sm text-white/60">Locatie</div>
+          <div class="mt-1 font-semibold">4e verdieping — Premium facility</div>
+          <div class="mt-2 text-sm text-white/70">
+            Voeg hier je adres toe • Stad • Postcode
+          </div>
+          <div class="mt-4 text-sm text-white/70">
+            <span class="text-white/60">Openingstijden:</span> Ma–Zo 06:00–23:00
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <form id="leadForm" class="space-y-4">
+          <div>
+            <label class="text-sm text-white/70">Naam</label>
+            <input required name="name" class="mt-1 w-full rounded-xl bg-eliteBlack/40 border border-white/10 px-4 py-3 outline-none focus:border-eliteGold/60"
+                   placeholder="Jouw naam" />
+          </div>
+          <div>
+            <label class="text-sm text-white/70">E-mail</label>
+            <input required type="email" name="email" class="mt-1 w-full rounded-xl bg-eliteBlack/40 border border-white/10 px-4 py-3 outline-none focus:border-eliteGold/60"
+                   placeholder="jij@mail.com" />
+          </div>
+          <div>
+            <label class="text-sm text-white/70">Doel (optioneel)</label>
+            <input name="goal" class="mt-1 w-full rounded-xl bg-eliteBlack/40 border border-white/10 px-4 py-3 outline-none focus:border-eliteGold/60"
+                   placeholder="Sterker worden / afvallen / fitter…" />
+          </div>
+
+          <button type="submit"
+                  class="w-full rounded-xl bg-eliteGold px-5 py-3 font-semibold text-black hover:opacity-90">
+            Stuur mij info
+          </button>
+
+          <p class="text-xs text-white/50">
+            Door te verzenden ga je akkoord dat we je mogen mailen. (Pas deze tekst aan voor je privacy policy.)
+          </p>
+
+          <div id="formMsg" class="hidden rounded-xl border border-white/10 bg-eliteBlack/40 p-3 text-sm"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-10 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+      <div>
+        <div class="font-semibold">ELITE GYM</div>
+        <div class="text-xs text-white/60">© <span id="year"></span> — Train Elite. Live Elite.</div>
+      </div>
+      <div class="flex gap-5 text-sm text-white/70">
+        <a class="hover:text-white" href="#faciliteiten">Faciliteiten</a>
+        <a class="hover:text-white" href="#prijzen">Prijzen</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simpele "send via mailto" lead capture (geen backend nodig)
+    // Vervang EMAIL hieronder door jouw mailadres.
+    const TO_EMAIL = "jouwemail@domein.nl";
+
+    const form = document.getElementById("leadForm");
+    const msg = document.getElementById("formMsg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = data.get("name");
+      const email = data.get("email");
+      const goal = data.get("goal") || "-";
+
+      const subject = encodeURIComponent("Nieuwe lead — Elite Gym landing");
+      const body = encodeURIComponent(
+        `Nieuwe lead via landing page:\n\nNaam: ${name}\nEmail: ${email}\nDoel: ${goal}\n\n(Verzonden vanaf GitHub Pages landing)`
+      );
+
+      // Laat een nette message zien + open mail client
+      msg.classList.remove("hidden");
+      msg.className = "rounded-xl border border-eliteGold/30 bg-eliteBlack/40 p-3 text-sm text-white/80";
+      msg.textContent = "Top! Je mail-app opent nu om te verzenden. Als dat niet gebeurt: check je pop-up instellingen.";
+
+      window.location.href = `mailto:${TO_EMAIL}?subject=${subject}&body=${body}`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
