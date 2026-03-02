@@ -886,7 +886,14 @@
       <div class="muted2" style="margin-top:10px;">Vul het formulier in en ik neem contact met je op.</div>
 
       <div class="form-wrap">
-        <form id="leadForm">
+        <!-- ✅ FORM IS NU GEKOPPELD AAN FORMSPREE -->
+        <form id="leadForm" action="https://formspree.io/f/xkovlnrv" method="POST">
+          <!-- instellingen voor mail -->
+          <input type="hidden" name="_subject" value="Nieuwe inschrijving — Sem Elite Performance (Off-season Camp)">
+          <input type="hidden" name="_replyto" value="">
+          <!-- spam honeypot -->
+          <input type="text" name="_gotcha" style="display:none">
+
           <div class="field">
             <label for="naam">Naam *</label>
             <input id="naam" name="naam" type="text" required placeholder="" />
@@ -966,7 +973,7 @@
       });
     });
 
-    // Pricing -> select package in form
+    // Pricing -> select package in form (iets robuuster)
     document.querySelectorAll('[data-select]').forEach(btn => {
       btn.addEventListener('click', () => {
         const choice = btn.getAttribute('data-select');
@@ -979,17 +986,54 @@
           "All-in": "All-in (€550)"
         };
         const val = map[choice] || "";
+
         [...select.options].forEach(opt => {
-          if(opt.textContent.trim() === val) select.value = opt.value;
+          if(opt.textContent.trim() === val) {
+            // robuust: zet op tekst (option value is ook tekst bij jou, maar dit is net iets veiliger)
+            select.value = opt.textContent.trim();
+          }
         });
       });
     });
 
-    // Dummy submit handler
-    document.getElementById('leadForm').addEventListener('submit', (e) => {
+    // ✅ Real submit handler (Formspree)
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const form = e.currentTarget;
       const msg = document.getElementById('formMsg');
-      msg.textContent = "Formulier klaar om te koppelen aan backend. (Nu: demo submit)";
+      const btn = form.querySelector('button[type="submit"]');
+
+      // reply-to gelijk zetten aan ingevuld emailadres
+      const emailVal = document.getElementById('email')?.value?.trim() || "";
+      const replyTo = form.querySelector('input[name="_replyto"]');
+      if (replyTo) replyTo.value = emailVal;
+
+      msg.textContent = "Verzenden...";
+      btn.disabled = true;
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          msg.textContent = "Gelukt! Je inschrijving is verzonden. Ik neem snel contact met je op.";
+          form.reset();
+          const pakket = document.getElementById('pakket');
+          if (pakket) pakket.selectedIndex = 0;
+        } else {
+          msg.textContent = "Verzenden lukt nu even niet. Probeer later opnieuw of stuur direct een bericht.";
+        }
+      } catch (err) {
+        msg.textContent = "Netwerkfout. Check je verbinding en probeer opnieuw.";
+      } finally {
+        btn.disabled = false;
+      }
     });
 
     // Footer year
