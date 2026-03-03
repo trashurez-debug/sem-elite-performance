@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- ✅ Social icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     :root{
       --bg:#070709;
@@ -473,14 +476,55 @@
       border-color:rgba(255,255,255,.18);
     }
 
-    /* FOOTER */
+    /* ✅ FOOTER (updated with socials) */
     footer{
-      padding:48px 0 64px;
+      padding:70px 0 64px;
       color:rgba(255,255,255,.55);
       border-top:1px solid rgba(255,255,255,.06);
       text-align:center;
       font-size:13px;
+      background: radial-gradient(700px 360px at 50% 0%, rgba(255,255,255,.05), transparent 65%);
     }
+    .footer-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+    .footer-social-title{
+      margin-top:6px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.85);
+      font-size:12px;
+    }
+    .social-icons{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:center;
+      margin-top:6px;
+    }
+    .social-icons a{
+      width:46px;
+      height:46px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,.55);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      transition: transform .12s ease, border-color .12s ease, background-color .12s ease, opacity .12s ease;
+      background: rgba(255,255,255,.02);
+    }
+    .social-icons a:hover{
+      transform: translateY(-2px);
+      border-color:#fff;
+      background: rgba(255,255,255,.05);
+      opacity: .98;
+    }
+    .social-icons i{font-size:18px}
 
     /* Responsive */
     @media (max-width: 980px){
@@ -949,15 +993,39 @@
     </div>
   </section>
 
+  <!-- ✅ FOOTER MET SOCIALS -->
   <footer>
-    <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
-      <img src="assets/logo.svg"
-           alt="Sem Elite Performance logo"
-           style="width:70px; opacity:0.9; filter: drop-shadow(0 6px 14px rgba(0,0,0,.6));"
-           onerror="this.style.display='none'"/>
+    <div class="container">
+      <div class="footer-inner">
+        <img src="assets/logo.svg"
+             alt="Sem Elite Performance logo"
+             style="width:70px; opacity:0.9; filter: drop-shadow(0 6px 14px rgba(0,0,0,.6));"
+             onerror="this.style.display='none'"/>
 
-      <div>
-        © <span id="year"></span> Sem Elite Performance. Alle rechten voorbehouden.
+        <div class="footer-social-title">VOLG ONS OP SOCIAL MEDIA</div>
+
+        <div class="social-icons">
+          <!-- 🔥 Instagram (zet hier je eigen link) -->
+          <a href="https://www.instagram.com/JOUW_INSTAGRAM/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <div style="margin-top:8px;">
+          © <span id="year"></span> Sem Elite Performance. Alle rechten voorbehouden.
+        </div>
       </div>
     </div>
   </footer>
@@ -989,7 +1057,6 @@
 
         [...select.options].forEach(opt => {
           if(opt.textContent.trim() === val) {
-            // robuust: zet op tekst (option value is ook tekst bij jou, maar dit is net iets veiliger)
             select.value = opt.textContent.trim();
           }
         });
