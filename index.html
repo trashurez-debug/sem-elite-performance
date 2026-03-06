@@ -148,17 +148,6 @@
       pointer-events:none;
     }
     .hero-inner{position:relative; z-index:1;}
-    .logo{
-      width:112px;
-      height:64px;
-      margin:0 auto 22px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
-      opacity:.95;
-    }
-    .logo img{max-width:100%; max-height:100%;}
     .hero .h1{margin-top:0}
     .hero .h2{
       margin-top:10px;
@@ -371,7 +360,7 @@
       color:rgba(255,255,255,.9);
     }
 
-    /* FOCUS GRID */
+    /* FOCUS */
     .focus{
       margin-top:46px;
       display:grid;
@@ -402,7 +391,7 @@
     .tile .tile-icon svg{width:28px; height:28px; opacity:.95}
     .tile .tile-title{font-weight:700; letter-spacing:-.01em; font-size:18px}
 
-    /* SCHEDULE LIST */
+    /* SCHEDULE */
     .schedule{
       margin-top:46px;
       display:grid;
@@ -536,7 +525,7 @@
       .pricing{grid-template-columns:1fr; gap:16px}
       .focus{grid-template-columns:1fr; gap:14px}
       .forwho{grid-template-columns:1fr}
-      .hero{min-height:78vh; padding-top:138px;}
+      .hero{min-height:78vh; padding-top:138px}
       .price-card.popular{transform:none}
     }
 
@@ -586,10 +575,6 @@
 
   <header class="hero" id="top">
     <div class="container hero-inner center">
-      <div class="logo" aria-label="Logo">
-        <img src="assets/logo.png" alt="Sem Elite Performance logo" onerror="this.style.display='none'"/>
-      </div>
-
       <h1 class="h1">Sem Elite Performance</h1>
       <h2 class="h2">Off-season Camp</h2>
 
@@ -901,7 +886,7 @@
         </div>
       </div>
 
-      <div style="
+      <div class="big" style="
         margin-top:24px;
         background:#fff;
         color:#0b0c0f;
