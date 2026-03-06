@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sem Elite Performance — Off-season Camp</title>
 
-  <!-- Font (lijkt op Inter / system) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ✅ Social icons (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -71,13 +69,70 @@
       color:var(--muted);
     }
 
+    /* TOPBAR */
+    .site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background: rgba(7,7,9,.88);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .site-header-inner{
+      width:min(var(--max), calc(100% - 48px));
+      margin:0 auto;
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .header-logo{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      min-width:0;
+    }
+    .header-logo img{
+      height:52px;
+      width:auto;
+      display:block;
+      object-fit:contain;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+    }
+    .header-cta{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.12);
+      background:#fff;
+      color:#0b0c0f;
+      font-weight:800;
+      padding:12px 20px;
+      border-radius:12px;
+      cursor:pointer;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+      transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+      font-size:15px;
+      white-space:nowrap;
+    }
+    .header-cta:hover{
+      transform: translateY(-1px);
+      box-shadow:0 18px 44px rgba(0,0,0,.35);
+    }
+    .header-cta:active{
+      transform: translateY(0);
+      opacity:.95;
+    }
+
     /* HERO */
     .hero{
       position:relative;
       min-height:88vh;
       display:flex;
       align-items:center;
-      padding:96px 0 74px;
+      padding:150px 0 74px;
       border-bottom:1px solid rgba(255,255,255,.06);
       background:
         linear-gradient(180deg, rgba(0,0,0,.78), rgba(0,0,0,.84)),
@@ -187,7 +242,7 @@
       padding:0 6px;
     }
 
-    /* PRICING (clean + badge fix) */
+    /* PRICING */
     .pricing{
       margin-top:42px;
       display:grid;
@@ -280,7 +335,7 @@
     .price-card .btn{width:100%; padding:14px 18px; border-radius:12px}
     .price-card .btn.ghost{border-color:rgba(255,255,255,.18)}
 
-    /* STATEMENT section */
+    /* STATEMENT */
     .statement{
       padding:92px 0;
       border-top:1px solid rgba(255,255,255,.06);
@@ -316,7 +371,7 @@
       color:rgba(255,255,255,.9);
     }
 
-    /* FOCUS GRID 2x3 */
+    /* FOCUS GRID */
     .focus{
       margin-top:46px;
       display:grid;
@@ -425,58 +480,7 @@
     }
     .form-actions .btn{width:100%; padding:16px 18px; border-radius:12px; font-size:16px}
 
-    /* NAV (simple) */
-    .topnav{
-      position:fixed;
-      top:16px;
-      left:50%;
-      transform:translateX(-50%);
-      width:min(var(--max), calc(100% - 28px));
-      z-index:50;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:10px 12px;
-      border-radius:999px;
-      background: rgba(0,0,0,.45);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(10px);
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center;
-      font-weight:800;
-      letter-spacing:-.02em;
-      padding-left:6px;
-      color:rgba(255,255,255,.92);
-    }
-    .dot{
-      width:10px; height:10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.75);
-      box-shadow: 0 0 0 6px rgba(255,255,255,.06);
-    }
-    .navlinks{
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    .pill{
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.02);
-      color:rgba(255,255,255,.85);
-      font-weight:700;
-      font-size:13px;
-    }
-    .pill:hover{background: rgba(255,255,255,.05)}
-    .pill.primary{
-      background:#fff;
-      color:#0b0c0f;
-      border-color:rgba(255,255,255,.18);
-    }
-
-    /* ✅ FOOTER (updated with socials) */
+    /* FOOTER */
     footer{
       padding:70px 0 64px;
       color:rgba(255,255,255,.55);
@@ -532,9 +536,21 @@
       .pricing{grid-template-columns:1fr; gap:16px}
       .focus{grid-template-columns:1fr; gap:14px}
       .forwho{grid-template-columns:1fr}
-      .topnav{display:none;} /* houdt het clean op mobile */
-      .hero{min-height:78vh}
+      .hero{min-height:78vh; padding-top:138px;}
       .price-card.popular{transform:none}
+    }
+
+    @media (max-width: 640px){
+      .site-header-inner{
+        min-height:74px;
+      }
+      .header-logo img{
+        height:44px;
+      }
+      .header-cta{
+        padding:11px 16px;
+        font-size:14px;
+      }
     }
 
     /* SELECT DARK DROPDOWN FIX */
@@ -558,22 +574,20 @@
 </head>
 
 <body>
-  <!-- Floating nav (extra, maar handig) -->
-  <div class="topnav" aria-label="Snelle navigatie">
-    <div class="brand"><span class="dot"></span> Sem Elite Performance</div>
-    <div class="navlinks">
-      <a class="pill" href="#coach">Coach</a>
-      <a class="pill" href="#pakketten">Pakketten</a>
-      <a class="pill" href="#programma">Programma</a>
-      <a class="pill primary" href="#inschrijven">Meld je aan</a>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
+        <img src="assets/logo.png" alt="Sem Elite Performance logo" onerror="this.style.display='none'" />
+      </a>
+
+      <button class="header-cta" data-scroll="#inschrijven">Meld je aan</button>
     </div>
   </div>
 
-  <!-- HERO -->
   <header class="hero" id="top">
     <div class="container hero-inner center">
       <div class="logo" aria-label="Logo">
-        <img src="assets/logo.svg" alt="Sem Elite Performance logo" onerror="this.style.display='none'"/>
+        <img src="assets/logo.png" alt="Sem Elite Performance logo" onerror="this.style.display='none'"/>
       </div>
 
       <h1 class="h1">Sem Elite Performance</h1>
@@ -589,7 +603,6 @@
     </div>
   </header>
 
-  <!-- COACH -->
   <section class="section" id="coach">
     <div class="container center">
       <h2 class="h2">Coach Sem van der Pijl</h2>
@@ -634,13 +647,11 @@
     </div>
   </section>
 
-  <!-- PACKAGES -->
   <section class="section tight" id="pakketten">
     <div class="container center">
       <h2 class="h2">Kies het niveau dat bij jou past.</h2>
 
       <div class="pricing">
-        <!-- Foundation -->
         <div class="price-card">
           <div class="plan-title">FOUNDATION CAMP</div>
           <div class="price">€375</div>
@@ -665,7 +676,6 @@
           <button class="btn" data-select="Foundation" data-scroll="#inschrijven">Meld je aan</button>
         </div>
 
-        <!-- Performance (recommended) -->
         <div class="price-card popular">
           <div class="badge-wrapper">
             <div class="badge">AANBEVOLEN</div>
@@ -684,7 +694,6 @@
           <button class="btn" data-select="Performance" data-scroll="#inschrijven">Reserveer mijn plek</button>
         </div>
 
-        <!-- Elite -->
         <div class="price-card">
           <div class="plan-title">ELITE CAMP</div>
           <div class="price">€550</div>
@@ -743,7 +752,6 @@
     </div>
   </section>
 
-  <!-- STATEMENT -->
   <section class="statement" id="waarom">
     <div class="container center">
       <h2 class="h2">De meeste spelers worden<br/>in de zomer zwakker.</h2>
@@ -782,7 +790,6 @@
     </div>
   </section>
 
-  <!-- FOCUS -->
   <section class="section" id="focus">
     <div class="container center">
       <h2 class="h2">Dit 12 daagse High-Performance blok<br/>richt zich op:</h2>
@@ -851,7 +858,6 @@
     </div>
   </section>
 
-  <!-- PROGRAM -->
   <section class="section tight" id="programma">
     <div class="container center">
       <h2 class="h2">12 dagen – 2 weken</h2>
@@ -869,7 +875,6 @@
     </div>
   </section>
 
-  <!-- FOR WHO -->
   <section class="section" id="voorwie">
     <div class="container center">
       <h2 class="h2">Voor wie?</h2>
@@ -896,8 +901,7 @@
         </div>
       </div>
 
-      <!-- gecentreerd blok -->
-      <div class="big" style="
+      <div style="
         margin-top:24px;
         background:#fff;
         color:#0b0c0f;
@@ -923,19 +927,15 @@
     </div>
   </section>
 
-  <!-- FORM -->
   <section class="section tight" id="inschrijven">
     <div class="container center">
       <h2 class="h2">Reserveer jouw plek</h2>
       <div class="muted2" style="margin-top:10px;">Vul het formulier in en ik neem contact met je op.</div>
 
       <div class="form-wrap">
-        <!-- ✅ FORM IS NU GEKOPPELD AAN FORMSPREE -->
         <form id="leadForm" action="https://formspree.io/f/xkovlnrv" method="POST">
-          <!-- instellingen voor mail -->
           <input type="hidden" name="_subject" value="Nieuwe inschrijving — Sem Elite Performance (Off-season Camp)">
           <input type="hidden" name="_replyto" value="">
-          <!-- spam honeypot -->
           <input type="text" name="_gotcha" style="display:none">
 
           <div class="field">
@@ -993,11 +993,10 @@
     </div>
   </section>
 
-  <!-- ✅ FOOTER MET SOCIALS -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <img src="assets/logo.svg"
+        <img src="assets/logo.png"
              alt="Sem Elite Performance logo"
              style="width:70px; opacity:0.9; filter: drop-shadow(0 6px 14px rgba(0,0,0,.6));"
              onerror="this.style.display='none'"/>
@@ -1005,7 +1004,6 @@
         <div class="footer-social-title">VOLG ONS OP SOCIAL MEDIA</div>
 
         <div class="social-icons">
-          <!-- 🔥 Instagram (zet hier je eigen link) -->
           <a href="https://www.instagram.com/semeliteperformance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
@@ -1023,7 +1021,6 @@
   </footer>
 
   <script>
-    // Smooth scroll
     document.querySelectorAll('[data-scroll]').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-scroll');
@@ -1033,7 +1030,6 @@
       });
     });
 
-    // Pricing -> select package in form (iets robuuster)
     document.querySelectorAll('[data-select]').forEach(btn => {
       btn.addEventListener('click', () => {
         const choice = btn.getAttribute('data-select');
@@ -1055,7 +1051,6 @@
       });
     });
 
-    // ✅ Real submit handler (Formspree)
     document.getElementById('leadForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -1063,7 +1058,6 @@
       const msg = document.getElementById('formMsg');
       const btn = form.querySelector('button[type="submit"]');
 
-      // reply-to gelijk zetten aan ingevuld emailadres
       const emailVal = document.getElementById('email')?.value?.trim() || "";
       const replyTo = form.querySelector('input[name="_replyto"]');
       if (replyTo) replyTo.value = emailVal;
@@ -1095,7 +1089,6 @@
       }
     });
 
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
