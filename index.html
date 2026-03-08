@@ -15,22 +15,19 @@
       --bg:#070709;
       --bg2:#0b0c0f;
       --card:#121318;
-      --card2:#0f1014;
       --stroke:rgba(255,255,255,.08);
-      --stroke2:rgba(255,255,255,.12);
       --text:#ffffff;
       --muted:rgba(255,255,255,.65);
       --muted2:rgba(255,255,255,.45);
       --green:#2ee59d;
-      --red:#ff3b3b;
       --shadow:0 18px 50px rgba(0,0,0,.55);
       --radius:18px;
-      --radius2:24px;
       --max:1100px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -39,7 +36,7 @@
       overflow-x:hidden;
     }
 
-    a{color:inherit; text-decoration:none}
+    a{color:inherit;text-decoration:none}
     .container{width:min(var(--max), calc(100% - 48px)); margin-inline:auto;}
     .section{padding:86px 0;}
     .section.tight{padding:64px 0;}
@@ -97,8 +94,6 @@
     .header-logo{
       display:flex;
       align-items:center;
-      justify-content:flex-start;
-      min-width:0;
       flex-shrink:0;
     }
 
@@ -196,15 +191,8 @@
     }
 
     .btn:active{
-      transform:translateY(0px);
+      transform:translateY(0);
       opacity:.95;
-    }
-
-    .btn.ghost{
-      background:transparent;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow:none;
     }
 
     .note{
@@ -260,7 +248,7 @@
     .card p{
       margin:0;
       text-align:center;
-      color:rgba(255,255,255,.78);
+      color:rgba(255,255,255,.82);
       font-size:16px;
       line-height:1.4;
       padding:0 6px;
@@ -269,14 +257,13 @@
     /* CLUB LOGOS */
     .club-strip{
       margin-top:22px;
-      padding-top:34px;
-      padding-bottom:34px;
+      padding:34px 28px;
     }
 
     .club-strip-title{
       margin:0 0 26px;
       text-align:center;
-      color:rgba(255,255,255,.92);
+      color:rgba(255,255,255,.94);
       font-size:18px;
       line-height:1.4;
       font-weight:800;
@@ -298,37 +285,36 @@
     }
 
     .club-logo{
-      width:100%;
-      max-width:120px;
-      aspect-ratio:1 / 1;
+      width:118px;
+      height:118px;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      background:transparent;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:14px;
-      transition:transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-
-    .club-logo:hover{
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,.18);
-      background:rgba(255,255,255,.05);
+      padding:12px;
+      overflow:hidden;
     }
 
     .club-logo img{
-      width:72px;
-      height:72px;
-      object-fit:contain;
       display:block;
+      object-fit:contain;
       filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));
     }
+
+    /* optisch gelijk trekken aan FC Utrecht */
+    .logo-feyenoord{ width:78px; height:78px; }
+    .logo-nac{ width:78px; height:78px; }
+    .logo-denbosch{ width:78px; height:78px; }
+    .logo-vitesse{ width:78px; height:78px; }
+    .logo-utrecht{ width:78px; height:78px; }
+    .logo-psv{ width:78px; height:78px; }
 
     .club-name{
       font-size:14px;
       line-height:1.3;
-      color:rgba(255,255,255,.82);
+      color:rgba(255,255,255,.84);
       font-weight:600;
       text-align:center;
       min-height:36px;
@@ -457,10 +443,6 @@
       border-radius:12px;
     }
 
-    .price-card .btn.ghost{
-      border-color:rgba(255,255,255,.18);
-    }
-
     /* STATEMENT */
     .statement{
       padding:92px 0;
@@ -584,7 +566,7 @@
       gap:22px;
     }
 
-    .forwho .big{
+    .big{
       margin-top:24px;
       background:#fff;
       color:#0b0c0f;
@@ -593,9 +575,12 @@
       text-align:center;
       box-shadow:var(--shadow);
       border:1px solid rgba(0,0,0,.05);
+      max-width:820px;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    .forwho .big h3{
+    .big h3{
       margin:0;
       font-size:30px;
       line-height:1.15;
@@ -760,12 +745,18 @@
       }
 
       .club-logo{
-        max-width:100px;
+        width:100px;
+        height:100px;
       }
 
-      .club-logo img{
-        width:64px;
-        height:64px;
+      .logo-feyenoord,
+      .logo-nac,
+      .logo-denbosch,
+      .logo-vitesse,
+      .logo-utrecht,
+      .logo-psv{
+        width:66px;
+        height:66px;
       }
 
       .club-name{
@@ -798,7 +789,7 @@
   <div class="site-header">
     <div class="site-header-inner">
       <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
-        <img src="assets/logo.png" alt="Sem Elite Performance logo" onerror="this.style.display='none'" />
+        <img src="assets/logo.png" alt="Sem Elite Performance logo" onerror="this.style.display='none'">
       </a>
 
       <button class="header-cta" data-scroll="#inschrijven">Meld je aan</button>
@@ -857,42 +848,42 @@
         <div class="club-logos">
           <div class="club-item">
             <div class="club-logo">
-              <img src="assets/feyenoord.png" alt="Feyenoord logo">
+              <img class="logo-feyenoord" src="assets/feyenoord.png" alt="Feyenoord logo">
             </div>
             <div class="club-name">Feyenoord</div>
           </div>
 
           <div class="club-item">
             <div class="club-logo">
-              <img src="assets/nac breda logo.png" alt="NAC Breda logo">
+              <img class="logo-nac" src="assets/nac breda logo.png" alt="NAC Breda logo">
             </div>
             <div class="club-name">NAC Breda</div>
           </div>
 
           <div class="club-item">
             <div class="club-logo">
-              <img src="assets/fc den bosch.png" alt="FC Den Bosch logo">
+              <img class="logo-denbosch" src="assets/fc den bosch.png" alt="FC Den Bosch logo">
             </div>
             <div class="club-name">FC Den Bosch</div>
           </div>
 
           <div class="club-item">
             <div class="club-logo">
-              <img src="assets/vitesse logo.png" alt="Vitesse logo">
+              <img class="logo-vitesse" src="assets/vitesse logo.png" alt="Vitesse logo">
             </div>
             <div class="club-name">Vitesse</div>
           </div>
 
           <div class="club-item">
             <div class="club-logo">
-              <img src="assets/fc utrecht logo.png" alt="FC Utrecht logo">
+              <img class="logo-utrecht" src="assets/fc utrecht logo.png" alt="FC Utrecht logo">
             </div>
             <div class="club-name">FC Utrecht</div>
           </div>
 
           <div class="club-item">
             <div class="club-logo">
-              <img src="assets/psv eindhoven.png" alt="PSV logo">
+              <img class="logo-psv" src="assets/psv eindhoven.png" alt="PSV logo">
             </div>
             <div class="club-name">PSV</div>
           </div>
@@ -954,46 +945,11 @@
           <p class="price-sub">Voor spelers die all-in gaan.</p>
 
           <ul class="list">
-            <li class="li">
-              <span class="check">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-              </span>
-              <span>Alles van Performance</span>
-            </li>
-            <li class="li">
-              <span class="check">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-              </span>
-              <span>MAS test</span>
-            </li>
-            <li class="li">
-              <span class="check">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-              </span>
-              <span>Persoonlijk zomerschema – Conditie</span>
-            </li>
-            <li class="li">
-              <span class="check">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-              </span>
-              <span>Persoonlijk zomerschema – Kracht</span>
-            </li>
-            <li class="li">
-              <span class="check">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-              </span>
-              <span>Persoonlijk zomerschema – Body Movements</span>
-            </li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Performance</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>MAS test</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Conditie</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Kracht</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Body Movements</span></li>
           </ul>
 
           <button class="btn" data-select="All-in" data-scroll="#inschrijven">Ik ga all-in</button>
@@ -1151,28 +1107,8 @@
         </div>
       </div>
 
-      <div class="big" style="
-        margin-top:24px;
-        background:#fff;
-        color:#0b0c0f;
-        border-radius:22px;
-        padding:34px 26px;
-        text-align:center;
-        box-shadow:var(--shadow);
-        border:1px solid rgba(0,0,0,.05);
-        max-width:820px;
-        margin-left:auto;
-        margin-right:auto;
-      ">
-        <h3 style="
-          margin:0;
-          font-size:30px;
-          line-height:1.15;
-          letter-spacing:-.02em;
-          font-weight:800;
-        ">
-          Voor spelers die niet gemiddeld<br>willen terugkeren na de zomer.
-        </h3>
+      <div class="big">
+        <h3>Voor spelers die niet gemiddeld<br>willen terugkeren na de zomer.</h3>
       </div>
     </div>
   </section>
@@ -1275,7 +1211,7 @@
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-scroll');
         const el = document.querySelector(target);
-        if(!el) return;
+        if (!el) return;
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
@@ -1284,7 +1220,7 @@
       btn.addEventListener('click', () => {
         const choice = btn.getAttribute('data-select');
         const select = document.getElementById('pakket');
-        if(!select) return;
+        if (!select) return;
 
         const map = {
           "Foundation": "Foundation (€375)",
@@ -1295,7 +1231,7 @@
         const val = map[choice] || "";
 
         [...select.options].forEach(opt => {
-          if(opt.textContent.trim() === val) {
+          if (opt.textContent.trim() === val) {
             select.value = opt.textContent.trim();
           }
         });
