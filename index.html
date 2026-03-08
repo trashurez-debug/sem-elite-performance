@@ -232,6 +232,51 @@
       padding:0 6px;
     }
 
+    /* CLUB LOGOS */
+    .club-strip{
+      margin-top:22px;
+    }
+    .club-strip-title{
+      margin:0 0 20px;
+      text-align:center;
+      color:rgba(255,255,255,.84);
+      font-size:18px;
+      line-height:1.4;
+      font-weight:700;
+    }
+    .club-logos{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+    .club-logo{
+      width:92px;
+      height:92px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .club-logo:hover{
+      transform: translateY(-2px);
+      border-color:rgba(255,255,255,.18);
+      background: rgba(255,255,255,.05);
+    }
+    .club-logo img{
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+    }
+
     /* PRICING */
     .pricing{
       margin-top:42px;
@@ -534,6 +579,10 @@
       .header-logo img{
         height:56px;
       }
+      .club-logo{
+        width:82px;
+        height:82px;
+      }
     }
 
     @media (max-width: 640px){
@@ -551,6 +600,17 @@
       }
       .hero{
         padding-top:136px;
+      }
+      .club-logos{
+        gap:14px;
+      }
+      .club-logo{
+        width:72px;
+        height:72px;
+        padding:12px;
+      }
+      .club-strip-title{
+        font-size:16px;
       }
     }
 
@@ -637,7 +697,37 @@
               <path d="M21 20a5 5 0 0 0-6-5"/>
             </svg>
           </div>
-          <p>Werk met spelers van NAC, PSV, Utrecht, Vitesse, Den Bosch</p>
+          <p>Werk met spelers uit het betaald voetbal</p>
+        </div>
+      </div>
+
+      <div class="card club-strip">
+        <p class="club-strip-title">Werk met spelers van</p>
+
+        <div class="club-logos">
+          <div class="club-logo">
+            <img src="assets/feyenoord.jpg" alt="Feyenoord logo" onerror="this.style.display='none'">
+          </div>
+
+          <div class="club-logo">
+            <img src="assets/nac breda logo.png" alt="NAC Breda logo" onerror="this.style.display='none'">
+          </div>
+
+          <div class="club-logo">
+            <img src="assets/fc den bosch.jpg" alt="FC Den Bosch logo" onerror="this.style.display='none'">
+          </div>
+
+          <div class="club-logo">
+            <img src="assets/vitesse logo.png" alt="Vitesse logo" onerror="this.style.display='none'">
+          </div>
+
+          <div class="club-logo">
+            <img src="assets/fc utrecht logo.png" alt="FC Utrecht logo" onerror="this.style.display='none'">
+          </div>
+
+          <div class="club-logo">
+            <img src="assets/psv eindhoven.jpg" alt="PSV Eindhoven logo" onerror="this.style.display='none'">
+          </div>
         </div>
       </div>
     </div>
