@@ -332,25 +332,35 @@
       padding:0 6px;
     }
 
-    /* CLUBS */
-.club-strip{
-  margin-top:22px;
-  padding:20px 28px 34px;
-}
+    /* CLUB LOGOS */
+    .club-strip{
+      margin-top:22px;
+      padding:34px 28px 34px;
+      position:relative;
+    }
 
-.club-strip-title{
-  margin:0 0 36px;
-  text-align:center;
-  color:rgba(255,255,255,.94);
-  font-size:18px;
-  line-height:1.4;
-  font-weight:800;
-}
+    .club-strip-title{
+      position:absolute;
+      top:18px;
+      left:50%;
+      transform:translateX(-50%);
+      margin:0;
+      width:100%;
+      max-width:calc(100% - 56px);
+      text-align:center;
+      color:rgba(255,255,255,.94);
+      font-size:18px;
+      line-height:1.4;
+      font-weight:800;
+      pointer-events:none;
+    }
+
     .club-logos{
       display:grid;
       grid-template-columns:repeat(6, 1fr);
       gap:22px;
       align-items:start;
+      padding-top:64px;
     }
 
     .club-item{
@@ -378,12 +388,18 @@
       width:80px;
       height:80px;
       object-fit:contain;
+      display:block;
       margin:auto;
       filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));
     }
 
-    .logo-denbosch{transform:scale(1.15)}
-    .logo-vitesse{transform:scale(1.15)}
+    .logo-denbosch{
+      transform:scale(1.15);
+    }
+
+    .logo-vitesse{
+      transform:scale(1.15);
+    }
 
     .club-name{
       font-size:14px;
@@ -669,7 +685,9 @@
       margin-inline:auto;
     }
 
-    .field{margin:18px 0 0}
+    .field{
+      margin:18px 0 0;
+    }
 
     label{
       display:block;
@@ -699,25 +717,6 @@
     input::placeholder,
     textarea::placeholder{
       color:rgba(255,255,255,.35);
-    }
-
-    select{
-      background-color:#0f1014;
-      color:#ffffff;
-      border:1px solid rgba(255,255,255,.15);
-      appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
-    }
-
-    select option{
-      background-color:#0f1014;
-      color:#ffffff;
-    }
-
-    select option:checked{
-      background-color:#121318;
-      color:#ffffff;
     }
 
     .form-actions{
@@ -790,7 +789,9 @@
     }
 
     @media (max-width: 1100px){
-      .club-logos{grid-template-columns:repeat(3, 1fr)}
+      .club-logos{
+        grid-template-columns:repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 980px){
@@ -806,8 +807,18 @@
         min-height:92px;
       }
 
-      .header-logo img{height:72px}
-      .header-title{font-size:15px}
+      .header-logo img{
+        height:72px;
+      }
+
+      .header-title{
+        font-size:15px;
+      }
+
+      .club-logos{
+        grid-template-columns:repeat(3, 1fr);
+        padding-top:68px;
+      }
     }
 
     @media (max-width: 640px){
@@ -817,8 +828,14 @@
         gap:14px;
       }
 
-      .header-left{gap:10px}
-      .header-logo img{height:58px}
+      .header-left{
+        gap:10px;
+      }
+
+      .header-logo img{
+        height:58px;
+      }
+
       .header-title{
         font-size:11px;
         letter-spacing:.05em;
@@ -830,19 +847,37 @@
         border-radius:12px;
       }
 
-      .hero{padding-top:144px}
-      .hero-badges{gap:10px}
+      .hero{
+        padding-top:144px;
+      }
+
+      .hero-badges{
+        gap:10px;
+      }
 
       .badge-item{
         font-size:12px;
         padding:7px 12px;
       }
 
-      .hero-stats{gap:24px}
+      .hero-stats{
+        gap:24px;
+      }
+
+      .club-strip{
+        padding:30px 18px 28px;
+      }
+
+      .club-strip-title{
+        top:14px;
+        font-size:16px;
+        max-width:calc(100% - 36px);
+      }
 
       .club-logos{
         grid-template-columns:repeat(2, 1fr);
         gap:18px 14px;
+        padding-top:58px;
       }
 
       .club-logo{
@@ -855,7 +890,28 @@
         height:66px;
       }
 
-      .club-name{font-size:13px}
+      .club-name{
+        font-size:13px;
+      }
+    }
+
+    select{
+      background-color:#0f1014;
+      color:#ffffff;
+      border:1px solid rgba(255,255,255,.15);
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+    }
+
+    select option{
+      background-color:#0f1014;
+      color:#ffffff;
+    }
+
+    select option:checked{
+      background-color:#121318;
+      color:#ffffff;
     }
   </style>
 </head>
@@ -995,7 +1051,7 @@
 
   <section class="section tight" id="pakketten">
     <div class="container center">
-      <h2 class="h2">Kies het niveau dat bij jou past</h2>
+      <h2 class="h2">Kies het niveau dat bij jou past.</h2>
 
       <div class="pricing">
         <div class="price-card">
@@ -1013,10 +1069,10 @@
               <span>12 dagen trainingscamp</span>
             </li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Testdag + Action Types Profilering</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>10 meter sprint</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>30–40 meter sprint</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>HRmax &amp; HR-herstel</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Krachtmonitoring</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>10m sprint</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>30–40m sprint</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>HRmax &amp; HR herstel</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Kracht monitoring</span></li>
           </ul>
 
           <button class="btn" data-select="Foundation" data-scroll="#inschrijven">Meld je aan</button>
@@ -1033,7 +1089,7 @@
 
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Foundation</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Begeleiding bij prep &amp; cooling-down</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Prep &amp; cooling down begeleiding</span></li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Kledingpakket</span></li>
           </ul>
 
@@ -1047,10 +1103,10 @@
 
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Performance</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>MAS-test</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – conditie</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – kracht</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – body movements</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>MAS test</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Conditie</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Kracht</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Body Movements</span></li>
           </ul>
 
           <button class="btn" data-select="All-in" data-scroll="#inschrijven">Ik ga all-in</button>
@@ -1061,7 +1117,7 @@
 
   <section class="statement" id="waarom">
     <div class="container center">
-      <h2 class="h2">De meeste spelers worden<br>in de zomer zwakker</h2>
+      <h2 class="h2">De meeste spelers worden<br>in de zomer zwakker.</h2>
 
       <div class="xlist" role="list">
         <div class="xrow" role="listitem">
@@ -1099,7 +1155,7 @@
 
   <section class="section" id="focus">
     <div class="container center">
-      <h2 class="h2">Dit 12-daagse high-performance blok<br>richt zich op:</h2>
+      <h2 class="h2">Dit 12 daagse High-Performance blok<br>richt zich op:</h2>
 
       <div class="focus">
         <div class="tile">
@@ -1168,15 +1224,15 @@
   <section class="section tight" id="programma">
     <div class="container center">
       <h2 class="h2">12 dagen – 2 weken</h2>
-      <div class="muted2" style="margin-top:10px;">Inclusief intake, starttest, exit-test en monitoring.</div>
+      <div class="muted2" style="margin-top:10px;">Inclusief intake, starttest, exit test en monitoring.</div>
 
       <div class="schedule">
         <div class="row"><div class="day">Maandag</div><div class="type">Veld</div></div>
         <div class="row"><div class="day">Dinsdag</div><div class="type">Kracht</div></div>
-        <div class="row"><div class="day">Woensdag</div><div class="type">Body movements</div></div>
+        <div class="row"><div class="day">Woensdag</div><div class="type">Body Movements</div></div>
         <div class="row"><div class="day">Donderdag</div><div class="type">Veld</div></div>
         <div class="row"><div class="day">Vrijdag</div><div class="type">Kracht</div></div>
-        <div class="row"><div class="day">Zaterdag</div><div class="type">Body movements</div></div>
+        <div class="row"><div class="day">Zaterdag</div><div class="type">Body Movements</div></div>
         <div class="row"><div class="day">Zondag</div><div class="type">Rust</div></div>
       </div>
     </div>
@@ -1194,7 +1250,7 @@
               <path d="M6 21a6 6 0 0 1 12 0"/>
             </svg>
           </div>
-          <p>O17 BVO t/m prof en topamateur</p>
+          <p>O17 BVO t/m Prof en Top Amateur</p>
         </div>
 
         <div class="card">
@@ -1246,7 +1302,7 @@
           </div>
 
           <div class="field">
-            <label for="email">E-mail *</label>
+            <label for="email">Email *</label>
             <input id="email" name="email" type="email" required>
           </div>
 
@@ -1283,14 +1339,12 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <img
-          src="assets/logo.png"
-          alt="Sem Elite Performance logo"
-          style="width:78px; opacity:0.92; filter:drop-shadow(0 6px 14px rgba(0,0,0,.6));"
-          onerror="this.style.display='none'"
-        >
+        <img src="assets/logo.png"
+             alt="Sem Elite Performance logo"
+             style="width:70px; opacity:0.9; filter:drop-shadow(0 6px 14px rgba(0,0,0,.6));"
+             onerror="this.style.display='none'">
 
-        <div class="footer-social-title">Volg ons op social media</div>
+        <div class="footer-social-title">VOLG ONS OP SOCIAL MEDIA</div>
 
         <div class="social-icons">
           <a href="https://www.instagram.com/semeliteperformance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1331,11 +1385,11 @@
           "All-in": "All-in (€550)"
         };
 
-        const value = map[choice] || "";
+        const val = map[choice] || "";
 
-        [...select.options].forEach(option => {
-          if (option.textContent.trim() === value) {
-            select.value = option.textContent.trim();
+        [...select.options].forEach(opt => {
+          if (opt.textContent.trim() === val) {
+            select.value = opt.textContent.trim();
           }
         });
       });
@@ -1367,14 +1421,13 @@
         if (res.ok) {
           msg.textContent = "Gelukt! Je inschrijving is verzonden. Ik neem snel contact met je op.";
           form.reset();
-
           const pakket = document.getElementById('pakket');
           if (pakket) pakket.selectedIndex = 0;
         } else {
-          msg.textContent = "Verzenden lukt nu even niet. Probeer het later opnieuw of stuur direct een bericht.";
+          msg.textContent = "Verzenden lukt nu even niet. Probeer later opnieuw of stuur direct een bericht.";
         }
       } catch (err) {
-        msg.textContent = "Netwerkfout. Controleer je verbinding en probeer opnieuw.";
+        msg.textContent = "Netwerkfout. Check je verbinding en probeer opnieuw.";
       } finally {
         btn.disabled = false;
       }
