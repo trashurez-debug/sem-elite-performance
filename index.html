@@ -26,20 +26,27 @@
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{height:100%}
 
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background:#070709;
+      background:var(--bg);
       color:var(--text);
       overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max), calc(100% - 48px)); margin-inline:auto;}
-    .section{padding:86px 0;}
-    .section.tight{padding:64px 0;}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 48px));
+      margin-inline:auto;
+    }
+
+    .section{padding:86px 0}
+    .section.tight{padding:64px 0}
     .center{text-align:center}
     .muted{color:var(--muted)}
     .muted2{color:var(--muted2)}
@@ -68,14 +75,14 @@
       color:var(--muted);
     }
 
-    /* TOPBAR */
+    /* HEADER */
     .site-header{
       position:fixed;
       top:0;
       left:0;
       width:100%;
       z-index:1000;
-      background:rgba(7,7,9,.9);
+      background:rgba(7,7,9,.78);
       border-bottom:1px solid rgba(255,255,255,.08);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
@@ -84,7 +91,7 @@
     .site-header-inner{
       width:min(1280px, calc(100% - 56px));
       margin:0 auto;
-      min-height:96px;
+      min-height:104px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -94,10 +101,9 @@
     .header-left{
       display:flex;
       align-items:center;
-      gap:16px;
-      flex-shrink:0;
-      height:64px;
+      gap:18px;
       min-width:0;
+      flex-shrink:1;
     }
 
     .header-logo{
@@ -105,21 +111,20 @@
       align-items:center;
       justify-content:center;
       flex-shrink:0;
-      height:64px;
+      background:transparent;
+      padding:0;
+      border:none;
+      box-shadow:none;
     }
 
     .header-logo img{
-      height:64px;
+      height:88px;
       width:auto;
-      display:block;
       object-fit:contain;
-      filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));
+      filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
     }
 
     .header-title{
-      display:flex;
-      align-items:center;
-      height:64px;
       font-size:18px;
       font-weight:800;
       letter-spacing:.08em;
@@ -160,7 +165,7 @@
       min-height:88vh;
       display:flex;
       align-items:center;
-      padding:172px 0 74px;
+      padding:182px 0 74px;
       border-bottom:1px solid rgba(255,255,255,.06);
       background:
         linear-gradient(180deg, rgba(0,0,0,.78), rgba(0,0,0,.84)),
@@ -327,7 +332,7 @@
       padding:0 6px;
     }
 
-    /* CLUB LOGOS */
+    /* CLUBS */
     .club-strip{
       margin-top:22px;
       padding:34px 28px;
@@ -374,18 +379,12 @@
       width:80px;
       height:80px;
       object-fit:contain;
-      display:block;
       margin:auto;
       filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));
     }
 
-    .logo-denbosch{
-      transform:scale(1.15);
-    }
-
-    .logo-vitesse{
-      transform:scale(1.15);
-    }
+    .logo-denbosch{transform:scale(1.15)}
+    .logo-vitesse{transform:scale(1.15)}
 
     .club-name{
       font-size:14px;
@@ -541,7 +540,7 @@
       align-items:center;
       gap:12px;
       justify-content:center;
-      color:rgba(255,0,0,.75);
+      color:rgba(255,80,80,.86);
       font-weight:600;
     }
 
@@ -671,9 +670,7 @@
       margin-inline:auto;
     }
 
-    .field{
-      margin:18px 0 0;
-    }
+    .field{margin:18px 0 0}
 
     label{
       display:block;
@@ -681,6 +678,7 @@
       color:rgba(255,255,255,.78);
       margin:0 0 8px;
       font-weight:700;
+      text-align:left;
     }
 
     input, select, textarea{
@@ -702,6 +700,25 @@
     input::placeholder,
     textarea::placeholder{
       color:rgba(255,255,255,.35);
+    }
+
+    select{
+      background-color:#0f1014;
+      color:#ffffff;
+      border:1px solid rgba(255,255,255,.15);
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+    }
+
+    select option{
+      background-color:#0f1014;
+      color:#ffffff;
+    }
+
+    select option:checked{
+      background-color:#121318;
+      color:#ffffff;
     }
 
     .form-actions{
@@ -774,9 +791,7 @@
     }
 
     @media (max-width: 1100px){
-      .club-logos{
-        grid-template-columns:repeat(3, 1fr);
-      }
+      .club-logos{grid-template-columns:repeat(3, 1fr)}
     }
 
     @media (max-width: 980px){
@@ -784,49 +799,28 @@
       .pricing{grid-template-columns:1fr; gap:16px}
       .focus{grid-template-columns:1fr; gap:14px}
       .forwho{grid-template-columns:1fr}
-      .hero{min-height:78vh; padding-top:150px}
+      .hero{min-height:78vh; padding-top:162px}
       .price-card.popular{transform:none}
+
       .site-header-inner{
         width:min(100%, calc(100% - 32px));
-        min-height:86px;
+        min-height:92px;
       }
-      .header-logo img{
-        height:56px;
-      }
-      .header-left{
-        height:56px;
-      }
-      .header-logo{
-        height:56px;
-      }
-      .header-title{
-        height:56px;
-        font-size:15px;
-      }
+
+      .header-logo img{height:72px}
+      .header-title{font-size:15px}
     }
 
     @media (max-width: 640px){
       .site-header-inner{
-        min-height:78px;
+        min-height:82px;
         width:calc(100% - 24px);
         gap:14px;
       }
 
-      .header-logo img{
-        height:46px;
-      }
-
-      .header-left{
-        gap:10px;
-        height:46px;
-      }
-
-      .header-logo{
-        height:46px;
-      }
-
+      .header-left{gap:10px}
+      .header-logo img{height:58px}
       .header-title{
-        height:46px;
         font-size:11px;
         letter-spacing:.05em;
       }
@@ -837,22 +831,15 @@
         border-radius:12px;
       }
 
-      .hero{
-        padding-top:136px;
-      }
-
-      .hero-badges{
-        gap:10px;
-      }
+      .hero{padding-top:144px}
+      .hero-badges{gap:10px}
 
       .badge-item{
         font-size:12px;
         padding:7px 12px;
       }
 
-      .hero-stats{
-        gap:24px;
-      }
+      .hero-stats{gap:24px}
 
       .club-logos{
         grid-template-columns:repeat(2, 1fr);
@@ -869,28 +856,7 @@
         height:66px;
       }
 
-      .club-name{
-        font-size:13px;
-      }
-    }
-
-    select{
-      background-color:#0f1014;
-      color:#ffffff;
-      border:1px solid rgba(255,255,255,.15);
-      appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
-    }
-
-    select option{
-      background-color:#0f1014;
-      color:#ffffff;
-    }
-
-    select option:checked{
-      background-color:#121318;
-      color:#ffffff;
+      .club-name{font-size:13px}
     }
   </style>
 </head>
@@ -912,18 +878,18 @@
 
   <header class="hero" id="top">
     <div class="container hero-inner center">
-      <h2 class="h2">Off-season Camp</h2>
+      <h1 class="h2">Off-season Camp</h1>
 
       <p class="sub">Ervaar de trainingsstandaard van topatleten.</p>
-      <p class="sub" style="margin-top:8px; opacity:.9;">Het 12-daagse high performance camp waar spelers sneller, sterker en explosiever worden</p>
+      <p class="sub" style="margin-top:8px; opacity:.9;">Het 12-daagse high-performance camp waar spelers sneller, sterker en explosiever worden.</p>
 
       <div class="cta">
         <button class="btn" data-scroll="#inschrijven">Claim mijn plek in het Elite Performance Camp</button>
-        <div class="note">Maximaal 8 spelers • BVO O17–O21 • Proffesioneel en Top Amateur.</div>
+        <div class="note">Maximaal 8 spelers • BVO O17–O21 • Professioneel en topamateur.</div>
 
         <div class="hero-badges">
           <div class="badge-item">⚡ 12 trainingsdagen</div>
-          <div class="badge-item">🏆 O17 t/m Prof</div>
+          <div class="badge-item">🏆 O17 t/m prof</div>
           <div class="badge-item">📍 Regio Breda</div>
         </div>
       </div>
@@ -960,7 +926,7 @@
               <path d="M9 14l-1 8 4-2 4 2-1-8"/>
             </svg>
           </div>
-          <p>4 jaar Performance Coach bij NAC</p>
+          <p>4 jaar performance coach bij NAC</p>
         </div>
 
         <div class="card">
@@ -974,7 +940,7 @@
               <path d="M10 21v-3h4v3"/>
             </svg>
           </div>
-          <p>Voetbalverleden Feyenoord</p>
+          <p>Voetbalverleden bij Feyenoord</p>
         </div>
       </div>
 
@@ -1030,7 +996,7 @@
 
   <section class="section tight" id="pakketten">
     <div class="container center">
-      <h2 class="h2">Kies het niveau dat bij jou past.</h2>
+      <h2 class="h2">Kies het niveau dat bij jou past</h2>
 
       <div class="pricing">
         <div class="price-card">
@@ -1048,10 +1014,10 @@
               <span>12 dagen trainingscamp</span>
             </li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Testdag + Action Types Profilering</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>10m sprint</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>30–40m sprint</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>HRmax &amp; HR herstel</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Kracht monitoring</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>10 meter sprint</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>30–40 meter sprint</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>HRmax &amp; HR-herstel</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Krachtmonitoring</span></li>
           </ul>
 
           <button class="btn" data-select="Foundation" data-scroll="#inschrijven">Meld je aan</button>
@@ -1068,7 +1034,7 @@
 
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Foundation</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Prep &amp; cooling down begeleiding</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Begeleiding bij prep &amp; cooling-down</span></li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Kledingpakket</span></li>
           </ul>
 
@@ -1082,10 +1048,10 @@
 
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Performance</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>MAS test</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Conditie</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Kracht</span></li>
-            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Body Movements</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>MAS-test</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – conditie</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – kracht</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – body movements</span></li>
           </ul>
 
           <button class="btn" data-select="All-in" data-scroll="#inschrijven">Ik ga all-in</button>
@@ -1096,7 +1062,7 @@
 
   <section class="statement" id="waarom">
     <div class="container center">
-      <h2 class="h2">De meeste spelers worden<br>in de zomer zwakker.</h2>
+      <h2 class="h2">De meeste spelers worden<br>in de zomer zwakker</h2>
 
       <div class="xlist" role="list">
         <div class="xrow" role="listitem">
@@ -1134,7 +1100,7 @@
 
   <section class="section" id="focus">
     <div class="container center">
-      <h2 class="h2">Dit 12 daagse High-Performance blok<br>richt zich op:</h2>
+      <h2 class="h2">Dit 12-daagse high-performance blok<br>richt zich op:</h2>
 
       <div class="focus">
         <div class="tile">
@@ -1203,15 +1169,15 @@
   <section class="section tight" id="programma">
     <div class="container center">
       <h2 class="h2">12 dagen – 2 weken</h2>
-      <div class="muted2" style="margin-top:10px;">Inclusief intake, starttest, exit test en monitoring.</div>
+      <div class="muted2" style="margin-top:10px;">Inclusief intake, starttest, exit-test en monitoring.</div>
 
       <div class="schedule">
         <div class="row"><div class="day">Maandag</div><div class="type">Veld</div></div>
         <div class="row"><div class="day">Dinsdag</div><div class="type">Kracht</div></div>
-        <div class="row"><div class="day">Woensdag</div><div class="type">Body Movements</div></div>
+        <div class="row"><div class="day">Woensdag</div><div class="type">Body movements</div></div>
         <div class="row"><div class="day">Donderdag</div><div class="type">Veld</div></div>
         <div class="row"><div class="day">Vrijdag</div><div class="type">Kracht</div></div>
-        <div class="row"><div class="day">Zaterdag</div><div class="type">Body Movements</div></div>
+        <div class="row"><div class="day">Zaterdag</div><div class="type">Body movements</div></div>
         <div class="row"><div class="day">Zondag</div><div class="type">Rust</div></div>
       </div>
     </div>
@@ -1229,7 +1195,7 @@
               <path d="M6 21a6 6 0 0 1 12 0"/>
             </svg>
           </div>
-          <p>O17 BVO t/m Prof en Top Amateur</p>
+          <p>O17 BVO t/m prof en topamateur</p>
         </div>
 
         <div class="card">
@@ -1281,7 +1247,7 @@
           </div>
 
           <div class="field">
-            <label for="email">Email *</label>
+            <label for="email">E-mail *</label>
             <input id="email" name="email" type="email" required>
           </div>
 
@@ -1318,12 +1284,14 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <img src="assets/logo.png"
-             alt="Sem Elite Performance logo"
-             style="width:70px; opacity:0.9; filter:drop-shadow(0 6px 14px rgba(0,0,0,.6));"
-             onerror="this.style.display='none'">
+        <img
+          src="assets/logo.png"
+          alt="Sem Elite Performance logo"
+          style="width:78px; opacity:0.92; filter:drop-shadow(0 6px 14px rgba(0,0,0,.6));"
+          onerror="this.style.display='none'"
+        >
 
-        <div class="footer-social-title">VOLG ONS OP SOCIAL MEDIA</div>
+        <div class="footer-social-title">Volg ons op social media</div>
 
         <div class="social-icons">
           <a href="https://www.instagram.com/semeliteperformance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1364,11 +1332,11 @@
           "All-in": "All-in (€550)"
         };
 
-        const val = map[choice] || "";
+        const value = map[choice] || "";
 
-        [...select.options].forEach(opt => {
-          if (opt.textContent.trim() === val) {
-            select.value = opt.textContent.trim();
+        [...select.options].forEach(option => {
+          if (option.textContent.trim() === value) {
+            select.value = option.textContent.trim();
           }
         });
       });
@@ -1400,13 +1368,14 @@
         if (res.ok) {
           msg.textContent = "Gelukt! Je inschrijving is verzonden. Ik neem snel contact met je op.";
           form.reset();
+
           const pakket = document.getElementById('pakket');
           if (pakket) pakket.selectedIndex = 0;
         } else {
-          msg.textContent = "Verzenden lukt nu even niet. Probeer later opnieuw of stuur direct een bericht.";
+          msg.textContent = "Verzenden lukt nu even niet. Probeer het later opnieuw of stuur direct een bericht.";
         }
       } catch (err) {
-        msg.textContent = "Netwerkfout. Check je verbinding en probeer opnieuw.";
+        msg.textContent = "Netwerkfout. Controleer je verbinding en probeer opnieuw.";
       } finally {
         btn.disabled = false;
       }
