@@ -303,6 +303,129 @@
       padding:0 6px;
     }
 
+    /* TESTIMONIALS */
+    .testimonials{
+      padding:46px 0 38px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:
+        radial-gradient(760px 280px at 50% 0%, rgba(255,255,255,.05), transparent 70%),
+        linear-gradient(180deg, #070709 0%, #090b0e 100%);
+      overflow:hidden;
+    }
+
+    .testimonials-head{
+      text-align:center;
+      margin-bottom:24px;
+    }
+
+    .testimonials-kicker{
+      margin:0 0 10px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.48);
+    }
+
+    .testimonials-title{
+      margin:0;
+      font-size:clamp(28px, 4vw, 42px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      font-weight:800;
+    }
+
+    .testimonials-sub{
+      margin:12px auto 0;
+      max-width:760px;
+      font-size:16px;
+      line-height:1.6;
+      color:rgba(255,255,255,.62);
+    }
+
+    .testimonials-slider{
+      position:relative;
+      overflow:hidden;
+      mask-image:linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+      -webkit-mask-image:linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    }
+
+    .testimonials-track{
+      display:flex;
+      gap:18px;
+      width:max-content;
+      animation:testimonials-marquee-right 34s linear infinite;
+      will-change:transform;
+    }
+
+    .testimonial-card{
+      width:340px;
+      flex:0 0 340px;
+      padding:24px 22px;
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 18px 40px rgba(0,0,0,.30);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .testimonial-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:radial-gradient(280px 140px at 20% 0%, rgba(255,255,255,.06), transparent 70%);
+      pointer-events:none;
+    }
+
+    .testimonial-card > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .testimonial-stars{
+      display:flex;
+      gap:4px;
+      margin-bottom:14px;
+      color:#fff;
+      opacity:.92;
+      font-size:14px;
+    }
+
+    .testimonial-text{
+      margin:0;
+      color:rgba(255,255,255,.84);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .testimonial-author{
+      margin-top:18px;
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
+
+    .testimonial-name{
+      font-size:15px;
+      font-weight:700;
+      color:#fff;
+    }
+
+    .testimonial-role{
+      font-size:13px;
+      color:rgba(255,255,255,.52);
+    }
+
+    @keyframes testimonials-marquee-right{
+      from{
+        transform:translateX(-50%);
+      }
+      to{
+        transform:translateX(0);
+      }
+    }
+
     #coach{
       padding:36px 0 70px;
     }
@@ -945,6 +1068,11 @@
       .elite-accordion-content-inner{padding:0 20px}
       .elite-accordion-content-inner p{padding-bottom:22px;font-size:15px;line-height:1.75}
       .forwho-wrap{padding:18px;border-radius:24px}
+
+      .testimonial-card{
+        width:300px;
+        flex:0 0 300px;
+      }
     }
 
     @media (max-width: 640px){
@@ -963,6 +1091,20 @@
       .club-logo{width:100px;height:100px}
       .club-logo img{width:66px;height:66px}
       .club-name{font-size:13px}
+
+      .testimonials{
+        padding:34px 0 24px;
+      }
+
+      .testimonial-card{
+        width:270px;
+        flex:0 0 270px;
+        padding:20px 18px;
+      }
+
+      .testimonial-text{
+        font-size:14px;
+      }
 
       .forwho-grid{
         grid-template-columns:1fr;
@@ -1040,6 +1182,192 @@
       </div>
     </div>
   </header>
+
+  <section class="testimonials" aria-label="Testimonials">
+    <div class="container">
+      <div class="testimonials-head">
+        <p class="testimonials-kicker">Testimonials</p>
+        <h2 class="testimonials-title">Wat spelers over Sem zeggen</h2>
+        <p class="testimonials-sub">
+          Ervaringen van ambitieuze spelers die bewust investeren in snelheid, kracht en explosiviteit.
+        </p>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonials-track">
+          <article class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Door Sem ben ik merkbaar sneller geworden in mijn eerste meters. Dat verschil voel je direct in wedstrijden.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler O19</span>
+              <span class="testimonial-role">BVO jeugd</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “De trainingen zijn zwaar, maar alles heeft een doel. Ik ben explosiever geworden en voel me veel sterker op het veld.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler 1e elftal</span>
+              <span class="testimonial-role">Top amateur</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Sem kijkt niet alleen naar hard trainen, maar juist naar details, uitvoering en wat je als speler echt nodig hebt.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler O17</span>
+              <span class="testimonial-role">Jeugdopleiding</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Ik kwam na de zomer fitter terug dan ooit. Dat gaf me meteen een voorsprong in de voorbereiding.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler O21</span>
+              <span class="testimonial-role">Prestatiegericht traject</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Wat ik vooral sterk vind is dat Sem je begrijpt als speler. Je voelt dat hij zelf uit die wereld komt.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler</span>
+              <span class="testimonial-role">Selectiespeler</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Door Sem ben ik merkbaar sneller geworden in mijn eerste meters. Dat verschil voel je direct in wedstrijden.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler O19</span>
+              <span class="testimonial-role">BVO jeugd</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “De trainingen zijn zwaar, maar alles heeft een doel. Ik ben explosiever geworden en voel me veel sterker op het veld.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler 1e elftal</span>
+              <span class="testimonial-role">Top amateur</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Sem kijkt niet alleen naar hard trainen, maar juist naar details, uitvoering en wat je als speler echt nodig hebt.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler O17</span>
+              <span class="testimonial-role">Jeugdopleiding</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Ik kwam na de zomer fitter terug dan ooit. Dat gaf me meteen een voorsprong in de voorbereiding.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler O21</span>
+              <span class="testimonial-role">Prestatiegericht traject</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              “Wat ik vooral sterk vind is dat Sem je begrijpt als speler. Je voelt dat hij zelf uit die wereld komt.”
+            </p>
+            <div class="testimonial-author">
+              <span class="testimonial-name">Speler</span>
+              <span class="testimonial-role">Selectiespeler</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="coach">
     <div class="container">
@@ -1490,7 +1818,7 @@
             </select>
           </div>
           
-         <div class="form-actions">
+          <div class="form-actions">
             <button class="btn" type="submit">Definitief inschrijven</button>
           </div>
 
