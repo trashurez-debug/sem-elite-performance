@@ -18,9 +18,10 @@
 
       --card:#111821;
       --card-2:#141d27;
+
       --surface:rgba(255,255,255,.035);
       --surface-2:rgba(255,255,255,.05);
-      --surface-3:rgba(255,255,255,.065);
+      --surface-3:rgba(255,255,255,.07);
 
       --stroke:rgba(255,255,255,.08);
       --stroke-strong:rgba(255,255,255,.14);
@@ -53,7 +54,7 @@
       --radius-xl:36px;
 
       --max:1140px;
-      --content-max:840px;
+      --content-max:860px;
     }
 
     *{box-sizing:border-box}
@@ -122,9 +123,9 @@
 
     .h1{
       margin:0;
-      font-size:clamp(52px, 7vw, 92px);
-      line-height:.94;
-      letter-spacing:-.055em;
+      font-size:clamp(52px, 7vw, 94px);
+      line-height:.92;
+      letter-spacing:-.06em;
       font-weight:900;
     }
 
@@ -150,7 +151,7 @@
       left:0;
       width:100%;
       z-index:1000;
-      background:rgba(6,8,11,.70);
+      background:rgba(6,8,11,.72);
       border-bottom:1px solid rgba(255,255,255,.06);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
@@ -223,17 +224,15 @@
       filter:brightness(1.03);
     }
 
-    .header-cta:active{transform:translateY(0)}
-
     .hero{
       position:relative;
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding:180px 0 96px;
+      padding:184px 0 96px;
       border-bottom:1px solid rgba(255,255,255,.06);
       background:
-        linear-gradient(180deg, rgba(4,6,9,.56), rgba(6,9,13,.84)),
+        linear-gradient(180deg, rgba(4,6,9,.55), rgba(6,9,13,.84)),
         url("assets/hero.jpg") center/cover no-repeat;
       overflow:hidden;
     }
@@ -243,9 +242,9 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(880px 460px at 50% 18%, rgba(57,229,140,.08), transparent 70%),
-        radial-gradient(980px 540px at 50% 44%, rgba(0,0,0,.06), rgba(0,0,0,.66) 70%),
-        linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.28) 38%, rgba(0,0,0,.64) 100%);
+        radial-gradient(900px 460px at 50% 16%, rgba(57,229,140,.08), transparent 70%),
+        radial-gradient(980px 540px at 50% 44%, rgba(0,0,0,.05), rgba(0,0,0,.68) 70%),
+        linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.28) 38%, rgba(0,0,0,.64) 100%);
       pointer-events:none;
     }
 
@@ -253,7 +252,7 @@
       position:relative;
       z-index:1;
       text-align:center;
-      max-width:1000px;
+      max-width:1020px;
       margin:0 auto;
     }
 
@@ -266,10 +265,18 @@
     }
 
     .hero .sub{
-      max-width:720px;
+      max-width:760px;
       font-size:19px;
       line-height:1.72;
-      color:rgba(245,247,250,.78);
+      color:rgba(245,247,250,.80);
+    }
+
+    .hero-value-line{
+      margin:18px auto 0;
+      max-width:760px;
+      font-size:15px;
+      line-height:1.7;
+      color:rgba(245,247,250,.64);
     }
 
     .hero-actions{
@@ -328,15 +335,28 @@
       filter:none;
     }
 
-    .hero-note{
-      margin-top:14px;
+    .hero-proof{
+      margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+    }
+
+    .proof-pill{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
       font-size:13px;
-      color:rgba(245,247,250,.56);
-      letter-spacing:.01em;
+      font-weight:700;
+      color:rgba(245,247,250,.88);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
     }
 
     .hero-feature-grid{
-      margin-top:42px;
+      margin-top:40px;
       display:grid;
       grid-template-columns:repeat(3, minmax(190px, 240px));
       justify-content:center;
@@ -368,8 +388,7 @@
       content:"";
       position:absolute;
       inset:-1px;
-      background:
-        radial-gradient(360px 180px at 50% 0%, rgba(255,255,255,.05), transparent 70%);
+      background:radial-gradient(360px 180px at 50% 0%, rgba(255,255,255,.05), transparent 70%);
       pointer-events:none;
     }
 
@@ -414,6 +433,40 @@
       max-width:220px;
       margin:0 auto;
       letter-spacing:-.01em;
+    }
+
+    .quick-trust{
+      padding:22px 0 0;
+    }
+
+    .quick-trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:24px;
+    }
+
+    .trust-card{
+      padding:22px 20px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+      box-shadow:var(--shadow-sm);
+      text-align:left;
+    }
+
+    .trust-title{
+      font-size:18px;
+      font-weight:800;
+      letter-spacing:-.02em;
+      margin:0 0 8px;
+    }
+
+    .trust-text{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
     }
 
     .testimonials{
@@ -532,8 +585,7 @@
     }
 
     .panel{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
       border:1px solid rgba(255,255,255,.08);
       border-radius:var(--radius-xl);
       box-shadow:var(--shadow-lg);
@@ -644,7 +696,7 @@
     }
 
     .forwho-box{
-      min-height:170px;
+      min-height:172px;
       padding:22px 18px;
       border-radius:24px;
       border:1px solid rgba(255,255,255,.09);
@@ -816,6 +868,21 @@
       font-size:15px;
     }
 
+    .offer-banner{
+      margin-top:40px;
+      padding:18px 20px;
+      border-radius:18px;
+      border:1px solid var(--accent-stroke);
+      background:linear-gradient(180deg, rgba(57,229,140,.10), rgba(57,229,140,.05));
+      color:rgba(245,247,250,.92);
+      font-size:15px;
+      line-height:1.7;
+      font-weight:600;
+      max-width:900px;
+      margin-inline:auto;
+      box-shadow:0 18px 40px rgba(0,0,0,.18);
+    }
+
     .pricing{
       margin-top:44px;
       display:grid;
@@ -832,7 +899,7 @@
       padding:30px 28px 24px;
       position:relative;
       overflow:hidden;
-      min-height:540px;
+      min-height:560px;
       transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
 
@@ -903,6 +970,14 @@
       text-align:center;
     }
 
+    .plan-tagline{
+      margin:-6px 0 20px;
+      text-align:center;
+      font-size:13px;
+      color:rgba(245,247,250,.80);
+      font-weight:700;
+    }
+
     .list{
       margin:18px 0 28px;
       padding:0;
@@ -944,6 +1019,13 @@
       padding:15px 18px;
       border-radius:14px;
       min-width:0;
+    }
+
+    .pricing-note{
+      margin-top:18px;
+      color:var(--muted2);
+      font-size:14px;
+      line-height:1.7;
     }
 
     .sem-premium-story-section{
@@ -1022,8 +1104,7 @@
     .sem-premium-image-overlay{
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.2) 42%, rgba(0,0,0,.72) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.2) 42%, rgba(0,0,0,.72) 100%);
       pointer-events:none;
     }
 
@@ -1181,10 +1262,48 @@
       text-align:left;
     }
 
+    .faq-grid{
+      display:grid;
+      gap:14px;
+      max-width:920px;
+      margin:40px auto 0;
+    }
+
+    .faq-item{
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+      padding:22px 22px 20px;
+      text-align:left;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .faq-q{
+      margin:0 0 8px;
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .faq-a{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.75;
+    }
+
     .form-shell{
       max-width:860px;
       margin:38px auto 0;
       padding:30px;
+    }
+
+    .form-top-note{
+      margin:0 auto 20px;
+      max-width:650px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.75;
     }
 
     .form-wrap{
@@ -1235,6 +1354,13 @@
       padding:17px 18px;
       border-radius:14px;
       font-size:16px;
+    }
+
+    .micro-trust{
+      margin-top:16px;
+      font-size:13px;
+      color:var(--muted2);
+      line-height:1.7;
     }
 
     footer{
@@ -1314,7 +1440,8 @@
       .sem-premium-story-grid{grid-template-columns:1fr}
       .sem-premium-image-card{position:relative;top:auto;min-height:620px}
       .sem-premium-image{min-height:620px}
-      .forwho-grid{grid-template-columns:repeat(2, 1fr)}
+      .forwho-grid,
+      .quick-trust-grid{grid-template-columns:repeat(2, 1fr)}
     }
 
     @media (max-width: 980px){
@@ -1352,6 +1479,7 @@
       .hero-actions{flex-direction:column}
       .btn,.btn-secondary{width:100%}
       .form-shell{padding:22px}
+      .quick-trust-grid{grid-template-columns:1fr}
     }
 
     @media (max-width: 640px){
@@ -1390,7 +1518,7 @@
         </a>
         <a href="#top" class="header-title">Sem Elite Performance Camp</a>
       </div>
-      <button class="header-cta" data-scroll="#inschrijven">Claim je plek</button>
+      <button class="header-cta" data-scroll="#inschrijven">Reserveer jouw plek</button>
     </div>
   </div>
 
@@ -1398,15 +1526,24 @@
     <div class="container">
       <div class="hero-inner">
         <div class="eyebrow">Elite off-season development</div>
-        <h1 class="h1">ELITE SUMMER<br>SPEED CAMP</h1>
-        <p class="sub">Word sneller, explosiever en dominanter op het veld. Voor ambitieuze spelers die deze zomer niet willen stilstaan, maar een fysieke voorsprong willen opbouwen.</p>
+        <h1 class="h1">KOM STERKER,<br>SNELLER EN<br>EXPLOSIEVER TERUG</h1>
+        <p class="sub">
+          Het Elite Summer Speed Camp is voor ambitieuze voetballers die deze zomer niet willen terugvallen, maar een fysieke voorsprong willen opbouwen voor het nieuwe seizoen.
+        </p>
+        <div class="hero-value-line">
+          10 trainingsdagen · maximale aandacht · elite performance focus · voor spelers die méér willen dan gemiddeld
+        </div>
 
         <div class="hero-actions">
           <button class="btn" data-scroll="#inschrijven">Claim mijn plek</button>
           <button class="btn btn-secondary" data-scroll="#pakketten">Bekijk pakketten</button>
         </div>
 
-        <div class="hero-note">Maximaal 8 spelers per groep · elite performance focus</div>
+        <div class="hero-proof">
+          <div class="proof-pill">Max 8 spelers per groep</div>
+          <div class="proof-pill">Begeleiding vanuit profomgeving</div>
+          <div class="proof-pill">Gericht op transfer naar het veld</div>
+        </div>
 
         <div class="hero-feature-grid">
           <div class="hero-feature-box">
@@ -1429,8 +1566,8 @@
                 <path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z"/>
               </svg>
             </div>
-            <div class="hero-feature-kicker">Training</div>
-            <div class="hero-feature-text">Elite Performance Training</div>
+            <div class="hero-feature-kicker">Focus</div>
+            <div class="hero-feature-text">Snelheid · Kracht · Explosiviteit</div>
           </div>
 
           <div class="hero-feature-box">
@@ -1447,6 +1584,35 @@
       </div>
     </div>
   </header>
+
+  <section class="section tight quick-trust">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Waarom dit werkt</div>
+        <h2 class="h2" style="margin-top:16px;">Geen standaard zomerwerk. Wel een fysieke voorsprong.</h2>
+        <p class="sub">
+          Dit camp is gebouwd voor spelers die bewust investeren in prestaties. Niet alleen harder trainen, maar slimmer en doelgerichter.
+        </p>
+      </div>
+
+      <div class="quick-trust-grid">
+        <div class="trust-card">
+          <h3 class="trust-title">Kleine groep, hoge kwaliteit</h3>
+          <p class="trust-text">Door te werken met maximaal 8 spelers per groep is er ruimte voor aandacht, detail, coaching en echte progressie.</p>
+        </div>
+
+        <div class="trust-card">
+          <h3 class="trust-title">Transfer naar het veld</h3>
+          <p class="trust-text">Alles is gericht op kwaliteiten die zichtbaar worden in wedstrijden: eerste meters, explosiviteit, kracht en functioneel bewegen.</p>
+        </div>
+
+        <div class="trust-card">
+          <h3 class="trust-title">Professionele standaard</h3>
+          <p class="trust-text">De aanpak is niet gebaseerd op hype, maar op ervaring, structuur en performance coaching uit de voetbalomgeving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="testimonials" aria-label="Testimonials">
     <div class="container">
@@ -1704,6 +1870,7 @@
       <div class="section-head">
         <div class="eyebrow">Waarom nu?</div>
         <h2 class="h2" style="margin-top:16px;">De meeste spelers worden in de zomer zwakker.</h2>
+        <p class="sub">Dat is precies waarom deze periode het verschil maakt tussen terugkomen op niveau óf terugkomen met voorsprong.</p>
       </div>
 
       <div class="xlist" role="list">
@@ -1741,8 +1908,8 @@
     <div class="container center">
       <div class="section-head">
         <div class="eyebrow">Wat je ontwikkelt</div>
-        <h2 class="h2" style="margin-top:16px;">HET ELITE SUMMER SPEED CAMP</h2>
-        <p class="sub">In deze 10-daagse camp bouw je gericht aan de fysieke kwaliteiten die direct verschil maken op het veld.</p>
+        <h2 class="h2" style="margin-top:16px;">Waar je in 10 dagen gericht aan bouwt</h2>
+        <p class="sub">In deze camp train je de fysieke kwaliteiten die direct zichtbaar worden in jouw spel.</p>
       </div>
 
       <div class="focus">
@@ -1785,6 +1952,10 @@
           <div class="tile-title">Voetbal-specifieke snelheid</div>
         </div>
       </div>
+
+      <div class="offer-banner">
+        Voor spelers die deze zomer niet alleen fit willen blijven, maar bewust willen bouwen aan een lichaam dat sneller reageert, krachtiger beweegt en meer transfer heeft naar het veld.
+      </div>
     </div>
   </section>
 
@@ -1792,15 +1963,16 @@
     <div class="container center">
       <div class="section-head">
         <div class="eyebrow">Pakketten</div>
-        <h2 class="h2" style="margin-top:16px;">Kies het niveau dat bij jou past.</h2>
-        <p class="sub">Drie trajecten, afgestemd op ambitie, begeleiding en persoonlijke verdieping.</p>
+        <h2 class="h2" style="margin-top:16px;">Kies het niveau dat bij jouw ambitie past</h2>
+        <p class="sub">Drie trajecten, afgestemd op hoeveel begeleiding, verdieping en personalisatie jij deze zomer wilt.</p>
       </div>
 
       <div class="pricing">
         <div class="price-card">
           <div class="plan-title">FOUNDATION CAMP</div>
           <div class="price">€375</div>
-          <p class="price-sub">Voor spelers die hun basis willen behouden.</p>
+          <p class="price-sub">Voor spelers die hun basis sterk willen houden.</p>
+          <div class="plan-tagline">Sterke basis · duidelijke structuur</div>
 
           <ul class="list">
             <li class="li"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>10 dagen trainingscamp</span></li>
@@ -1810,14 +1982,15 @@
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Action Types Profilering</span></li>
           </ul>
 
-          <button class="btn" data-select="Foundation" data-scroll="#inschrijven">Claim je plek</button>
+          <button class="btn" data-select="Foundation" data-scroll="#inschrijven">Kies Foundation</button>
         </div>
 
         <div class="price-card popular">
-          <div class="badge-wrapper"><div class="badge">AANBEVOLEN</div></div>
+          <div class="badge-wrapper"><div class="badge">MEEST GEKOZEN</div></div>
           <div class="plan-title">PERFORMANCE CAMP</div>
           <div class="price">€450</div>
-          <p class="price-sub">Voor spelers die fysiek het verschil willen maken.</p>
+          <p class="price-sub">Voor spelers die fysiek verschil willen maken.</p>
+          <div class="plan-tagline">Beste balans tussen resultaat en begeleiding</div>
 
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Foundation</span></li>
@@ -1825,13 +1998,14 @@
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Kledingpakket</span></li>
           </ul>
 
-          <button class="btn" data-select="Performance" data-scroll="#inschrijven">Reserveer mijn plek</button>
+          <button class="btn" data-select="Performance" data-scroll="#inschrijven">Kies Performance</button>
         </div>
 
         <div class="price-card">
           <div class="plan-title">ELITE CAMP</div>
           <div class="price">€550</div>
-          <p class="price-sub">Voor spelers die all-in gaan.</p>
+          <p class="price-sub">Voor spelers die maximaal willen investeren.</p>
+          <div class="plan-tagline">All-in begeleiding en extra personalisatie</div>
 
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Alles van Performance</span></li>
@@ -1841,8 +2015,12 @@
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Body Movements</span></li>
           </ul>
 
-          <button class="btn" data-select="All-in" data-scroll="#inschrijven">Ik ga all-in</button>
+          <button class="btn" data-select="All-in" data-scroll="#inschrijven">Kies Elite</button>
         </div>
+      </div>
+
+      <div class="pricing-note">
+        Beperkte plekken per groep. Wie vroeg reserveert, heeft de meeste keuze in pakket en plek.
       </div>
     </div>
   </section>
@@ -1904,7 +2082,7 @@
                     Met een voetbalachtergrond van acht jaar in de jeugdopleiding van Feyenoord – van O12 tot Jong Feyenoord – en mijn officieuze debuut in het eerste elftal op zeventienjarige leeftijd, begrijp ik wat er nodig is om op topniveau te blijven presteren. Niet alleen fysiek en conditioneel, maar ook op het gebied van discipline, belasting, focus, tegenslagen en de druk die daar dagelijks bij komt kijken.
                   </p>
                   <p>
-                    Ik weet wat spelers meemaken, zowel in euforische momenten als in moeilijke periodes. Daardoor kan ik spelers niet alleen fysiek begeleiden, maar ook begrijpen en ondersteunen in wat zij doormaken.
+                    Daardoor kan ik spelers niet alleen fysiek begeleiden, maar ook begrijpen en ondersteunen in wat zij doormaken.
                   </p>
                 </div>
               </div>
@@ -1949,6 +2127,38 @@
     </div>
   </section>
 
+  <section class="section tight" id="faq">
+    <div class="container center">
+      <div class="section-head">
+        <div class="eyebrow">Veelgestelde vragen</div>
+        <h2 class="h2" style="margin-top:16px;">Praktisch en duidelijk</h2>
+        <p class="sub">De belangrijkste vragen die spelers en ouders meestal hebben voordat ze reserveren.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">Voor welk niveau is dit camp bedoeld?</h3>
+          <p class="faq-a">Voor ambitieuze spelers vanaf BVO O17 t/m 1e elftal en top amateur, of spelers met vergelijkbare prestatiedoelen en mentaliteit.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Hoe groot zijn de groepen?</h3>
+          <p class="faq-a">Er wordt gewerkt met maximaal 8 spelers per groep. Daardoor blijft de kwaliteit van coaching, aandacht en begeleiding hoog.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Wat maakt dit anders dan normaal zomertrainen?</h3>
+          <p class="faq-a">De trainingen zijn niet algemeen of vrijblijvend. Ze zijn gericht op kwaliteiten die directe transfer hebben naar jouw prestaties op het veld.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Hoe reserveer ik mijn plek?</h3>
+          <p class="faq-a">Vul hieronder je gegevens in, kies je pakket en verstuur je inschrijving. Daarna wordt contact met je opgenomen voor de volgende stap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section tight" id="inschrijven">
     <div class="container center">
       <div class="section-head">
@@ -1958,6 +2168,10 @@
       </div>
 
       <div class="panel form-shell">
+        <p class="form-top-note">
+          Vul hieronder je gegevens in en kies het pakket dat het beste past bij jouw ambitie. Na je inschrijving wordt er contact met je opgenomen.
+        </p>
+
         <div class="form-wrap">
           <form id="leadForm" action="https://formspree.io/f/xkovlnrv" method="POST">
             <input type="hidden" name="_subject" value="Nieuwe inschrijving — Sem Elite Performance (Off-season Camp)">
@@ -2001,6 +2215,10 @@
 
             <div class="form-actions">
               <button class="btn" type="submit">Definitief inschrijven</button>
+            </div>
+
+            <div class="micro-trust">
+              Beperkte plekken per groep · je gegevens worden alleen gebruikt voor contact over je inschrijving
             </div>
 
             <div id="formMsg" class="muted2" style="margin-top:12px; font-size:13px;"></div>
@@ -2058,6 +2276,9 @@
             select.value = opt.textContent.trim();
           }
         });
+
+        const form = document.querySelector('#inschrijven');
+        if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
