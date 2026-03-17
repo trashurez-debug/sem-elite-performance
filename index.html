@@ -254,6 +254,90 @@
     .stat-number{font-size:28px;font-weight:800;letter-spacing:-.02em}
     .stat-label{font-size:12px;color:rgba(255,255,255,.65);margin-top:4px}
 
+    .hero-feature-grid{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:14px;
+      max-width:860px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .hero-feature-box{
+      min-height:170px;
+      padding:20px 18px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow:0 14px 30px rgba(0,0,0,.28);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      gap:8px;
+      position:relative;
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .hero-feature-box::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:radial-gradient(360px 180px at 50% 0%, rgba(255,255,255,.05), transparent 70%);
+      pointer-events:none;
+    }
+
+    .hero-feature-box > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-feature-icon{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-feature-icon svg{
+      width:18px;
+      height:18px;
+      opacity:.95;
+    }
+
+    .hero-feature-kicker{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.45);
+    }
+
+    .hero-feature-number{
+      font-size:32px;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:-.03em;
+      color:#fff;
+    }
+
+    .hero-feature-text{
+      font-size:15px;
+      font-weight:700;
+      line-height:1.25;
+      color:rgba(255,255,255,.92);
+      max-width:220px;
+      margin:0 auto;
+      letter-spacing:-.01em;
+    }
+
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2, 1fr);
@@ -1036,6 +1120,7 @@
       .header-logo img{height:100px}
       .header-title{font-size:15px}
       .club-logos{grid-template-columns:repeat(3, 1fr);padding-top:68px}
+      .hero-feature-grid{grid-template-columns:1fr; max-width:520px}
     }
 
     @media (max-width: 768px){
@@ -1055,6 +1140,20 @@
       .testimonial-card{
         width:300px;
         flex:0 0 300px;
+      }
+
+      .hero-feature-grid{
+        grid-template-columns:1fr;
+        max-width:360px;
+      }
+
+      .hero-feature-box{
+        min-height:138px;
+        padding:18px 16px;
+      }
+
+      .hero-feature-text{
+        font-size:15px;
       }
     }
 
@@ -1162,7 +1261,43 @@
     <div class="container hero-inner center">
       <h1 class="h2">ELITE SUMMER SPEED CAMP</h1>
       <p class="sub">Word sneller, explosiever en dominanter op het veld.</p>
-      <p class="sub" style="margin-top:8px; opacity:.9;">10 Trainingsdagen<br>Elite Performance Training<br>Max 8 spelers.</p>
+
+      <div class="hero-feature-grid">
+        <div class="hero-feature-box">
+          <div class="hero-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+              <rect x="3" y="6" width="18" height="15" rx="2"/>
+              <path d="M3 10h18"/>
+            </svg>
+          </div>
+          <div class="hero-feature-kicker">Camp duur</div>
+          <div class="hero-feature-number">10</div>
+          <div class="hero-feature-text">Trainingsdagen</div>
+        </div>
+
+        <div class="hero-feature-box">
+          <div class="hero-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z"/>
+            </svg>
+          </div>
+          <div class="hero-feature-kicker">Training</div>
+          <div class="hero-feature-text">Elite Performance Training</div>
+        </div>
+
+        <div class="hero-feature-box">
+          <div class="hero-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z"/>
+              <path d="M6 21a6 6 0 0 1 12 0"/>
+            </svg>
+          </div>
+          <div class="hero-feature-kicker">Groep</div>
+          <div class="hero-feature-text">Max 8 spelers</div>
+        </div>
+      </div>
 
       <div class="cta">
         <button class="btn" data-scroll="#inschrijven">Claim mijn plek</button>
@@ -1512,6 +1647,7 @@
           <span>Ze verliezen hun voorsprong.</span>
         </div>
       </div>
+    </div>
   </section>
 
   <section class="section" id="focus">
