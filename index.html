@@ -255,28 +255,29 @@
     .stat-label{font-size:12px;color:rgba(255,255,255,.65);margin-top:4px}
 
     .hero-feature-grid{
-      margin-top:28px;
+      margin-top:40px;
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:14px;
-      max-width:860px;
+      grid-template-columns:repeat(3, minmax(180px, 220px));
+      justify-content:center;
+      gap:12px;
+      max-width:720px;
       margin-left:auto;
       margin-right:auto;
     }
 
     .hero-feature-box{
-      min-height:170px;
-      padding:20px 18px;
-      border-radius:20px;
+      min-height:112px;
+      padding:14px 14px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      box-shadow:0 14px 30px rgba(0,0,0,.28);
+      box-shadow:0 12px 24px rgba(0,0,0,.24);
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
       text-align:center;
-      gap:8px;
+      gap:6px;
       position:relative;
       overflow:hidden;
       backdrop-filter:blur(10px);
@@ -297,9 +298,9 @@
     }
 
     .hero-feature-icon{
-      width:40px;
-      height:40px;
-      border-radius:12px;
+      width:34px;
+      height:34px;
+      border-radius:10px;
       display:grid;
       place-items:center;
       background:rgba(0,0,0,.25);
@@ -307,13 +308,13 @@
     }
 
     .hero-feature-icon svg{
-      width:18px;
-      height:18px;
+      width:16px;
+      height:16px;
       opacity:.95;
     }
 
     .hero-feature-kicker{
-      font-size:10px;
+      font-size:9px;
       font-weight:700;
       letter-spacing:.14em;
       text-transform:uppercase;
@@ -321,7 +322,7 @@
     }
 
     .hero-feature-number{
-      font-size:32px;
+      font-size:24px;
       font-weight:800;
       line-height:1;
       letter-spacing:-.03em;
@@ -329,9 +330,9 @@
     }
 
     .hero-feature-text{
-      font-size:15px;
+      font-size:13px;
       font-weight:700;
-      line-height:1.25;
+      line-height:1.2;
       color:rgba(255,255,255,.92);
       max-width:220px;
       margin:0 auto;
@@ -1120,7 +1121,7 @@
       .header-logo img{height:100px}
       .header-title{font-size:15px}
       .club-logos{grid-template-columns:repeat(3, 1fr);padding-top:68px}
-      .hero-feature-grid{grid-template-columns:1fr; max-width:520px}
+      .hero-feature-grid{grid-template-columns:1fr; max-width:280px}
     }
 
     @media (max-width: 768px){
@@ -1144,16 +1145,16 @@
 
       .hero-feature-grid{
         grid-template-columns:1fr;
-        max-width:360px;
+        max-width:280px;
       }
 
       .hero-feature-box{
-        min-height:138px;
-        padding:18px 16px;
+        min-height:100px;
+        padding:14px 14px;
       }
 
       .hero-feature-text{
-        font-size:15px;
+        font-size:13px;
       }
     }
 
