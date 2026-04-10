@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sem Elite Performance — Elite Summer Speed Camp</title>
+  <title>Sem Elite Performance — Elite Off-Season Speed Camp</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +54,8 @@
 
       --max:1140px;
       --content-max:840px;
+      --hero-cream:#f3eadf;
+      --hero-orange:#f47a38;
     }
 
     *{box-sizing:border-box}
@@ -75,7 +77,7 @@
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    button, input, select, textarea{font:inherit}
+    button,input,select,textarea{font:inherit}
 
     .container{
       width:min(var(--max), calc(100% - 48px));
@@ -150,10 +152,10 @@
       left:0;
       width:100%;
       z-index:1000;
-      background:rgba(6,8,11,.70);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
+      background:rgba(6,8,11,.28);
+      border-bottom:1px solid rgba(255,255,255,.04);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .site-header-inner{
@@ -191,7 +193,7 @@
 
     .header-cta{
       appearance:none;
-      border:1px solid var(--accent-stroke);
+      border:1px solid rgba(255,255,255,.14);
       background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
       color:#07110b;
       font-weight:900;
@@ -225,10 +227,10 @@
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding:180px 0 96px;
-      border-bottom:1px solid rgba(255,255,255,.06);
+      padding:140px 0 90px;
       overflow:hidden;
       background:#05080d;
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
 
     .hero-video{
@@ -246,79 +248,64 @@
       inset:0;
       z-index:1;
       background:
-        radial-gradient(880px 460px at 50% 18%, rgba(57,229,140,.08), transparent 70%),
-        radial-gradient(980px 540px at 50% 44%, rgba(0,0,0,.10), rgba(0,0,0,.62) 70%),
-        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.34) 38%, rgba(0,0,0,.72) 100%);
+        linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.45) 40%, transparent 80%),
+        linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.7));
       pointer-events:none;
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
-      text-align:center;
-      max-width:1000px;
-      margin:0 auto;
+      max-width:700px;
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
     }
 
     .hero-title{
-      margin:0 0 28px;
-      font-size:clamp(34px, 6vw, 72px);
-      line-height:1;
-      letter-spacing:-.04em;
+      margin:0 0 24px;
+      font-size:clamp(60px, 9vw, 130px);
       font-weight:900;
+      line-height:.85;
+      letter-spacing:-.05em;
       text-transform:uppercase;
-      color:var(--text);
-      text-shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-
-    .hero .eyebrow{
-      margin-bottom:22px;
-      background:rgba(6,8,12,.36);
-      border-color:rgba(255,255,255,.10);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-    }
-
-    .hero .sub{
-      max-width:720px;
-      font-size:19px;
-      line-height:1.72;
-      color:rgba(245,247,250,.78);
+      color:var(--hero-cream);
+      text-shadow:0 8px 30px rgba(0,0,0,.28);
     }
 
     .hero-actions{
-      margin-top:34px;
       display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-wrap:wrap;
       gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
     }
 
     .btn{
       appearance:none;
-      border:1px solid var(--accent-stroke);
-      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
-      color:#07110b;
-      font-weight:900;
+      border:1px solid rgba(255,255,255,.10);
+      background:var(--hero-orange);
+      color:#fff;
+      font-weight:800;
       padding:16px 26px;
-      border-radius:14px;
+      border-radius:0;
       cursor:pointer;
       box-shadow:
-        0 14px 36px rgba(57,229,140,.14),
-        0 14px 32px rgba(0,0,0,.32);
+        0 14px 36px rgba(0,0,0,.20),
+        0 10px 24px rgba(0,0,0,.18);
       transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease, filter .14s ease, opacity .14s ease;
       font-size:15px;
-      min-width:200px;
+      min-width:210px;
+      text-transform:uppercase;
     }
 
     .btn:hover{
       transform:translateY(-1px);
-      border-color:rgba(57,229,140,.46);
       box-shadow:
-        0 18px 44px rgba(57,229,140,.14),
-        0 18px 44px rgba(0,0,0,.40);
-      filter:brightness(1.03);
+        0 18px 44px rgba(0,0,0,.24),
+        0 12px 28px rgba(0,0,0,.22);
+      filter:brightness(1.04);
     }
 
     .btn:active{
@@ -326,26 +313,33 @@
       opacity:.96;
     }
 
-    .btn-secondary{
+    .btn-light{
+      appearance:none;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
-      box-shadow:0 14px 30px rgba(0,0,0,.24);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      background:rgba(243,234,223,.96);
+      color:var(--hero-orange);
+      font-weight:800;
+      padding:16px 26px;
+      border-radius:0;
+      cursor:pointer;
+      box-shadow:0 14px 30px rgba(0,0,0,.18);
+      transition:transform .14s ease, box-shadow .14s ease, filter .14s ease, background .14s ease;
+      font-size:15px;
+      min-width:210px;
+      text-transform:uppercase;
     }
 
-    .btn-secondary:hover{
-      border-color:rgba(255,255,255,.22);
-      background:rgba(255,255,255,.075);
-      box-shadow:0 18px 42px rgba(0,0,0,.34);
+    .btn-light:hover{
+      transform:translateY(-1px);
+      background:#fff3ea;
       filter:none;
+      box-shadow:0 18px 42px rgba(0,0,0,.22);
     }
 
     .hero-note{
-      margin-top:14px;
-      font-size:13px;
-      color:rgba(245,247,250,.56);
+      margin-top:16px;
+      font-size:14px;
+      color:rgba(245,247,250,.70);
       letter-spacing:.01em;
     }
 
@@ -358,17 +352,12 @@
     }
 
     .hero-feature-grid{
-      margin-top:42px;
       display:grid;
       grid-template-columns:repeat(3, minmax(190px, 240px));
       justify-content:center;
       gap:14px;
       max-width:780px;
-      margin-inline:auto;
-    }
-
-    .hero-feature-grid-section{
-      margin-top:0;
+      margin:0 auto;
     }
 
     .hero-feature-box{
@@ -409,11 +398,7 @@
       background:var(--accent-soft);
       border:1px solid var(--accent-stroke);
       color:var(--accent);
-    }
-
-    .hero-feature-icon svg{
-      width:17px;
-      height:17px;
+      font-size:16px;
     }
 
     .hero-feature-kicker{
@@ -968,6 +953,10 @@
       padding:15px 18px;
       border-radius:14px;
       min-width:0;
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+      color:#07110b;
+      text-transform:none;
+      border:1px solid var(--accent-stroke);
     }
 
     .sem-premium-story-section{
@@ -1223,7 +1212,7 @@
       letter-spacing:.01em;
     }
 
-    input, select, textarea{
+    input,select,textarea{
       width:100%;
       padding:15px 15px;
       border-radius:14px;
@@ -1235,7 +1224,7 @@
       transition:border-color .16s ease, box-shadow .16s ease, background .16s ease, transform .16s ease;
     }
 
-    input:focus, select:focus, textarea:focus{
+    input:focus,select:focus,textarea:focus{
       border-color:var(--accent-stroke);
       box-shadow:0 0 0 4px rgba(57,229,140,.10);
       background:rgba(255,255,255,.045);
@@ -1243,7 +1232,7 @@
     }
 
     textarea{min-height:120px;resize:vertical}
-    input::placeholder, textarea::placeholder{color:rgba(245,247,250,.35)}
+    input::placeholder,textarea::placeholder{color:rgba(245,247,250,.35)}
 
     .form-actions{
       margin-top:20px;
@@ -1254,6 +1243,11 @@
       padding:17px 18px;
       border-radius:14px;
       font-size:16px;
+      min-width:0;
+      text-transform:none;
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+      color:#07110b;
+      border:1px solid var(--accent-stroke);
     }
 
     footer{
@@ -1328,7 +1322,7 @@
     select option{background-color:#10161d;color:var(--text)}
     select option:checked{background-color:#151d26;color:var(--text)}
 
-    @media (max-width: 1100px){
+    @media (max-width:1100px){
       .club-logos{grid-template-columns:repeat(3, 1fr)}
       .sem-premium-story-grid{grid-template-columns:1fr}
       .sem-premium-image-card{position:relative;top:auto;min-height:620px}
@@ -1336,7 +1330,7 @@
       .forwho-grid{grid-template-columns:repeat(3, 1fr)}
     }
 
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .section{padding:92px 0}
 
       .pricing{
@@ -1357,7 +1351,7 @@
 
       .hero{
         min-height:86vh;
-        padding-top:162px;
+        padding:128px 0 76px;
       }
 
       .price-card.popular{transform:none}
@@ -1393,7 +1387,7 @@
       .h1{font-size:clamp(46px, 10vw, 74px)}
     }
 
-    @media (max-width: 768px){
+    @media (max-width:768px){
       .section{padding:80px 0}
       .section.tight{padding:58px 0}
 
@@ -1415,6 +1409,33 @@
       .h2{
         font-size:clamp(30px, 8vw, 46px);
         line-height:1.02;
+      }
+
+      .hero{
+        min-height:78vh;
+        padding:120px 0 70px;
+      }
+
+      .hero-inner{
+        max-width:100%;
+      }
+
+      .hero-title{
+        font-size:clamp(42px, 14vw, 84px);
+        line-height:.9;
+        max-width:420px;
+        margin-bottom:20px;
+      }
+
+      .hero-actions{
+        gap:10px;
+      }
+
+      .btn,
+      .btn-light{
+        min-width:170px;
+        padding:14px 18px;
+        font-size:14px;
       }
 
       .sem-premium-story-section{
@@ -1553,11 +1574,6 @@
         border-radius:10px;
       }
 
-      .hero-feature-icon svg{
-        width:14px;
-        height:14px;
-      }
-
       .hero-feature-kicker{
         font-size:7px;
         letter-spacing:.11em;
@@ -1570,22 +1586,6 @@
       .hero-feature-text{
         font-size:10.5px;
         line-height:1.12;
-      }
-
-      .hero-actions{
-        flex-direction:row;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
-      }
-
-      .btn,
-      .btn-secondary{
-        width:auto;
-        min-width:156px;
-        padding:14px 18px;
-        font-size:14px;
-        border-radius:12px;
       }
 
       .pricing{
@@ -1673,7 +1673,7 @@
         margin-top:14px;
       }
 
-      input, select, textarea{
+      input,select,textarea{
         padding:14px 14px;
         font-size:14px;
         border-radius:12px;
@@ -1685,7 +1685,7 @@
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .site-header-inner{
         min-height:74px;
         width:calc(100% - 18px);
@@ -1709,28 +1709,17 @@
       }
 
       .hero{
-        padding-top:136px;
-        padding-bottom:62px;
+        padding:108px 0 58px;
         min-height:auto;
       }
 
       .hero-title{
-        margin-bottom:20px;
-        font-size:clamp(28px, 9vw, 40px);
-      }
-
-      .hero .eyebrow{
-        margin-bottom:16px;
-      }
-
-      .hero .sub{
-        font-size:15px;
-        line-height:1.55;
+        font-size:clamp(34px, 13vw, 58px);
+        max-width:320px;
       }
 
       .hero-note{
-        font-size:11px;
-        margin-top:10px;
+        font-size:12px;
       }
 
       .club-strip{
@@ -1831,11 +1820,7 @@
         width:26px;
         height:26px;
         border-radius:9px;
-      }
-
-      .hero-feature-icon svg{
-        width:12px;
-        height:12px;
+        font-size:12px;
       }
 
       .hero-feature-kicker{
@@ -1879,7 +1864,7 @@
       }
     }
 
-    @media (max-width: 420px){
+    @media (max-width:420px){
       .container{
         width:calc(100% - 18px);
       }
@@ -1904,10 +1889,6 @@
 
       .sub{
         font-size:14px;
-      }
-
-      .hero-title{
-        font-size:clamp(24px, 8vw, 34px);
       }
 
       .club-logo{
@@ -1938,10 +1919,6 @@
         font-size:9.5px;
       }
 
-      .hero .sub{
-        font-size:14px;
-      }
-
       .hero-feature-grid{
         grid-template-columns:repeat(3, minmax(0, 1fr));
         gap:5px;
@@ -1957,11 +1934,6 @@
         height:24px;
       }
 
-      .hero-feature-icon svg{
-        width:11px;
-        height:11px;
-      }
-
       .hero-feature-number{
         font-size:16px;
       }
@@ -1971,7 +1943,7 @@
       }
 
       .btn,
-      .btn-secondary{
+      .btn-light{
         min-width:145px;
         font-size:13px;
         padding:13px 14px;
@@ -2009,11 +1981,15 @@
 
     <div class="container">
       <div class="hero-inner">
-        <h1 class="hero-title">Elite Off-Season Speed Camp</h1>
+        <h1 class="hero-title">
+          Elite<br>
+          Off-Season<br>
+          Speed Camp
+        </h1>
 
         <div class="hero-actions">
           <button class="btn" data-scroll="#inschrijven">Claim mijn plek</button>
-          <button class="btn btn-secondary" data-scroll="#pakketten">Bekijk pakketten</button>
+          <button class="btn-light" data-scroll="#pakketten">Bekijk pakketten</button>
         </div>
 
         <div class="hero-note">Maximaal 8 spelers per groep</div>
@@ -2023,15 +1999,10 @@
 
   <section class="camp-info-section">
     <div class="container">
-      <div class="hero-feature-grid hero-feature-grid-section">
+      <div class="hero-feature-grid">
         <div class="hero-feature-box">
           <div class="hero-feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M8 2v4"/>
-              <path d="M16 2v4"/>
-              <rect x="3" y="6" width="18" height="15" rx="2"/>
-              <path d="M3 10h18"/>
-            </svg>
+            <i class="fa-solid fa-calendar"></i>
           </div>
           <div class="hero-feature-kicker">Camp duur</div>
           <div class="hero-feature-number">10</div>
@@ -2040,9 +2011,7 @@
 
         <div class="hero-feature-box">
           <div class="hero-feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z"/>
-            </svg>
+            <i class="fa-solid fa-bolt"></i>
           </div>
           <div class="hero-feature-kicker">Training</div>
           <div class="hero-feature-text">Elite Performance Training</div>
@@ -2050,10 +2019,7 @@
 
         <div class="hero-feature-box">
           <div class="hero-feature-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z"/>
-              <path d="M6 21a6 6 0 0 1 12 0"/>
-            </svg>
+            <i class="fa-solid fa-user"></i>
           </div>
           <div class="hero-feature-kicker">Groep</div>
           <div class="hero-feature-text">Max 8 spelers</div>
@@ -2568,7 +2534,7 @@
       <div class="section-head">
         <div class="eyebrow">Reserveer jouw plek</div>
         <h2 class="h2" style="margin-top:16px;">Schrijf je in voor het camp</h2>
-        <p class="sub">Wil jij deze zomer sneller en explosiever worden? Reserveer nu jouw plek voor het Elite Summer Speed Camp.</p>
+        <p class="sub">Wil jij deze zomer sneller en explosiever worden? Reserveer nu jouw plek voor het Elite Off-Season Speed Camp.</p>
       </div>
 
       <div class="panel form-shell">
