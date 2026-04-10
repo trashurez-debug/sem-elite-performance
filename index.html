@@ -55,7 +55,6 @@
       --max:1140px;
       --content-max:840px;
       --hero-cream:#f3eadf;
-      --hero-orange:#f47a38;
     }
 
     *{box-sizing:border-box}
@@ -193,7 +192,7 @@
 
     .header-cta{
       appearance:none;
-      border:1px solid rgba(255,255,255,.14);
+      border:1px solid var(--accent-stroke);
       background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
       color:#07110b;
       font-weight:900;
@@ -282,44 +281,31 @@
       justify-content:flex-start;
     }
 
-   .btn{
-  appearance:none;
-  border:1px solid var(--accent-stroke);
-  background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color:#07110b;
-  font-weight:900;
-  padding:16px 26px;
-  border-radius:0;
-  cursor:pointer;
-  box-shadow:
-    0 14px 36px rgba(57,229,140,.14),
-    0 14px 32px rgba(0,0,0,.32);
-  transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease, filter .14s ease, opacity .14s ease;
-  font-size:15px;
-  min-width:210px;
-  text-transform:uppercase;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
-  border-color:rgba(57,229,140,.46);
-  box-shadow:
-    0 18px 44px rgba(57,229,140,.14),
-    0 18px 44px rgba(0,0,0,.40);
-  filter:brightness(1.03);
-}
-
-.btn:active{
-  transform:translateY(0);
-  opacity:.96;
-}
+    .btn{
+      appearance:none;
+      border:1px solid var(--accent-stroke);
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+      color:#07110b;
+      font-weight:900;
+      padding:18px 30px;
+      border-radius:18px;
+      cursor:pointer;
+      box-shadow:
+        0 14px 34px rgba(57,229,140,.16),
+        0 14px 32px rgba(0,0,0,.28);
+      transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease, filter .14s ease, opacity .14s ease;
+      font-size:15px;
+      min-width:220px;
+      text-transform:none;
+    }
 
     .btn:hover{
       transform:translateY(-1px);
+      border-color:rgba(57,229,140,.46);
       box-shadow:
-        0 18px 44px rgba(0,0,0,.24),
-        0 12px 28px rgba(0,0,0,.22);
-      filter:brightness(1.04);
+        0 18px 44px rgba(57,229,140,.14),
+        0 18px 44px rgba(0,0,0,.34);
+      filter:brightness(1.03);
     }
 
     .btn:active{
@@ -329,25 +315,29 @@
 
     .btn-light{
       appearance:none;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(243,234,223,.96);
-      color:var(--hero-orange);
-      font-weight:800;
-      padding:16px 26px;
-      border-radius:0;
+      border:1px solid var(--accent-stroke);
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+      color:#07110b;
+      font-weight:900;
+      padding:18px 30px;
+      border-radius:18px;
       cursor:pointer;
-      box-shadow:0 14px 30px rgba(0,0,0,.18);
-      transition:transform .14s ease, box-shadow .14s ease, filter .14s ease, background .14s ease;
+      box-shadow:
+        0 14px 34px rgba(57,229,140,.16),
+        0 14px 32px rgba(0,0,0,.28);
+      transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease, filter .14s ease, opacity .14s ease;
       font-size:15px;
-      min-width:210px;
-      text-transform:uppercase;
+      min-width:220px;
+      text-transform:none;
     }
 
     .btn-light:hover{
       transform:translateY(-1px);
-      background:#fff3ea;
-      filter:none;
-      box-shadow:0 18px 42px rgba(0,0,0,.22);
+      border-color:rgba(57,229,140,.46);
+      box-shadow:
+        0 18px 44px rgba(57,229,140,.14),
+        0 18px 44px rgba(0,0,0,.34);
+      filter:brightness(1.03);
     }
 
     .hero-note{
@@ -1998,7 +1988,7 @@
         <h1 class="hero-title">
           Elite<br>
           Off-Season<br>
-          Camp
+          Speed Camp
         </h1>
 
         <div class="hero-actions">
