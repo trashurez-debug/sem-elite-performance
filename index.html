@@ -340,11 +340,35 @@
       filter:brightness(1.03);
     }
 
-    .hero-note{
-      margin-top:16px;
-      font-size:14px;
-      color:rgba(245,247,250,.70);
-      letter-spacing:.01em;
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      margin-top:20px;
+      padding:12px 20px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.04),
+        0 10px 30px rgba(0,0,0,.35);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .hero-badge::before{
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 18px rgba(57,229,140,.6);
+      flex:0 0 auto;
     }
 
     .camp-info-section{
@@ -1442,6 +1466,19 @@
         font-size:14px;
       }
 
+      .hero-badge{
+        margin-top:16px;
+        padding:10px 16px;
+        font-size:10px;
+        letter-spacing:.14em;
+        gap:10px;
+      }
+
+      .hero-badge::before{
+        width:8px;
+        height:8px;
+      }
+
       .sem-premium-story-section{
         padding:82px 16px;
       }
@@ -1722,10 +1759,6 @@
         max-width:320px;
       }
 
-      .hero-note{
-        font-size:12px;
-      }
-
       .club-strip{
         padding:26px 14px 22px;
       }
@@ -1953,6 +1986,11 @@
         padding:13px 14px;
       }
 
+      .hero-badge{
+        font-size:9px;
+        padding:9px 14px;
+      }
+
       .sem-premium-story-section{
         padding:72px 12px;
       }
@@ -1962,18 +2000,6 @@
         min-height:400px;
       }
     }
-
-    /*
-    @media (max-width: 768px) {
-      .hero {
-        background: url('assets/banner-fallback.jpg') center/cover no-repeat;
-      }
-
-      .hero-video {
-        display: none;
-      }
-    }
-    */
   </style>
 </head>
 
@@ -1990,7 +2016,6 @@
     </div>
   </div>
 
-  <!-- Hero -->
   <header class="hero" id="top">
     <video
       class="hero-video"
@@ -2009,7 +2034,7 @@
         <h1 class="hero-title">
           Elite<br>
           Off-Season<br>
-          Camp
+          Speed Camp
         </h1>
 
         <div class="hero-actions">
@@ -2017,12 +2042,11 @@
           <button class="btn-light" data-scroll="#pakketten">Bekijk pakketten</button>
         </div>
 
-        <div class="hero-note">Maximaal 6 spelers per groep</div>
+        <div class="hero-badge">Maximaal 6 spelers per groep</div>
       </div>
     </div>
   </header>
 
-  <!-- Camp info -->
   <section class="camp-info-section">
     <div class="container">
       <div class="hero-feature-grid">
@@ -2054,7 +2078,6 @@
     </div>
   </section>
 
-  <!-- Coacht spelers van -->
   <section class="section tight" id="coach">
     <div class="container">
       <div class="panel club-strip">
@@ -2095,7 +2118,6 @@
     </div>
   </section>
 
-  <!-- Voor wie -->
   <section class="section" id="voorwie">
     <div class="container center">
       <div class="section-head">
@@ -2181,7 +2203,6 @@
     </div>
   </section>
 
-  <!-- Waarom nu -->
   <section class="statement" id="waarom">
     <div class="container center">
       <div class="section-head">
@@ -2220,7 +2241,6 @@
     </div>
   </section>
 
-  <!-- Wat je ontwikkelt -->
   <section class="section" id="focus">
     <div class="container center">
       <div class="section-head">
@@ -2272,7 +2292,6 @@
     </div>
   </section>
 
-  <!-- Pakketten -->
   <section class="section tight" id="pakketten">
     <div class="container center">
       <div class="section-head">
@@ -2332,7 +2351,6 @@
     </div>
   </section>
 
-  <!-- Coach story -->
   <section class="sem-premium-story-section">
     <div class="sem-premium-story-wrap">
       <div class="sem-premium-story-heading">
@@ -2435,7 +2453,6 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="testimonials" aria-label="Testimonials">
     <div class="container">
       <div class="testimonials-head">
@@ -2562,7 +2579,6 @@
     </div>
   </section>
 
-  <!-- Inschrijven -->
   <section class="section tight" id="inschrijven">
     <div class="container center">
       <div class="section-head">
