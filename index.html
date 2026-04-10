@@ -160,24 +160,17 @@
       width:min(1280px, calc(100% - 56px));
       margin:0 auto;
       min-height:98px;
-      display:flex;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
       align-items:center;
-      justify-content:space-between;
       gap:24px;
-    }
-
-    .header-left{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      min-width:0;
     }
 
     .header-logo{
       display:flex;
       align-items:center;
-      justify-content:center;
-      flex-shrink:0;
+      justify-content:flex-start;
+      min-width:0;
     }
 
     .header-logo img{
@@ -188,13 +181,19 @@
     }
 
     .header-title{
+      justify-self:center;
+      text-align:center;
       font-size:16px;
       font-weight:900;
-      letter-spacing:.1em;
+      letter-spacing:.10em;
       text-transform:uppercase;
       color:var(--text);
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
       line-height:1;
+      min-width:0;
+      width:100%;
     }
 
     .header-cta{
@@ -213,6 +212,7 @@
       font-size:15px;
       white-space:nowrap;
       flex-shrink:0;
+      justify-self:end;
     }
 
     .header-cta:hover{
@@ -1340,10 +1340,26 @@
       .site-header-inner{
         width:min(100%, calc(100% - 32px));
         min-height:88px;
+        gap:12px;
+        grid-template-columns:auto 1fr auto;
       }
 
-      .header-logo img{height:96px}
-      .header-title{font-size:14px}
+      .header-logo img{height:72px}
+
+      .header-title{
+        font-size:12px;
+        letter-spacing:.05em;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        max-width:100%;
+      }
+
+      .header-cta{
+        padding:10px 12px;
+        font-size:12px;
+        border-radius:11px;
+      }
 
       .club-logos{
         grid-template-columns:repeat(3, 1fr);
@@ -1663,32 +1679,28 @@
 
     @media (max-width: 640px){
       .site-header-inner{
-        min-height:74px;
-        width:calc(100% - 18px);
+        min-height:70px;
+        width:calc(100% - 16px);
         gap:8px;
-      }
-
-      .header-left{
-        gap:8px;
-        min-width:0;
-        flex:1;
+        grid-template-columns:auto 1fr auto;
       }
 
       .header-logo img{
-        height:60px;
+        height:52px;
       }
 
       .header-title{
         font-size:10px;
         letter-spacing:.04em;
-        white-space:normal;
-        line-height:1.1;
-        max-width:108px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        max-width:100%;
       }
 
       .header-cta{
-        padding:9px 11px;
-        font-size:11px;
+        padding:8px 10px;
+        font-size:10px;
         border-radius:10px;
       }
 
@@ -1863,17 +1875,21 @@
         width:calc(100% - 18px);
       }
 
-      .header-title{
-        display:none;
+      .header-logo img{
+        height:48px;
       }
 
-      .header-logo img{
-        height:56px;
+      .header-title{
+        font-size:9px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        max-width:100%;
       }
 
       .header-cta{
-        padding:8px 10px;
-        font-size:10px;
+        padding:7px 9px;
+        font-size:9px;
       }
 
       .h1{
@@ -1971,12 +1987,12 @@
 <body>
   <div class="site-header">
     <div class="site-header-inner">
-      <div class="header-left">
-        <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
-          <img src="assets/sep logo png.png" alt="SEP logo" onerror="this.style.display='none'">
-        </a>
-        <a href="#top" class="header-title">Sem Elite Performance Camp</a>
-      </div>
+      <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
+        <img src="assets/sep logo png.png" alt="SEP logo" onerror="this.style.display='none'">
+      </a>
+
+      <a href="#top" class="header-title">Summer Speed Camp</a>
+
       <button class="header-cta" data-scroll="#inschrijven">Claim je plek</button>
     </div>
   </div>
