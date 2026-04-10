@@ -164,6 +164,7 @@
       align-items:center;
       justify-content:space-between;
       gap:24px;
+      position:relative;
     }
 
     .header-left{
@@ -171,6 +172,7 @@
       align-items:center;
       gap:16px;
       min-width:0;
+      z-index:2;
     }
 
     .header-logo{
@@ -187,7 +189,10 @@
       filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
     }
 
-    .header-title{
+    .header-center{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
       font-size:16px;
       font-weight:900;
       letter-spacing:.1em;
@@ -195,6 +200,8 @@
       color:var(--text);
       white-space:nowrap;
       line-height:1;
+      text-align:center;
+      pointer-events:none;
     }
 
     .header-cta{
@@ -213,6 +220,8 @@
       font-size:15px;
       white-space:nowrap;
       flex-shrink:0;
+      z-index:2;
+      position:relative;
     }
 
     .header-cta:hover{
@@ -1343,7 +1352,7 @@
       }
 
       .header-logo img{height:96px}
-      .header-title{font-size:14px}
+      .header-center{font-size:14px}
 
       .club-logos{
         grid-template-columns:repeat(3, 1fr);
@@ -1678,12 +1687,12 @@
         height:60px;
       }
 
-      .header-title{
-        font-size:10px;
-        letter-spacing:.04em;
+      .header-center{
+        font-size:11px;
+        text-align:center;
+        max-width:170px;
         white-space:normal;
-        line-height:1.1;
-        max-width:140px;
+        line-height:1.15;
       }
 
       .header-cta{
@@ -1863,8 +1872,9 @@
         width:calc(100% - 18px);
       }
 
-      .header-title{
-        display:none;
+      .header-center{
+        font-size:10px;
+        max-width:125px;
       }
 
       .header-logo img{
@@ -1975,8 +1985,10 @@
         <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
           <img src="assets/sep logo png.png" alt="SEP logo" onerror="this.style.display='none'">
         </a>
-        <a href="#top" class="header-title">Elite Off-Season Speed Camp</a>
       </div>
+
+      <div class="header-center">ELITE OFF-SEASON SPEED CAMP</div>
+
       <button class="header-cta" data-scroll="#inschrijven">Claim je plek</button>
     </div>
   </div>
