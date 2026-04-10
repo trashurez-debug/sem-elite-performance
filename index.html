@@ -1962,6 +1962,21 @@
         min-height:400px;
       }
     }
+
+    /* Optionele mobiele fallback:
+       Verwijder de comment tekens als je liever op mobiel een afbeelding toont i.p.v. video.
+    */
+    /*
+    @media (max-width: 768px) {
+      .hero {
+        background: url('assets/banner-fallback.jpg') center/cover no-repeat;
+      }
+
+      .hero-video {
+        display: none;
+      }
+    }
+    */
   </style>
 </head>
 
@@ -1979,7 +1994,15 @@
   </div>
 
   <header class="hero" id="top">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+    >
       <source src="assets/sem-banner-web.mp4" type="video/mp4">
     </video>
 
@@ -1988,7 +2011,7 @@
         <h1 class="hero-title">
           Elite<br>
           Off-Season<br>
-          Camp
+          Speed Camp
         </h1>
 
         <div class="hero-actions">
@@ -2325,7 +2348,7 @@
     <div class="container center">
       <div class="section-head">
         <div class="eyebrow">Wat je ontwikkelt</div>
-        <h2 class="h2" style="margin-top:16px;">HET ELITE SUMMER SPEED CAMP</h2>
+        <h2 class="h2" style="margin-top:16px;">HET ELITE OFF-SEASON SPEED CAMP</h2>
         <p class="sub">In deze 10-daagse camp bouw je gericht aan de fysieke kwaliteiten die direct verschil maken op het veld.</p>
       </div>
 
@@ -2702,6 +2725,16 @@
         }
       });
     });
+
+    const video = document.querySelector('.hero-video');
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => {
+        document.addEventListener('touchstart', () => {
+          video.play();
+        }, { once: true });
+      });
+    }
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
