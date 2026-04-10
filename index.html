@@ -160,24 +160,17 @@
       width:min(1280px, calc(100% - 56px));
       margin:0 auto;
       min-height:98px;
-      display:flex;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
       align-items:center;
-      justify-content:space-between;
       gap:24px;
-    }
-
-    .header-left{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      min-width:0;
     }
 
     .header-logo{
       display:flex;
       align-items:center;
-      justify-content:center;
-      flex-shrink:0;
+      justify-self:start;
+      min-width:0;
     }
 
     .header-logo img{
@@ -188,6 +181,8 @@
     }
 
     .header-title{
+      justify-self:center;
+      text-align:center;
       font-size:16px;
       font-weight:900;
       letter-spacing:.1em;
@@ -195,9 +190,11 @@
       color:var(--text);
       white-space:nowrap;
       line-height:1;
+      min-width:0;
     }
 
     .header-cta{
+      justify-self:end;
       appearance:none;
       border:1px solid var(--accent-stroke);
       background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
@@ -1309,6 +1306,17 @@
       .sem-premium-image-card{position:relative;top:auto;min-height:620px}
       .sem-premium-image{min-height:620px}
       .forwho-grid{grid-template-columns:repeat(3, 1fr)}
+
+      .site-header-inner{
+        grid-template-columns:auto 1fr auto;
+      }
+
+      .header-title{
+        font-size:14px;
+        white-space:normal;
+        line-height:1.15;
+        max-width:320px;
+      }
     }
 
     @media (max-width: 980px){
@@ -1340,10 +1348,15 @@
       .site-header-inner{
         width:min(100%, calc(100% - 32px));
         min-height:88px;
+        gap:16px;
+        grid-template-columns:auto 1fr auto;
       }
 
       .header-logo img{height:96px}
-      .header-title{font-size:14px}
+      .header-title{
+        font-size:13px;
+        max-width:260px;
+      }
 
       .club-logos{
         grid-template-columns:repeat(3, 1fr);
@@ -1659,6 +1672,29 @@
         padding:15px 16px;
         font-size:15px;
       }
+
+      .site-header-inner{
+        min-height:78px;
+        gap:12px;
+        grid-template-columns:auto 1fr auto;
+      }
+
+      .header-logo img{
+        height:72px;
+      }
+
+      .header-title{
+        font-size:11px;
+        letter-spacing:.06em;
+        max-width:180px;
+        line-height:1.15;
+      }
+
+      .header-cta{
+        padding:10px 14px;
+        font-size:12px;
+        border-radius:11px;
+      }
     }
 
     @media (max-width: 640px){
@@ -1666,12 +1702,7 @@
         min-height:74px;
         width:calc(100% - 18px);
         gap:8px;
-      }
-
-      .header-left{
-        gap:8px;
-        min-width:0;
-        flex:1;
+        grid-template-columns:auto 1fr auto;
       }
 
       .header-logo img{
@@ -1681,9 +1712,9 @@
       .header-title{
         font-size:10px;
         letter-spacing:.04em;
-        white-space:normal;
         line-height:1.1;
-        max-width:108px;
+        max-width:120px;
+        white-space:normal;
       }
 
       .header-cta{
@@ -1863,12 +1894,19 @@
         width:calc(100% - 18px);
       }
 
-      .header-title{
-        display:none;
+      .site-header-inner{
+        grid-template-columns:auto 1fr auto;
+        gap:6px;
       }
 
       .header-logo img{
         height:56px;
+      }
+
+      .header-title{
+        font-size:9px;
+        max-width:96px;
+        letter-spacing:.03em;
       }
 
       .header-cta{
@@ -1971,12 +2009,12 @@
 <body>
   <div class="site-header">
     <div class="site-header-inner">
-      <div class="header-left">
-        <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
-          <img src="assets/sep logo png.png" alt="SEP logo" onerror="this.style.display='none'">
-        </a>
-        <a href="#top" class="header-title">Sem Elite Performance Camp</a>
-      </div>
+      <a href="#top" class="header-logo" aria-label="Sem Elite Performance home">
+        <img src="assets/sep logo png.png" alt="SEP logo" onerror="this.style.display='none'">
+      </a>
+
+      <a href="#top" class="header-title">Sem Elite Performance Camp</a>
+
       <button class="header-cta" data-scroll="#inschrijven">Claim je plek</button>
     </div>
   </div>
