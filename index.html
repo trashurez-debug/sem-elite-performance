@@ -1031,9 +1031,9 @@
 
     .sem-premium-story-grid{
       display:grid;
-      grid-template-columns:.95fr 1.05fr;
+      grid-template-columns:minmax(320px, 560px) 1fr;
       gap:30px;
-      align-items:stretch;
+      align-items:start;
     }
 
     .sem-premium-visual,
@@ -1042,8 +1042,8 @@
     .sem-premium-image-card{
       position:sticky;
       top:118px;
-      min-height:780px;
-      height:100%;
+      min-height:auto;
+      height:auto;
       border-radius:34px;
       overflow:hidden;
       background:linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.02) 100%);
@@ -1051,60 +1051,16 @@
       box-shadow:
         0 22px 68px rgba(0,0,0,.32),
         inset 0 1px 0 rgba(255,255,255,.04);
+      aspect-ratio:3 / 4.6;
     }
 
     .sem-premium-image{
       width:100%;
       height:100%;
-      min-height:780px;
-      object-fit:cover;
       display:block;
+      object-fit:cover;
+      aspect-ratio:3 / 4.6;
       filter:saturate(.94) contrast(1.02);
-    }
-
-    .sem-premium-image-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.2) 42%, rgba(0,0,0,.72) 100%);
-      pointer-events:none;
-    }
-
-    .sem-premium-badge-group{
-      position:absolute;
-      left:24px;
-      right:24px;
-      bottom:24px;
-      display:grid;
-      gap:12px;
-      z-index:2;
-    }
-
-    .sem-premium-badge{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(8,10,14,.58);
-      border:1px solid rgba(255,255,255,.09);
-      backdrop-filter:blur(12px);
-      box-shadow:0 10px 30px rgba(0,0,0,.24);
-    }
-
-    .sem-premium-badge-label{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      color:rgba(245,247,250,.5);
-      font-weight:800;
-    }
-
-    .sem-premium-badge-value{
-      font-size:18px;
-      line-height:1.38;
-      font-weight:700;
-      letter-spacing:-.02em;
-      color:rgba(245,247,250,.95);
     }
 
     .elite-accordion{
@@ -1428,8 +1384,12 @@
     @media (max-width:1100px){
       .club-logos{grid-template-columns:repeat(3, 1fr)}
       .sem-premium-story-grid{grid-template-columns:1fr}
-      .sem-premium-image-card{position:relative;top:auto;min-height:620px}
-      .sem-premium-image{min-height:620px}
+      .sem-premium-image-card{
+        position:relative;
+        top:auto;
+        max-width:560px;
+        margin:0 auto;
+      }
       .forwho-grid{grid-template-columns:repeat(3, 1fr)}
     }
 
@@ -1573,27 +1533,8 @@
 
       .sem-premium-image-card,
       .sem-premium-image{
-        min-height:460px;
         border-radius:24px;
-      }
-
-      .sem-premium-badge-group{
-        left:14px;
-        right:14px;
-        bottom:14px;
-      }
-
-      .sem-premium-badge{
-        padding:13px 14px;
-        border-radius:15px;
-      }
-
-      .sem-premium-badge-label{
-        font-size:11px;
-      }
-
-      .sem-premium-badge-value{
-        font-size:15px;
+        aspect-ratio:3 / 4.2;
       }
 
       .elite-accordion{
@@ -2098,7 +2039,7 @@
 
       .sem-premium-image-card,
       .sem-premium-image{
-        min-height:400px;
+        aspect-ratio:3 / 4.2;
       }
 
       .fade-slider{
@@ -2469,20 +2410,7 @@
       <div class="sem-premium-story-grid">
         <div class="sem-premium-visual">
           <div class="sem-premium-image-card">
-            <img src="assets/sem-coach.jpg" alt="Sem van der Pijl tijdens training" class="sem-premium-image" />
-            <div class="sem-premium-image-overlay"></div>
-
-            <div class="sem-premium-badge-group">
-              <div class="sem-premium-badge">
-                <span class="sem-premium-badge-label">Performance Coach</span>
-                <span class="sem-premium-badge-value">NAC Breda Jeugdopleiding</span>
-              </div>
-
-              <div class="sem-premium-badge">
-                <span class="sem-premium-badge-label">Specialisatie</span>
-                <span class="sem-premium-badge-value">Snelheid · Kracht · Explosiviteit · Mobiliteit</span>
-              </div>
-            </div>
+            <img src="assets/sem karim long lever bridge core.jpeg" alt="Sem van der Pijl tijdens training" class="sem-premium-image" />
           </div>
         </div>
 
@@ -2699,9 +2627,9 @@
         <img src="assets/groep buiten.jpeg" alt="Training en performance moment" class="slide">
         <img src="assets/hylke kleine horde.jpeg" alt="Speler uit de SEP omgeving" class="slide">
         <img src="assets/redwan binnen rotatie aquabag.jpeg" alt="Performance en progressie" class="slide">
-         <img src="assets/redwan dribbel.jpeg" alt="Performance en progressie" class="slide">
-         <img src="assets/seth horde.jpeg" alt="Performance en progressie" class="slide">
-         <img src="assets/sem en gijs.jpeg" alt="Performance en progressie" class="slide">
+        <img src="assets/redwan dribbel.jpeg" alt="Performance en progressie" class="slide">
+        <img src="assets/seth horde.jpeg" alt="Performance en progressie" class="slide">
+        <img src="assets/sem en gijs.jpeg" alt="Performance en progressie" class="slide">
         <img src="assets/binnen zijwaarts.jpeg" alt="Performance en progressie" class="slide">
         <img src="assets/over horde plyo.jpeg" alt="Performance en progressie" class="slide">
       </div>
