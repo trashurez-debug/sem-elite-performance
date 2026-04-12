@@ -836,17 +836,28 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(4,8,12,.04) 0%, rgba(4,8,12,.10) 34%, rgba(4,8,12,.84) 100%);
       z-index:1;
       pointer-events:none;
+      background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,.16) 0%,
+        rgba(255,255,255,.07) 14%,
+        rgba(255,255,255,.02) 26%,
+        rgba(0,0,0,.04) 40%,
+        rgba(0,0,0,.22) 58%,
+        rgba(0,0,0,.56) 78%,
+        rgba(0,0,0,.90) 100%
+      );
     }
 
     .focus-card::after{
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(520px 180px at 50% 100%, rgba(57,229,140,.16), transparent 58%);
-      opacity:.9;
+      background:
+        radial-gradient(520px 180px at 50% 100%, rgba(57,229,140,.14), transparent 58%),
+        linear-gradient(to bottom, rgba(0,0,0,0) 58%, rgba(0,0,0,.16) 100%);
+      opacity:.95;
       z-index:1;
       pointer-events:none;
     }
@@ -867,12 +878,12 @@
       object-fit:cover;
       display:block;
       transition:transform .9s ease, filter .5s ease;
-      filter:saturate(.94) contrast(1.04) brightness(.78);
+      filter:saturate(.98) contrast(1.03) brightness(.94);
     }
 
     .focus-card:hover img{
       transform:scale(1.05);
-      filter:saturate(1) contrast(1.06) brightness(.74);
+      filter:saturate(1.02) contrast(1.05) brightness(.90);
     }
 
     .focus-card-content{
