@@ -809,50 +809,128 @@
     .xmark svg{width:12px;height:12px}
 
     .focus{
-      margin-top:40px;
+      margin-top:48px;
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:24px;
-      max-width:980px;
+      gap:26px;
+      max-width:1040px;
       margin-left:auto;
       margin-right:auto;
     }
 
     .focus-card{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
+      position:relative;
+      min-height:420px;
+      border-radius:30px;
       overflow:hidden;
-      box-shadow:0 8px 30px rgba(0,0,0,.25);
-      backdrop-filter:blur(8px);
-      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-      text-align:center;
+      border:1px solid rgba(255,255,255,.10);
+      background:#0b1016;
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.04);
+      transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      isolation:isolate;
+    }
+
+    .focus-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(4,8,12,.04) 0%, rgba(4,8,12,.10) 34%, rgba(4,8,12,.84) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .focus-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(520px 180px at 50% 100%, rgba(57,229,140,.16), transparent 58%);
+      opacity:.9;
+      z-index:1;
+      pointer-events:none;
     }
 
     .focus-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 12px 36px rgba(0,0,0,.35);
-      border-color:rgba(57,229,140,.24);
+      transform:translateY(-8px);
+      border-color:rgba(57,229,140,.26);
+      box-shadow:
+        0 34px 80px rgba(0,0,0,.44),
+        0 0 0 1px rgba(57,229,140,.08) inset;
     }
 
     .focus-card img{
+      position:absolute;
+      inset:0;
       width:100%;
-      height:260px;
+      height:100%;
       object-fit:cover;
       display:block;
+      transition:transform .9s ease, filter .5s ease;
+      filter:saturate(.94) contrast(1.04) brightness(.78);
+    }
+
+    .focus-card:hover img{
+      transform:scale(1.05);
+      filter:saturate(1) contrast(1.06) brightness(.74);
     }
 
     .focus-card-content{
-      padding:18px 20px 22px;
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:2;
+      padding:26px 24px 24px;
+      text-align:left;
+    }
+
+    .focus-card-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color:rgba(245,247,250,.82);
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .focus-card-kicker::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 14px rgba(57,229,140,.45);
+      flex:0 0 auto;
     }
 
     .focus-card-title{
       margin:0;
-      font-size:28px;
-      font-weight:800;
+      font-size:clamp(24px, 3vw, 34px);
+      font-weight:900;
       color:#ffffff;
-      line-height:1.15;
-      letter-spacing:-.02em;
+      line-height:1.02;
+      letter-spacing:-.035em;
+      text-transform:uppercase;
+      text-shadow:0 10px 26px rgba(0,0,0,.34);
+      max-width:320px;
+    }
+
+    .focus-card-line{
+      width:72px;
+      height:1px;
+      margin:16px 0 0;
+      background:linear-gradient(90deg, rgba(57,229,140,.95), rgba(57,229,140,0));
+      box-shadow:0 0 16px rgba(57,229,140,.20);
     }
 
     .pricing{
@@ -1686,15 +1764,32 @@
 
       .focus{
         grid-template-columns:1fr;
-        gap:14px;
+        gap:16px;
       }
 
-      .focus-card img{
-        height:220px;
+      .focus-card{
+        min-height:300px;
+        border-radius:24px;
+      }
+
+      .focus-card-content{
+        padding:20px 18px 18px;
+      }
+
+      .focus-card-kicker{
+        font-size:9px;
+        padding:7px 10px;
+        margin-bottom:10px;
       }
 
       .focus-card-title{
         font-size:22px;
+        max-width:260px;
+      }
+
+      .focus-card-line{
+        width:58px;
+        margin-top:14px;
       }
 
       .xlist{
@@ -2003,12 +2098,22 @@
         aspect-ratio:3 / 4.2;
       }
 
-      .focus-card img{
-        height:200px;
+      .focus-card{
+        min-height:260px;
+      }
+
+      .focus-card-content{
+        padding:18px 16px 16px;
       }
 
       .focus-card-title{
         font-size:20px;
+        max-width:220px;
+      }
+
+      .focus-card-line{
+        width:48px;
+        margin-top:12px;
       }
 
       .fade-slider{
@@ -2268,28 +2373,36 @@
         <div class="focus-card">
           <img src="assets/seth sprint.jpeg" alt="Sprint snelheid training">
           <div class="focus-card-content">
+            <div class="focus-card-kicker">Elite quality</div>
             <h3 class="focus-card-title">Sprint Snelheid</h3>
+            <div class="focus-card-line"></div>
           </div>
         </div>
 
         <div class="focus-card">
           <img src="assets/redwan binnen rotatie aquabag.jpeg" alt="Explosieve kracht training">
           <div class="focus-card-content">
+            <div class="focus-card-kicker">Elite quality</div>
             <h3 class="focus-card-title">Explosieve Kracht</h3>
+            <div class="focus-card-line"></div>
           </div>
         </div>
 
         <div class="focus-card">
-          <img src="assets/hylke horde binnen.jpeg" alt="Functioneel bewegen training">
+          <img src="assets/hamstring strech.jpeg" alt="Functioneel bewegen training">
           <div class="focus-card-content">
+            <div class="focus-card-kicker">Elite quality</div>
             <h3 class="focus-card-title">Functioneel Bewegen</h3>
+            <div class="focus-card-line"></div>
           </div>
         </div>
 
         <div class="focus-card">
-          <img src="assets/hamstring strech.jpeg" alt="Mobiliteit">
+          <img src="assets/hylke horde binnen.jpeg" alt="Voetbalspecifieke snelheid training">
           <div class="focus-card-content">
-            <h3 class="focus-card-title">Mobiliteit</h3>
+            <div class="focus-card-kicker">Elite quality</div>
+            <h3 class="focus-card-title">Voetbalspecifieke Snelheid</h3>
+            <div class="focus-card-line"></div>
           </div>
         </div>
       </div>
