@@ -90,6 +90,8 @@
     .muted2{color:var(--muted2)}
 
     .eyebrow{
+      position:relative;
+      z-index:2;
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -119,6 +121,8 @@
       max-width:var(--content-max);
       margin:0 auto 34px;
       text-align:center;
+      position:relative;
+      z-index:2;
     }
 
     .h1{
@@ -437,6 +441,7 @@
       content:"";
       position:absolute;
       inset:0;
+      z-index:0;
       background:
         radial-gradient(680px 220px at 50% 0%, rgba(57,229,140,.04), transparent 72%),
         linear-gradient(135deg, rgba(255,255,255,.03), transparent 36%);
@@ -453,28 +458,13 @@
       position:relative;
     }
 
-    .club-strip-title{
-      position:absolute;
-      top:20px;
-      left:50%;
-      transform:translateX(-50%);
-      margin:0;
-      width:100%;
-      max-width:calc(100% - 56px);
-      text-align:center;
-      color:rgba(245,247,250,.94);
-      font-size:18px;
-      line-height:1.4;
-      font-weight:900;
-      pointer-events:none;
-    }
-
     .club-logos{
+      position:relative;
+      z-index:2;
       display:grid;
       grid-template-columns:repeat(6, 1fr);
       gap:22px;
       align-items:start;
-      padding-top:68px;
     }
 
     .club-item{
@@ -554,7 +544,7 @@
       inset:0;
       z-index:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.80)),
+        linear-gradient(to bottom, rgba(0,0,0,.40), rgba(0,0,0,.78)),
         linear-gradient(90deg, rgba(0,0,0,.36), rgba(0,0,0,.16), rgba(0,0,0,.36));
     }
 
@@ -570,7 +560,7 @@
     .audience-content{
       position:relative;
       z-index:1;
-      max-width:980px;
+      max-width:920px;
       margin:0 auto;
       color:#fff;
     }
@@ -623,56 +613,42 @@
       color:rgba(255,255,255,.84);
     }
 
-    /* HERSCHREVEN BLOKKEN-SECTIE */
     .audience-points{
-      margin:28px auto 0;
+      margin-top:30px;
       display:grid;
       grid-template-columns:repeat(3, auto);
       justify-content:center;
-      gap:12px 16px;
-      max-width:900px;
+      gap:12px 14px;
     }
 
     .audience-points span{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:11px 18px;
+      padding:10px 16px;
       border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      color:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(57,229,140,.18);
+      color:rgba(255,255,255,.80);
       font-size:14px;
       font-weight:600;
-      letter-spacing:.01em;
       text-align:center;
-      white-space:nowrap;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04),
-        0 10px 24px rgba(0,0,0,.22);
       backdrop-filter:blur(8px);
       -webkit-backdrop-filter:blur(8px);
-      transition:transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      transition:transform .2s ease, background-color .2s ease, border-color .2s ease;
     }
 
     .audience-points span:hover{
       transform:translateY(-2px);
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.24);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.05),
-        0 14px 30px rgba(0,0,0,.28);
+      background:rgba(255,255,255,.08);
+      border-color:rgba(57,229,140,.28);
     }
 
-    .audience-points .is-highlight{
-      background:linear-gradient(180deg, rgba(57,229,140,.96) 0%, rgba(34,184,106,.96) 100%);
-      color:#08110b;
-      border-color:rgba(57,229,140,.54);
+    .audience-points .highlight-point{
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+      color:#07110b;
       font-weight:800;
+      border-color:rgba(57,229,140,.36);
       box-shadow:
-        0 12px 28px rgba(57,229,140,.18),
-        0 12px 28px rgba(0,0,0,.28);
+        0 10px 24px rgba(57,229,140,.16),
+        0 10px 24px rgba(0,0,0,.22);
     }
 
     .statement{
@@ -1481,7 +1457,6 @@
       .club-logos{
         grid-template-columns:repeat(3, 1fr);
         gap:18px;
-        padding-top:68px;
       }
 
       .club-logo{
@@ -1500,15 +1475,7 @@
       }
 
       .fade-slider{height:480px}
-
-      .audience-banner{
-        min-height:560px;
-      }
-
-      .audience-points{
-        grid-template-columns:repeat(2, auto);
-        gap:12px;
-      }
+      .audience-banner{min-height:560px}
     }
 
     @media (max-width:768px){
@@ -1590,15 +1557,13 @@
 
       .audience-points{
         grid-template-columns:repeat(2, auto);
-        gap:10px 10px;
+        gap:10px;
         margin-top:24px;
       }
 
       .audience-points span{
         font-size:12px;
-        padding:10px 14px;
-        min-height:44px;
-        white-space:normal;
+        padding:9px 13px;
       }
 
       .sem-premium-story-section{padding:82px 16px}
@@ -1793,16 +1758,9 @@
         padding:26px 14px 22px;
       }
 
-      .club-strip-title{
-        top:12px;
-        font-size:14px;
-        max-width:calc(100% - 28px);
-      }
-
       .club-logos{
         grid-template-columns:repeat(3, 1fr);
         gap:12px 8px;
-        padding-top:50px;
       }
 
       .club-logo{
@@ -1876,19 +1834,8 @@
       .form-shell{padding:16px 14px}
       footer{padding:56px 0 52px}
       .fade-slider{height:280px}
-
-      .audience-banner{
-        min-height:400px;
-      }
-
-      .audience-points{
-        grid-template-columns:1fr;
-        max-width:320px;
-      }
-
-      .audience-points span{
-        width:100%;
-      }
+      .audience-banner{min-height:400px}
+      .audience-points{grid-template-columns:1fr}
     }
 
     @media (max-width:420px){
@@ -2071,9 +2018,9 @@
   <section class="section tight" id="coach">
     <div class="container">
       <div class="panel club-strip">
-        <div class="section-head" style="margin-bottom:20px;">
-  <span class="eyebrow">Coacht spelers van</span>
-</div>
+        <div class="section-head" style="margin-bottom:26px;">
+          <span class="eyebrow">Coacht spelers van</span>
+        </div>
 
         <div class="club-logos">
           <div class="club-item">
@@ -2116,7 +2063,6 @@
         <div class="audience-content">
           <div class="audience-badge">Voor ambitieuze spelers</div>
           <h2 class="audience-title">Voor wie is dit camp?</h2>
-
           <p class="audience-text">
             Voor voetballers die hun zomer bewust willen gebruiken om fysiek sterker,
             sneller en completer terug te keren.
@@ -2126,9 +2072,9 @@
             <span>10 trainingsdagen</span>
             <span>BVO O17 t/m 1e elftal</span>
             <span>Made</span>
-            <span class="is-highlight">100% prestatiegericht</span>
+            <span class="highlight-point">100% prestatiegericht</span>
             <span>Fysieke voorsprong opbouwen</span>
-            <span>Voor ambitieuze spelers</span>
+            <span>Voor spelers die méér willen dan gemiddeld</span>
           </div>
         </div>
       </div>
