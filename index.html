@@ -1430,9 +1430,9 @@
       }
 
       .price-card:last-child{
-        grid-column:1 / -1;
-        max-width:520px;
-        margin:0 auto;
+        grid-column:auto;
+        max-width:none;
+        margin:0;
       }
 
       .focus{
@@ -1626,11 +1626,16 @@
       .hero-feature-text{font-size:10.5px;line-height:1.12}
 
       .pricing{
-        grid-template-columns:repeat(2, 1fr);
+        grid-template-columns:1fr;
         gap:12px;
       }
 
-      .price-card{
+      .price-card,
+      .price-card:last-child{
+        width:100%;
+        max-width:none;
+        margin:0;
+        grid-column:auto;
         min-height:auto;
         padding:22px 16px 18px;
         border-radius:20px;
@@ -1823,9 +1828,12 @@
         gap:12px;
       }
 
+      .price-card,
       .price-card:last-child{
-        grid-column:auto;
+        width:100%;
         max-width:none;
+        margin:0;
+        grid-column:auto;
       }
 
       .price-card{padding:20px 16px 18px}
