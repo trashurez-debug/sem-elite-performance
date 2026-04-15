@@ -16,14 +16,19 @@
       --bg2:#0b1016;
       --bg3:#101720;
 
+      --bg-section:#081019;
+      --bg-section-2:#081019;
+
       --card:#111821;
       --card-2:#141d27;
+      --card-uniform:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
       --surface:rgba(255,255,255,.035);
       --surface-2:rgba(255,255,255,.05);
       --surface-3:rgba(255,255,255,.065);
 
       --stroke:rgba(255,255,255,.08);
       --stroke-strong:rgba(255,255,255,.14);
+      --card-border:rgba(255,255,255,.10);
 
       --text:#f5f7fa;
       --muted:rgba(245,247,250,.72);
@@ -67,8 +72,7 @@
       color:var(--text);
       overflow-x:hidden;
       background:
-        radial-gradient(1000px 540px at 50% -8%, rgba(57,229,140,.06), transparent 58%),
-        radial-gradient(900px 380px at 50% 0%, rgba(255,255,255,.03), transparent 60%),
+        radial-gradient(1000px 540px at 50% -8%, rgba(57,229,140,.05), transparent 58%),
         linear-gradient(180deg, var(--bg) 0%, #070b10 100%);
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
@@ -77,6 +81,18 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     button,input,select,textarea{font:inherit}
+
+    input,
+    select,
+    textarea,
+    .price-sub,
+    .li,
+    .club-name,
+    .audience-text,
+    .sub{
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
 
     .container{
       width:min(var(--max), calc(100% - 48px));
@@ -347,9 +363,7 @@
 
     .camp-info-section{
       padding:48px 0 24px;
-      background:
-        radial-gradient(900px 260px at 50% 0%, rgba(57,229,140,.04), transparent 72%),
-        linear-gradient(180deg, #080c11 0%, #0a1017 100%);
+      background:var(--bg-section);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
@@ -367,7 +381,7 @@
       padding:18px 16px;
       border-radius:20px;
       border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.022));
+      background:var(--card-uniform);
       box-shadow:var(--shadow-sm);
       display:flex;
       flex-direction:column;
@@ -385,7 +399,7 @@
       content:"";
       position:absolute;
       inset:-1px;
-      background:radial-gradient(360px 180px at 50% 0%, rgba(255,255,255,.05), transparent 70%);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
       pointer-events:none;
     }
 
@@ -429,7 +443,7 @@
     }
 
     .panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+      background:var(--card-uniform);
       border:1px solid rgba(255,255,255,.08);
       border-radius:var(--radius-xl);
       box-shadow:var(--shadow-lg);
@@ -442,15 +456,14 @@
       position:absolute;
       inset:0;
       z-index:0;
-      background:
-        radial-gradient(680px 220px at 50% 0%, rgba(57,229,140,.04), transparent 72%),
-        linear-gradient(135deg, rgba(255,255,255,.03), transparent 36%);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
       pointer-events:none;
     }
 
     #coach{
       padding-top:44px;
       padding-bottom:88px;
+      background:var(--bg-section);
     }
 
     .club-strip{
@@ -515,9 +528,7 @@
     .audience-section{
       position:relative;
       padding:110px 0;
-      background:
-        radial-gradient(900px 320px at 50% 0%, rgba(57,229,140,.05), transparent 72%),
-        linear-gradient(180deg, #080c11 0%, #091018 100%);
+      background:var(--bg-section);
       border-top:1px solid rgba(255,255,255,.06);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
@@ -553,7 +564,7 @@
       position:absolute;
       inset:0;
       z-index:0;
-      background:radial-gradient(circle at center, rgba(57,229,140,.08), transparent 55%);
+      background:radial-gradient(circle at center, rgba(57,229,140,.06), transparent 55%);
       pointer-events:none;
     }
 
@@ -655,9 +666,7 @@
       padding:110px 0;
       border-top:1px solid rgba(255,255,255,.06);
       border-bottom:1px solid rgba(255,255,255,.06);
-      background:
-        radial-gradient(900px 320px at 50% 0%, rgba(57,229,140,.05), transparent 72%),
-        linear-gradient(180deg, #080c11 0%, #090f16 100%);
+      background:var(--bg-section);
     }
 
     .statement .section-head{
@@ -693,6 +702,10 @@
     }
 
     .xmark svg{width:12px;height:12px}
+
+    #focus{
+      background:var(--bg-section);
+    }
 
     .focus{
       margin-top:48px;
@@ -802,6 +815,10 @@
       box-shadow:0 0 16px rgba(57,229,140,.20);
     }
 
+    #pakketten{
+      background:var(--bg-section);
+    }
+
     .pricing{
       margin-top:44px;
       display:grid;
@@ -811,8 +828,8 @@
     }
 
     .price-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border:1px solid rgba(255,255,255,.10);
+      background:var(--card-uniform);
+      border:1px solid var(--card-border);
       border-radius:24px;
       box-shadow:var(--shadow-md);
       padding:30px 28px 24px;
@@ -825,8 +842,8 @@
     .price-card::before{
       content:"";
       position:absolute;
-      inset:-2px;
-      background:radial-gradient(520px 260px at 20% 5%, rgba(255,255,255,.05), transparent 65%);
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
       pointer-events:none;
     }
 
@@ -840,8 +857,7 @@
     .price-card.popular{
       transform:translateY(-8px);
       border-color:var(--accent-stroke);
-      background:
-        linear-gradient(180deg, rgba(57,229,140,.10), rgba(255,255,255,.02) 22%, rgba(255,255,255,.015) 100%);
+      background:var(--card-uniform);
       box-shadow:
         0 28px 74px rgba(0,0,0,.42),
         0 0 0 1px rgba(57,229,140,.10) inset;
@@ -935,9 +951,7 @@
     .sem-premium-story-section{
       position:relative;
       padding:124px 24px;
-      background:
-        radial-gradient(circle at top, rgba(57,229,140,.06), transparent 35%),
-        linear-gradient(180deg, #05080d 0%, #03060a 100%);
+      background:var(--bg-section);
       color:var(--text);
       overflow:hidden;
       border-top:1px solid rgba(255,255,255,.06);
@@ -1108,9 +1122,7 @@
     .testimonials{
       padding:70px 0 54px;
       border-bottom:1px solid rgba(255,255,255,.06);
-      background:
-        radial-gradient(900px 260px at 50% 0%, rgba(57,229,140,.04), transparent 72%),
-        linear-gradient(180deg, #080c11 0%, #0a1017 100%);
+      background:var(--bg-section);
       overflow:hidden;
     }
 
@@ -1215,7 +1227,7 @@
 
     .gallery-section{
       padding:96px 0;
-      background:#0b0b0b;
+      background:var(--bg-section);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
@@ -1283,6 +1295,10 @@
       transform:scale(1);
     }
 
+    #inschrijven{
+      background:var(--bg-section);
+    }
+
     .form-shell{
       max-width:860px;
       margin:38px auto 0;
@@ -1344,9 +1360,7 @@
       border-top:1px solid rgba(255,255,255,.06);
       text-align:center;
       font-size:13px;
-      background:
-        radial-gradient(700px 360px at 50% 0%, rgba(57,229,140,.04), transparent 65%),
-        linear-gradient(180deg, #07090c 0%, #06080b 100%);
+      background:var(--bg-section);
     }
 
     .footer-inner{
@@ -1627,11 +1641,12 @@
 
       .pricing{
         grid-template-columns:1fr;
-        gap:12px;
+        gap:14px;
       }
 
       .price-card,
-      .price-card:last-child{
+      .price-card:last-child,
+      .price-card.popular{
         width:100%;
         max-width:none;
         margin:0;
@@ -1639,12 +1654,16 @@
         min-height:auto;
         padding:22px 16px 18px;
         border-radius:20px;
+        transform:none;
       }
 
       .plan-title{font-size:11px}
+
       .price{
         font-size:34px;
+        line-height:1.05;
         margin:14px 0 8px;
+        word-break:break-word;
       }
 
       .price-sub{
@@ -1660,6 +1679,17 @@
       .li{
         font-size:13px;
         gap:10px;
+        overflow-wrap:anywhere;
+      }
+
+      .plan-title,
+      .price-sub{
+        overflow-wrap:anywhere;
+      }
+
+      .price-card .btn{
+        width:100%;
+        min-width:0;
       }
 
       .focus{
