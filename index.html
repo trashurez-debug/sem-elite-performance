@@ -635,17 +635,24 @@
     .audience-points{
       margin-top:30px;
       display:grid;
-      grid-template-columns:repeat(3, auto);
-      justify-content:center;
+      grid-template-columns:repeat(2, minmax(240px, 1fr));
       gap:12px 14px;
+      justify-content:center;
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
     }
 
     .audience-points span{
-      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:12px 18px;
       border-radius:999px;
       background:rgba(255,255,255,.05);
-      border:1px solid rgba(57,229,140,.18);
-      color:rgba(255,255,255,.80);
+      border:1px solid rgba(255,255,255,.12);
+      color:rgba(255,255,255,.82);
       font-size:14px;
       font-weight:600;
       text-align:center;
@@ -657,17 +664,7 @@
     .audience-points span:hover{
       transform:translateY(-2px);
       background:rgba(255,255,255,.08);
-      border-color:rgba(57,229,140,.28);
-    }
-
-    .audience-points .highlight-point{
-      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
-      color:#07110b;
-      font-weight:800;
-      border-color:rgba(57,229,140,.36);
-      box-shadow:
-        0 10px 24px rgba(57,229,140,.16),
-        0 10px 24px rgba(0,0,0,.22);
+      border-color:rgba(255,255,255,.18);
     }
 
     .statement{
@@ -1578,14 +1575,15 @@
       }
 
       .audience-points{
-        grid-template-columns:repeat(2, auto);
+        grid-template-columns:repeat(2, minmax(0, 1fr));
         gap:10px;
         margin-top:24px;
       }
 
       .audience-points span{
+        min-height:48px;
         font-size:12px;
-        padding:9px 13px;
+        padding:10px 12px;
       }
 
       .sem-premium-story-section{padding:82px 16px}
@@ -2115,8 +2113,8 @@
           </p>
 
           <div class="audience-points">
-            <span>Spelen vanaf BVO O17 t/m 1e elftal & Top Amateur</span>
-            <span class="highlight-point">100% prestatiegericht</span>
+            <span>Spelen vanaf BVO O17 t/m 1e elftal &amp; Top Amateur</span>
+            <span>100% prestatiegericht</span>
             <span>Fysiek een voorsprong willen opbouwen</span>
             <span>Méér willen dan gemiddeld trainen</span>
           </div>
@@ -2253,7 +2251,7 @@
           <ul class="list">
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Het volledige Performance pakket</span></li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Testdag</span></li>
-             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Exit testdag</span></li>
+            <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Exit testdag</span></li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Conditie</span></li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Kracht</span></li>
             <li class="li"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persoonlijk zomerschema – Body Movements</span></li>
