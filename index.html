@@ -543,22 +543,10 @@
       justify-content:center;
       text-align:center;
       padding:80px 24px;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,.22) 0%,
-          rgba(0,0,0,.42) 35%,
-          rgba(0,0,0,.68) 100%
-        ),
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.32) 0%,
-          rgba(0,0,0,.14) 50%,
-          rgba(0,0,0,.32) 100%
-        ),
-        url("assets/seth benen horde.jpeg") center center / cover no-repeat;
-      border:1px solid rgba(255,255,255,.08);
+      background:url("assets/seth benen horde.jpeg") center center / cover no-repeat;
+      border:none;
       box-shadow:var(--shadow-lg);
+      isolation:isolate;
     }
 
     .audience-banner::before{
@@ -567,15 +555,15 @@
       inset:0;
       z-index:0;
       pointer-events:none;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(255,255,255,.05) 0%,
-          rgba(255,255,255,.02) 14%,
-          rgba(0,0,0,.10) 34%,
-          rgba(0,0,0,.34) 58%,
-          rgba(0,0,0,.68) 100%
-        );
+      background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,.06) 0%,
+        rgba(255,255,255,.02) 14%,
+        rgba(0,0,0,.06) 34%,
+        rgba(0,0,0,.22) 58%,
+        rgba(0,0,0,.55) 78%,
+        rgba(0,0,0,.85) 100%
+      );
     }
 
     .audience-banner::after{
@@ -585,7 +573,7 @@
       z-index:0;
       pointer-events:none;
       background:
-        radial-gradient(520px 220px at 50% 100%, rgba(57,229,140,.10), transparent 60%);
+        radial-gradient(520px 180px at 50% 100%, rgba(57,229,140,.12), transparent 60%);
     }
 
     .audience-content{
