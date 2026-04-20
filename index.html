@@ -134,11 +134,42 @@
     }
 
     .section-head{
-      max-width:var(--content-max);
+      position:relative;
+      z-index:2;
+    }
+
+    .title-wrap{
+      max-width:900px;
       margin:0 auto 34px;
       text-align:center;
       position:relative;
       z-index:2;
+    }
+
+    .section-title{
+      margin:0;
+      font-size:clamp(38px, 5vw, 62px);
+      line-height:.98;
+      letter-spacing:-.045em;
+      font-weight:900;
+      color:var(--text);
+    }
+
+    .title-wrap .eyebrow + .section-title{
+      margin-top:16px;
+    }
+
+    .title-wrap .sub{
+      margin:18px auto 0;
+      max-width:820px;
+    }
+
+    .title-wrap .sem-premium-intro,
+    .title-wrap .testimonials-sub,
+    .title-wrap .gallery-sub,
+    .title-wrap .audience-text{
+      margin-left:auto;
+      margin-right:auto;
     }
 
     .h1{
@@ -149,12 +180,13 @@
       font-weight:900;
     }
 
-    .h2{
+    .h2,
+    .audience-title,
+    .sem-premium-title,
+    .testimonials-title,
+    .gallery-title{
       margin:0;
-      font-size:clamp(38px, 5vw, 62px);
-      line-height:.98;
-      letter-spacing:-.045em;
-      font-weight:900;
+      color:var(--text);
     }
 
     .sub{
@@ -425,13 +457,6 @@
       color:rgba(245,247,250,.46);
     }
 
-    .hero-feature-number{
-      font-size:26px;
-      font-weight:900;
-      line-height:1;
-      letter-spacing:-.04em;
-    }
-
     .hero-feature-text{
       font-size:13px;
       font-weight:800;
@@ -579,7 +604,7 @@
     .audience-content{
       position:relative;
       z-index:1;
-      max-width:920px;
+      max-width:100%;
       margin:0 auto;
       color:#fff;
     }
@@ -590,7 +615,7 @@
       justify-content:center;
       gap:10px;
       padding:10px 18px;
-      margin-bottom:24px;
+      margin-bottom:0;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.05);
@@ -615,11 +640,6 @@
     }
 
     .audience-title{
-      margin:0;
-      font-size:clamp(46px, 7vw, 92px);
-      line-height:.94;
-      letter-spacing:-.055em;
-      font-weight:900;
       color:#f7f7f7;
       text-shadow:0 10px 34px rgba(0,0,0,.40);
     }
@@ -967,16 +987,7 @@
     }
 
     .sem-premium-story-wrap{max-width:1320px;margin:0 auto}
-    .sem-premium-story-heading{max-width:860px;margin:0 auto 58px;text-align:center}
-    .sem-premium-story-heading .eyebrow{margin-bottom:0}
-
-    .sem-premium-title{
-      margin:0;
-      font-size:clamp(42px, 6vw, 82px);
-      line-height:.94;
-      font-weight:900;
-      letter-spacing:-.055em;
-    }
+    .sem-premium-story-heading{margin:0 auto 58px;text-align:center}
 
     .sem-premium-intro{
       max-width:740px;
@@ -1137,18 +1148,6 @@
     .testimonials-head{
       text-align:center;
       margin-bottom:26px;
-      max-width:760px;
-      margin-inline:auto;
-    }
-
-    .testimonials-head .eyebrow{margin-bottom:10px}
-
-    .testimonials-title{
-      margin:0;
-      font-size:clamp(28px, 4vw, 44px);
-      line-height:1.02;
-      letter-spacing:-.04em;
-      font-weight:900;
     }
 
     .testimonials-sub{
@@ -1240,7 +1239,6 @@
     }
 
     .gallery-head{
-      max-width:760px;
       margin:0 auto 36px;
       display:flex;
       flex-direction:column;
@@ -1248,20 +1246,13 @@
       text-align:center;
     }
 
-    .gallery-head .eyebrow{margin-bottom:16px}
-
     .gallery-title{
-      margin:0 0 14px;
       color:#ffffff;
-      font-size:clamp(2rem, 4vw, 3.4rem);
-      line-height:1.05;
-      font-weight:800;
       text-transform:uppercase;
-      letter-spacing:-.03em;
     }
 
     .gallery-sub{
-      margin:0;
+      margin:14px 0 0;
       color:rgba(255,255,255,.72);
       font-size:1.05rem;
       line-height:1.7;
@@ -1505,18 +1496,22 @@
       .section.tight{padding:58px 0}
 
       .container{width:min(var(--max), calc(100% - 24px))}
-      .section-head{margin-bottom:28px}
+
+      .title-wrap{
+        max-width:92%;
+        margin:0 auto 28px;
+      }
+
+      .section-title{
+        font-size:clamp(30px, 8vw, 46px);
+        line-height:1.02;
+      }
 
       .sub{
         font-size:15px;
         line-height:1.62;
         margin-top:14px;
         max-width:680px;
-      }
-
-      .h2{
-        font-size:clamp(30px, 8vw, 46px);
-        line-height:1.02;
       }
 
       .hero{
@@ -1568,7 +1563,6 @@
       .audience-badge{
         font-size:10px;
         letter-spacing:.14em;
-        margin-bottom:18px;
       }
 
       .audience-text{
@@ -1645,7 +1639,6 @@
         letter-spacing:.11em;
       }
 
-      .hero-feature-number{font-size:20px}
       .hero-feature-text{font-size:10.5px;line-height:1.12}
 
       .pricing{
@@ -1755,7 +1748,6 @@
       }
 
       .gallery-section{padding:78px 0}
-      .gallery-head{margin-bottom:26px}
       .gallery-sub{
         font-size:15px;
         line-height:1.62;
@@ -1859,7 +1851,6 @@
         letter-spacing:.1em;
       }
 
-      .hero-feature-number{font-size:17px}
       .hero-feature-text{font-size:9px;line-height:1.05}
 
       .pricing{
@@ -1899,7 +1890,11 @@
         line-height:.96;
       }
 
-      .h2{
+      .title-wrap{
+        max-width:94%;
+      }
+
+      .section-title{
         font-size:clamp(26px, 9vw, 34px);
       }
 
@@ -1930,7 +1925,6 @@
         height:24px;
       }
 
-      .hero-feature-number{font-size:16px}
       .hero-feature-text{font-size:8.5px}
 
       .btn,
@@ -2073,7 +2067,9 @@
     <div class="container">
       <div class="panel club-strip">
         <div class="section-head" style="margin-bottom:26px;">
-          <span class="eyebrow">Coacht spelers van</span>
+          <div class="title-wrap" style="margin-bottom:0;">
+            <span class="eyebrow">Coacht spelers van</span>
+          </div>
         </div>
 
         <div class="club-logos">
@@ -2115,14 +2111,14 @@
     <div class="container">
       <div class="audience-banner">
         <div class="audience-content">
-          <div class="audience-badge">Voor ambitieuze spelers</div>
-          <h2 class="audience-title">Dit kamp is voor spelers die:</h2>
-          <p class="audience-text">
-            
-          </p>
+          <div class="title-wrap">
+            <div class="audience-badge">Voor ambitieuze spelers</div>
+            <h2 class="section-title audience-title">Dit kamp is voor spelers die:</h2>
+            <p class="audience-text"></p>
+          </div>
 
           <div class="audience-points">
-            <span>Spelen vanaf BVO O17 t/m 1e elftal & Top Amateur</span>
+            <span>Spelen vanaf BVO O17 t/m 1e elftal &amp; Top Amateur</span>
             <span>100% prestatiegericht zijn</span>
             <span>Fysiek een voorsprong willen opbouwen</span>
             <span>Méér willen dan gemiddeld trainen</span>
@@ -2135,8 +2131,10 @@
   <section class="statement" id="waarom">
     <div class="container center">
       <div class="section-head">
-        <div class="eyebrow">Waarom nu?</div>
-        <h2 class="h2" style="margin-top:16px;">De meeste spelers worden in de zomer zwakker.</h2>
+        <div class="title-wrap">
+          <div class="eyebrow">Waarom nu?</div>
+          <h2 class="section-title">De meeste spelers worden in de zomer zwakker.</h2>
+        </div>
       </div>
 
       <div class="xlist" role="list">
@@ -2173,9 +2171,11 @@
   <section class="section" id="focus">
     <div class="container center">
       <div class="section-head">
-        <div class="eyebrow">Wat je ontwikkelt</div>
-        <h2 class="h2" style="margin-top:16px;">Het Elite Off-Season Camp</h2>
-        <p class="sub">In dit 10-daagse kamp bouw je gericht aan de fysieke kwaliteiten die direct verschil maken op het veld.</p>
+        <div class="title-wrap">
+          <div class="eyebrow">Wat je ontwikkelt</div>
+          <h2 class="section-title">Het Elite Off-Season Camp</h2>
+          <p class="sub">In dit 10-daagse kamp bouw je gericht aan de fysieke kwaliteiten die direct verschil maken op het veld.</p>
+        </div>
       </div>
 
       <div class="focus">
@@ -2217,9 +2217,11 @@
   <section class="section tight" id="pakketten">
     <div class="container center">
       <div class="section-head">
-        <div class="eyebrow">Pakketten</div>
-        <h2 class="h2" style="margin-top:16px;">Kies het niveau dat bij jou past.</h2>
-        <p class="sub">Drie trajecten, afgestemd op persoonlijke doelen, begeleiding en coaching.</p>
+        <div class="title-wrap">
+          <div class="eyebrow">Pakketten</div>
+          <h2 class="section-title">Kies het niveau dat bij jou past.</h2>
+          <p class="sub">Drie trajecten, afgestemd op persoonlijke doelen, begeleiding en coaching.</p>
+        </div>
       </div>
 
       <div class="pricing">
@@ -2279,7 +2281,7 @@
                   <path d="M20 6 9 17l-5-5"/>
                 </svg>
               </span>
-              <span>Persoonlijke programma voor prep & cooling down</span>
+              <span>Persoonlijke programma voor prep &amp; cooling down</span>
             </li>
           </ul>
 
@@ -2351,11 +2353,13 @@
   <section class="sem-premium-story-section">
     <div class="sem-premium-story-wrap">
       <div class="sem-premium-story-heading">
-        <div class="eyebrow">Coach story</div>
-        <h2 class="sem-premium-title" style="margin-top:16px;">De visie achter Sem Elite Performance</h2>
-        <p class="sem-premium-intro">
-          Meer dan alleen trainen. Ontdek de achtergrond, visie en standaarden achter de manier waarop Sem ambitieuze voetballers ontwikkelt.
-        </p>
+        <div class="title-wrap">
+          <div class="eyebrow">Coach story</div>
+          <h2 class="section-title sem-premium-title">De visie achter Sem Elite Performance</h2>
+          <p class="sem-premium-intro">
+            Meer dan alleen trainen. Ontdek de achtergrond, visie en standaarden achter de manier waarop Sem ambitieuze voetballers ontwikkelt.
+          </p>
+        </div>
       </div>
 
       <div class="sem-premium-story-grid">
@@ -2440,11 +2444,13 @@
   <section class="testimonials" aria-label="Testimonials">
     <div class="container">
       <div class="testimonials-head">
-        <p class="eyebrow">Testimonials</p>
-        <h2 class="testimonials-title">Wat spelers over Sem zeggen</h2>
-        <p class="testimonials-sub">
-          Ervaringen van ambitieuze spelers die bewust investeren in snelheid, kracht en explosiviteit.
-        </p>
+        <div class="title-wrap">
+          <p class="eyebrow">Testimonials</p>
+          <h2 class="section-title testimonials-title">Wat spelers over Sem zeggen</h2>
+          <p class="testimonials-sub">
+            Ervaringen van ambitieuze spelers die bewust investeren in snelheid, kracht en explosiviteit.
+          </p>
+        </div>
       </div>
 
       <div class="testimonials-slider">
@@ -2555,11 +2561,13 @@
   <section class="gallery-section" id="foto-slider">
     <div class="container">
       <div class="gallery-head">
-        <div class="eyebrow">Resultaten</div>
-        <h2 class="gallery-title">Sfeer &amp; Progressie</h2>
-        <p class="gallery-sub">
-          Een blik in de Sem Elite Performance omgeving, waar kwaliteit, energie en ontwikkeling samenkomen.
-        </p>
+        <div class="title-wrap">
+          <div class="eyebrow">Resultaten</div>
+          <h2 class="section-title gallery-title">Sfeer &amp; Progressie</h2>
+          <p class="gallery-sub">
+            Een blik in de Sem Elite Performance omgeving, waar kwaliteit, energie en ontwikkeling samenkomen.
+          </p>
+        </div>
       </div>
 
       <div class="fade-slider" aria-label="Fotogalerij">
@@ -2579,9 +2587,11 @@
   <section class="section tight" id="inschrijven">
     <div class="container center">
       <div class="section-head">
-        <div class="eyebrow">Reserveer jouw plek</div>
-        <h2 class="h2" style="margin-top:16px;">Schrijf je in voor het camp</h2>
-        <p class="sub">Wil jij deze zomer sneller en explosiever worden? Reserveer nu jouw plek voor het Elite Off-Season Speed Camp.</p>
+        <div class="title-wrap">
+          <div class="eyebrow">Reserveer jouw plek</div>
+          <h2 class="section-title">Schrijf je in voor het camp</h2>
+          <p class="sub">Wil jij deze zomer sneller en explosiever worden? Reserveer nu jouw plek voor het Elite Off-Season Speed Camp.</p>
+        </div>
       </div>
 
       <div class="panel form-shell">
